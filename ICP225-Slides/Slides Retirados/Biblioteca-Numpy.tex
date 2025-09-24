@@ -1,0 +1,172 @@
+%----------------------------------------------------------------------------------------
+%    TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title{Biblioteca Numpy}
+
+\author{Prof. Gabriel Rodrigues Caldas de Aquino}
+
+\institute
+{
+    gabrielaquino@ic.ufrj.br\\
+    
+    Instituto de Computação -
+    Universidade Federal do Rio de Janeiro % Your institution for the title page
+}
+\date{03 de Junho de 2025} % Date, can be changed to a custom date
+
+%----------------------------------------------------------------------------------------
+%    PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+
+\begin{frame}
+    % Print the title page as the first slide
+    \titlepage
+\end{frame}
+
+%------------------------------------------------
+\section{Sobre o numpy}
+%------------------------------------------------
+
+\begin{frame}{NumPy - Introdução}
+
+\begin{block}{O que é NumPy?}
+\begin{itemize}
+    \item Pacote fundamental para \textbf{computação científica} em Python
+   
+    
+\end{itemize}
+\end{block}
+
+\begin{block}{Objeto principal: \texttt{numpy.ndarray}}
+\begin{itemize}
+    \item Vetor \textbf{n-dimensional} (arrays multidimensionais)
+    \item Características fundamentais:
+    \begin{itemize}
+        \item \textbf{Tamanho fixo} (definido na criação)
+        \item \textbf{Indexado} por tuplas de inteiros positivos
+        \item \textbf{Homogêneo} - todos elementos do mesmo tipo
+    \end{itemize}
+\end{itemize}
+\end{block}
+
+\begin{exampleblock}{Documentação Oficial}
+\centering
+
+Há diversas métodos e atributos disponíveis no NumPy, os quais podem ser consultados na documentação oficial no endereço:
+\url{https://numpy.org/doc/stable/index.html}
+
+
+\end{exampleblock}
+
+
+\end{frame}
+
+\begin{frame}[fragile]{NumPy - Arrays}
+
+\begin{block}{Importe o módulo e crie arrays a partir de listas}
+
+    \begin{verbatim}
+    import numpy as np
+    np.array(lista)
+    \end{verbatim}
+
+\end{block}
+\begin{columns}[T]
+    \begin{column}{0.5\textwidth}
+\begin{exampleblock}{Exemplos}
+\begin{verbatim}
+# Array 1D (vetor)
+x = np.array([1, 2, 3])
+
+
+# Array 2D (matriz)
+y = np.array([[1., 0., 0.], 
+              [0., 1., 0.]])
+
+\end{verbatim}
+\end{exampleblock}
+    \end{column}
+    
+  \begin{column}{0.5\textwidth}  
+  \begin{block}{Saída dos Exemplos}
+        \begin{verbatim}
+#Saída:
+>>> x
+array([1, 2, 3])
+
+>>> y
+array([[1., 0., 0.],
+       [0., 1., 0.]])
+ \end{verbatim}
+        \end{block}
+    \end{column}
+\end{columns} 
+\end{frame}
+
+\begin{frame}{Tipos de Numpy array}
+
+\begin{alertblock}{Verificando o Tipo}
+        \begin{verbatim}
+
+>>> type(x)
+numpy.ndarray
+
+>>> type(y)
+numpy.ndarray
+        \end{verbatim}
+\end{alertblock}
+
+
+\begin{block}{Características}
+\begin{itemize}
+    \item \texttt{x} é um array \textbf{1-dimensional} (vetor)
+    \item \texttt{y} é um array \textbf{2-dimensional} (matriz)
+    \item Ambos são do tipo \texttt{numpy.ndarray}
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]{NumPy - O Atributo \texttt{dtype}}
+
+\begin{block}{Definição}
+O \texttt{dtype} define o tipo dos elementos armazenados no array NumPy
+\end{block}
+
+\begin{exampleblock}{Exemplo Inicial}
+\begin{verbatim}
+minhalista = [1, 2, 3, 4, 5]
+arr = np.array(minhalista)
+print(arr)          # array([1, 2, 3, 4, 5])
+print(type(arr))    # <class 'numpy.ndarray'>
+print(arr.dtype)    # dtype('int64')
+\end{verbatim}
+\end{exampleblock}
+
+\begin{columns}[T]
+    \begin{column}{0.5\textwidth}
+        \begin{alertblock}{Com Número Decimal}
+\begin{verbatim}
+minhalista = [1, 2, 3, 4, 5.5]
+arr = np.array(minhalista)
+print(arr.dtype)  # dtype('float64')
+\end{verbatim}
+        \end{alertblock}
+    \end{column}
+    
+    \begin{column}{0.5\textwidth}
+        \begin{alertblock}{Com String}
+\begin{verbatim}
+minhalista = [1, 2, 3, 4, "ola"]
+arr = np.array(minhalista)
+print(arr.dtype)  # dtype('<U21')
+\end{verbatim}
+        \end{alertblock}
+    \end{column}
+\end{columns}
+
+
+\end{frame}
+
+

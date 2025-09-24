@@ -1,0 +1,201 @@
+\title{Lista de exercicios: Revisão}
+\author{Gabriel Rodrigues Caldas de Aquino}
+\date{11/06/2025}
+
+\begin{document}
+
+\maketitle
+
+\section{Conversão de string para número decimal}
+
+\textbf{Descrição:}  
+Peça ao usuário que digite um número com casas decimais (float). Utilize \textit{try/except} para capturar exceções no caso de o valor não poder ser convertido (como letras ou símbolos). Exiba o número com duas casas decimais após a conversão bem-sucedida.
+
+\section{Remoção de elemento de lista}
+
+\textbf{Descrição:}  
+Crie uma lista de números e peça ao usuário que digite um valor para remover da lista. Utilize \textit{try/except} para tratar a exceção que ocorre caso o valor informado não exista na lista.
+
+\section{Abertura e leitura de arquivos numéricos}
+
+\textbf{Descrição:}  
+Solicite ao usuário o nome de um arquivo que contenha números inteiros (um por linha). Tente abrir e ler os valores, convertendo cada linha em número. Utilize \textit{try/except} para tratar: (i) erro na abertura do arquivo; (ii) erro na conversão de alguma linha para inteiro.
+
+\section{Divisão segura com múltiplas verificações}
+
+\textbf{Descrição:}  
+Solicite ao usuário dois valores. Tente converter ambos para números e realizar uma divisão. Trate com \textit{try/except} os seguintes erros: (i) erro de conversão; (ii) divisão por zero. Utilize \textit{else} para mostrar o resultado e \textit{finally} para imprimir uma mensagem de encerramento.
+
+\section{Verificação de tipo e valor de entrada}
+
+\textbf{Descrição:}  
+Peça ao usuário que digite um número inteiro entre 1 e 100. Use \textit{try/except} para tratar entradas inválidas (não numéricas) e utilize \textit{raise} com \textit{ValueError} se o número estiver fora do intervalo permitido. Exiba uma mensagem adequada em cada caso.
+
+
+\section{Validação de senha com exceções personalizadas}
+
+\textbf{Descrição:}  
+Crie uma função para validar uma senha fornecida pelo usuário. As regras são:
+\begin{itemize}
+    \item A senha deve ter pelo menos 8 caracteres.
+    \item Deve conter ao menos um número.
+    \item Deve conter ao menos uma letra maiúscula.
+\end{itemize}
+
+Se a senha não atender a uma das condições acima, lance uma exceção personalizada com uma mensagem indicando o motivo da falha na validação.
+
+
+\section{Filtro de Palavras}
+
+\textbf{Descrição:}  
+Crie um programa que leia o conteúdo de um arquivo chamado \texttt{textao.txt} e grave em um novo arquivo \texttt{palavras-chave.txt} apenas as linhas que contenham uma determinada palavra-chave fornecida pelo usuário. 
+
+\begin{itemize}
+    \item Exemplo de palavra-chave: \texttt{segurança}
+\end{itemize}
+
+\section{Cópia de Arquivo Linha a Linha}
+
+\textbf{Descrição:}  
+Escreva um programa que copie o conteúdo de um arquivo chamado \texttt{origem.txt} para um novo arquivo chamado \texttt{copia.txt}, escrevendo uma linha por vez.
+
+\begin{itemize}
+    \item Certifique-se de fechar os arquivos ao final do processo.
+\end{itemize}
+
+\section{Contador de Palavras}
+
+\textbf{Descrição:}  
+Crie um programa que leia um arquivo \texttt{textao.txt} e conte o total de palavras no texto. O programa deve imprimir a contagem final na tela.
+
+\begin{itemize}
+    \item Considere que palavras estão separadas por espaço.
+    \item Dica: use \texttt{split()} para separar as palavras de cada linha.
+\end{itemize}
+
+\section{Atualização de Preços em Arquivo CSV}
+
+\textbf{Descrição:}  
+Dado um arquivo \texttt{produtos.csv} no formato \texttt{Produto,Preco}, crie um programa que aplique um reajuste de 10\% em todos os preços e grave o resultado em \texttt{produtos-reajustados.csv}.
+
+\begin{itemize}
+    \item Exemplo de entrada:
+\end{itemize}
+
+\begin{verbatim}
+Caneta,2.50
+Lápis,1.00
+Caderno,15.00
+\end{verbatim}
+
+\begin{itemize}
+    \item Saída esperada:
+\end{itemize}
+
+\begin{verbatim}
+Caneta,2.75
+Lápis,1.10
+Caderno,16.50
+\end{verbatim}
+
+\section{Leitura e cálculo de desvio padrão}
+
+\textbf{Descrição:} Crie um arquivo \textit{dados.txt} contendo 6 números reais separados por espaço. Escreva um programa que:
+
+\begin{enumerate}
+    \item Leia o arquivo no modo \textit{r} e use \textit{split()} para obter os valores.
+    \item Converta a lista de strings em um vetor NumPy de float.
+    \item Calcule e exiba o desvio padrão dos valores.
+\end{enumerate}
+
+\textbf{Exemplo}:
+\begin{verbatim}
+import numpy as np
+G = np.array([10.0, 12.0, 23.0, 23.0, 16.0, 23.0])
+print(G.std())
+#resultado: 4.898979485566356
+\end{verbatim}
+
+\section{Leitura de matriz e média por coluna}
+
+\textbf{Descrição:} Crie um arquivo chamado \textit{notas.txt} contendo 4 linhas, com 3 números reais por linha, representando notas de alunos. Escreva um programa que:
+
+\begin{enumerate}
+    \item Leia todas as linhas e converta em uma matriz NumPy.
+    \item Calcule a média de cada coluna (cada prova).
+    \item Exiba o vetor com as médias.
+\end{enumerate}
+
+\textbf{Exemplo}:
+\begin{verbatim}
+H = np.array([[7.5, 8.0, 6.0],
+              [6.0, 9.0, 7.0],
+              [8.5, 7.5, 9.0],
+              [9.0, 6.0, 8.0]])
+print(H.mean(axis=0))
+#resultado: [7.75 7.625 7.5]
+\end{verbatim}
+
+\section{Criação de matriz identidade e gravação}
+
+\textbf{Descrição:} Escreva um programa que:
+
+\begin{enumerate}
+    \item Peça ao usuário um número inteiro \( n \).
+    \item Crie uma matriz identidade \( n \times n \) usando NumPy.
+    \item Grave essa matriz no arquivo \textit{identidade.txt}, com os números separados por espaço.
+\end{enumerate}
+
+\textbf{Exemplo}:
+\begin{verbatim}
+import numpy as np
+I = np.identity(3, dtype=int)
+print(I)
+#resultado:
+[[1 0 0]
+ [0 1 0]
+ [0 0 1]]
+\end{verbatim}
+
+\section{Diferença entre vetores de arquivos}
+
+\textbf{Descrição:} Crie dois arquivos: \textit{vetor1.txt} e \textit{vetor2.txt}, cada um com 5 inteiros separados por espaço. Escreva um programa que:
+
+\begin{enumerate}
+    \item Leia os dois vetores a partir dos arquivos.
+    \item Calcule a diferença absoluta entre os dois vetores (elemento a elemento).
+    \item Grave o vetor resultante em \textit{diferenca.txt}.
+\end{enumerate}
+
+\textbf{Exemplo}:
+\begin{verbatim}
+import numpy as np
+A = np.array([10, 20, 30, 40, 50])
+B = np.array([8, 18, 25, 45, 60])
+print(np.abs(A - B))
+#resultado: [ 2  2  5  5 10]
+\end{verbatim}
+
+\section{Contagem de números pares e ímpares em vetor}
+
+\textbf{Descrição:} Crie um arquivo chamado \textit{numeros.txt} contendo 15 números inteiros em uma única linha, separados por espaço. Faça um programa que:
+
+\begin{enumerate}
+    \item Leia o arquivo e crie um vetor NumPy com os valores.
+    \item Conte quantos números pares e quantos ímpares existem no vetor.
+    \item Exiba o resultado na tela.
+\end{enumerate}
+
+\textbf{Exemplo}:
+\begin{verbatim}
+import numpy as np
+V = np.array([1, 2, 3, 4, 5, 6])
+pares = np.sum(V % 2 == 0)
+impares = np.sum(V % 2 != 0)
+print("Pares:", pares, "Ímpares:", impares)
+#resultado: Pares: 3 Ímpares: 3
+\end{verbatim}
+
+
+\end{document}
+

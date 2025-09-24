@@ -1,0 +1,258 @@
+\title{Lista de Exercícios: Introdução ao Matplotlib}
+\author{Gabriel Rodrigues Caldas de Aquino}
+\date{03/07/2025}
+
+\begin{document}
+
+\maketitle
+
+\section{Preço por kg de leite em pó}
+
+\textbf{Descrição:}  
+
+Você possui o arquivo de texto chamado \texttt{leite-preco-kg.txt}, contendo informações de diferentes marcas de leite em pó. Cada linha possui o nome do produto, o preço total do pacote em reais e o peso do pacote em kg, separados por vírgula.  
+
+\begin{verbatim}
+Leite em pó A,38.90,2.0
+Leite em pó B,22.50,1.0
+Leite em pó C,18.00,0.8
+Leite em pó D,45.20,2.5
+Leite em pó E,12.90,0.4
+Leite em pó Z,12.90,0.0
+Leite em pó F,27.50,1.2
+Leite em pó G,55.00,3.0
+\end{verbatim}
+
+\textbf{Tarefas:}
+
+\begin{itemize}
+  \item Ler o arquivo linha por linha, separando corretamente os campos.
+  \item Calcular o preço por kg de cada produto (preço dividido pelo peso).
+  \item Gerar um gráfico de barras com \texttt{matplotlib} mostrando:
+    \begin{itemize}
+      \item eixo X: nome do produto
+      \item eixo Y: preço por kg calculado
+    \end{itemize}
+  \item Tratar possíveis erros (por exemplo, divisão por zero) com \texttt{try-except}.
+\end{itemize}
+
+O gráfico deve conter título, legendas nos eixos e as barras identificadas.
+
+
+\section{Cálculo de vendas com produto matricial}
+
+\textbf{Descrição:}  
+
+Você é responsável pelo controle de vendas de três produtos (Lápis, Caderno e Borracha) em três lojas diferentes (Loja A, Loja B e Loja C). Foi montada uma planilha com a quantidade de produtos vendidos em cada loja, conforme abaixo (cada linha representa uma loja, e cada coluna representa um produto):
+
+\begin{verbatim}
+        Lápis   Caderno   Borracha
+Loja A   100       50        200
+Loja B    80       60        150
+Loja C   120       40        100
+\end{verbatim}
+
+Além disso, você possui os preços unitários de cada produto:
+
+\begin{itemize}
+    \item Lápis: R\$ 2,00
+    \item Caderno: R\$ 10,00
+    \item Borracha: R\$ 1,50
+\end{itemize}
+
+\textbf{Tarefa:}
+
+Utilizando o \texttt{NumPy} e a operação de produto matricial, calcule o valor total recebido em cada loja considerando todas as vendas.
+
+
+\section{Cálculo de vendas com preços diferenciados por loja}
+
+\textbf{Descrição:}  
+
+Você é responsável por três lojas (Loja A, Loja B e Loja C) que vendem três produtos (Lápis, Caderno e Borracha). Cada loja tem seu próprio preço para cada produto, e você já possui o levantamento das vendas conforme abaixo:
+
+\textbf{Quantidade de produtos vendidos:}
+
+\begin{verbatim}
+        Lápis   Caderno   Borracha
+Loja A   100       50        200
+Loja B    80       60        150
+Loja C   120       40        100
+\end{verbatim}
+
+\textbf{Preços dos produtos em cada loja:}
+
+\begin{verbatim}
+        Lápis   Caderno   Borracha
+Loja A   2.00      9.50       1.60
+Loja B   2.20     10.00       1.40
+Loja C   1.90      9.80       1.50
+\end{verbatim}
+
+\textbf{Tarefa:}
+
+Utilizando o \texttt{NumPy}, calcule o valor total recebido em cada loja, considerando a multiplicação elemento a elemento entre quantidade e preço, e depois somando os valores de cada loja.
+
+
+\section{Soma vetorial de forças}
+
+\textbf{Descrição:}  
+
+Um objeto está sendo puxado por duas forças representadas diretamente em coordenadas cartesianas:
+
+\begin{itemize}
+    \item \textbf{F\textsubscript{1} = (10, 5) N}
+    \item \textbf{F\textsubscript{2} = (–4, 12) N}
+\end{itemize}
+
+\textbf{Tarefa:}
+
+\begin{quote}
+Calcule a força resultante (soma vetorial) usando a biblioteca \texttt{NumPy}.
+\end{quote}
+
+
+\section{Plotando funções definidas pelo usuário}
+
+\textbf{Descrição:}  
+
+Em Python, crie uma função chamada \texttt{f(x)} onde você mesmo(a) define a função matemática (por exemplo, \(f(x) = x^2 + 3x + 1\)) dentro dela.
+
+\textbf{Tarefas:}
+
+\begin{itemize}
+    \item Implemente a função \texttt{f(x)} contendo a expressão matemática desejada dentro dela.
+    \item Use o \texttt{matplotlib} para plotar o gráfico de \texttt{f(x)} para valores de \(x\) no intervalo \([-10, 10]\), com pelo menos 100 pontos.
+    \item Modifique a expressão dentro de \texttt{f(x)} para testar diferentes funções e verifique os gráficos resultantes.
+    \item Utilize o \texttt{NumPy} para gerar os valores de \(x\).
+\end{itemize}
+
+
+\section{ Faça o tratamento dos possíveis erros que podem acontecer neste código mostrado em aula}
+
+\begin{verbatim}
+def calcular_media(valores):
+    soma = sum(valores)
+    media = soma / len(valores)
+    return media
+
+def ler_arquivo(nome_arquivo):
+    with open(nome_arquivo, 'r') as file:
+        dados = file.read().split(',')
+    return [float(dado) for dado in dados]
+
+print("=== Calculadora de Média ===")
+valores = input("Digite números separados por vírgula: ").split(',')
+
+valores = [int(x) for x in valores]
+
+print(f"Valores de entrada: {valores}")
+
+media = calcular_media(valores)
+print(f"Média do teclado: {media}")
+
+dados_arquivo = ler_arquivo('dados.txt')
+print(f"Média do arquivo: {calcular_media(dados_arquivo)}")
+
+\end{verbatim}
+
+\section{Manipulação de arquivos em Python}
+
+\textbf{Descrição:}  
+
+Analise o seguinte código em Python:
+
+\begin{verbatim}
+with open("dados.txt", "w+") as arquivo:
+    arquivo.write("Primeira linha\n")
+    arquivo.seek(0)
+    print(arquivo.read())
+\end{verbatim}
+
+\textbf{Perguntas:}
+
+\begin{enumerate}
+    \item[a)] O que será exibido no console após a execução do código?
+    \item[b)] Qual seria o resultado se a linha \texttt{arquivo.seek(0)} fosse removida? Justifique sua resposta.
+\end{enumerate}
+
+
+\section{Uso do método \texttt{seek()} em arquivos}
+
+\textbf{Descrição:}  
+
+O método \texttt{seek()} reposiciona o cursor de leitura/escrita de um arquivo para um deslocamento específico, permitindo que operações subsequentes sejam feitas a partir de uma posição arbitrária dentro do arquivo.
+
+\textbf{Exemplo:}
+
+Considere que um arquivo chamado \texttt{letras.txt} contém o seguinte conteúdo:
+
+\begin{verbatim}
+ABCDEF
+\end{verbatim}
+
+E que o seguinte código seja executado em Python:
+
+\begin{verbatim}
+arq = open("letras.txt", "a+")
+arq.seek(3)
+print(arq.read())
+arq.close()
+\end{verbatim}
+
+\textbf{Pergunta:}
+
+\begin{itemize}
+    \item Qual será a saída exibida no console após a execução do código? Explique detalhadamente o motivo.
+\end{itemize}
+
+\section{Verificação de triângulo equilátero}
+
+\textbf{Descrição:}  
+
+Considere o seguinte código em Python:
+
+\begin{verbatim}
+def verifica_equilatero(triangulo):
+    if triangulo[0] == triangulo[1] == triangulo[2]:
+        return True
+    else:
+        raise ValueError("Não é um triângulo equilátero!")
+\end{verbatim}
+
+\textbf{Perguntas:}
+
+\begin{enumerate}
+    \item[a)] O que acontece se for passado os valores \texttt{[4,5,4]} como argumento?
+    \item[b)] Escreva um código que chame essa função e trate a exceção de forma adequada, exibindo a mensagem de erro para o usuário.
+\end{enumerate}
+
+
+\section{Tratamento de exceções em Python}
+
+\textbf{Descrição:}  
+
+Considere o seguinte código Python:
+
+\begin{verbatim}
+try:
+    arquivo = open("dados.txt", "r")
+    dados = arquivo.read()
+except FileNotFoundError:
+    print("Arquivo não encontrado!")
+finally:
+    print("Fim da execução")
+\end{verbatim}
+
+Suponha que o arquivo \texttt{dados.txt} não exista no diretório onde o código é executado.
+
+\textbf{Perguntas:}
+
+\begin{enumerate}
+    \item[a)] Qual será a saída exibida na tela?
+    \item[b)] Explique.
+\end{enumerate}
+
+
+
+\end{document}

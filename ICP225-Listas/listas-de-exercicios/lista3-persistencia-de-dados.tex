@@ -1,0 +1,144 @@
+\title{Lista de exercícios 3: Persistência de Dados}
+\author{Gabriel Rodrigues Caldas de Aquino}
+\date{28/05/2025}
+
+\begin{document}
+
+\maketitle
+    
+\section{Leitura Básica de Arquivo}
+    \textbf{Descrição:} Crie um programa em Python que abra um arquivo chamado "dados.txt" (modo leitura), imprima todo o seu conteúdo na tela e depois feche o arquivo.
+
+\section{Contador de Linhas}
+        \textbf{Descrição:} Escreva um programa que conte quantas linhas existem em um arquivo chamado "nomes.txt". O programa deve abrir o arquivo, contar as linhas, imprimir o total e fechar o arquivo.
+
+\section{Gravação Simples}
+        \textbf{Descrição:} Crie um programa que grave três nomes (um em cada linha) em um arquivo chamado "alunos.txt". Use o modo de escrita ('w') e não esqueça de fechar o arquivo.
+
+\section{Adição de Conteúdo}
+        \textbf{Descrição:} Modifique o exercício anterior para adicionar mais dois nomes ao final do arquivo "alunos.txt" (em vez de sobrescrever). Use o modo de adição ('a').
+
+\section{Tratamento de Erros}
+        \textbf{Descrição:} Escreva um programa que tente abrir um arquivo "notas.txt" para leitura. Se o arquivo não existir, o programa deve imprimir uma mensagem amigável (como "Arquivo não encontrado") em vez de mostrar o erro do Python. Use try-except.   
+
+\section{Manipulação de Arquivo CSV}
+
+\textbf{Descrição:} Crie um programa que leia um arquivo \textit{dados.csv} (no formato Nome,Idade,Cidade) e gere um novo arquivo \texttt{maiores-de-idade.txt} contendo apenas as pessoas com idade maior ou igual a 18 anos.
+
+\begin{itemize}
+    \item Exemplo de entrada (\textit{dados.csv}):
+\end{itemize}
+
+\begin{verbatim}
+João,17,Caxias
+Maria,19,Maricá
+Pedro,20,Niterói
+Ana,16,Belém
+\end{verbatim}
+\begin{itemize}
+    \item Saída esperada (\textit{maiores-de-idade.txt}):
+\end{itemize}
+\begin{verbatim}
+Maria,19,Maricá
+Pedro,20,Niterói
+\end{verbatim}
+
+
+\section{Busca em Arquivo}
+
+\textbf{Descrição:} Crie um programa que permita ao usuário buscar um nome em um arquivo \textit{contatos.txt}, onde cada linha tem o formato \textit{Nome:Telefone}. Se o nome existir, exiba o telefone; caso contrário, informe que o contato não foi encontrado
+
+\begin{itemize}
+    \item Exemplo de entrada (\textit{contatos.txt}):
+\end{itemize}
+
+\begin{verbatim}
+João:21987654321
+Maria:21912345678
+Pedro:21955554444
+\end{verbatim}
+
+
+\begin{itemize}
+    \item Exemplo de execução:
+\end{itemize}
+
+\begin{verbatim}
+Digite o nome a buscar: Maria
+Telefone: 21912345678      
+\end{verbatim}
+
+\section{Log de Execução}
+
+\textbf{Descrição:} Crie um programa que registre em um arquivo \textit{log.txt} todas as vezes que ele for executado, adicionando uma nova linha com a data e hora.
+
+\begin{itemize}
+    \item Formato:
+\end{itemize}
+    
+\begin{verbatim}
+Programa executado em: 2025-05-29 14:30:00  
+Programa executado em: 2025-05-30 09:15:00      
+\end{verbatim}
+
+
+\textbf{Dica}: Use \textit{import datetime} e \textit{datetime.now()} para obter a data/hora atual
+
+\section{Soma de Dados Numéricos}
+
+Crie um programa que leia um arquivo \textit{valores.txt} (formato: \textit{NodeID,Valor}) e calcule:
+
+\begin{itemize}
+\item A soma total dos valores.
+
+    \item O maior valor da lista.
+
+    \item Grave os resultados em um novo arquivo estatisticas.txt.
+\end{itemize}
+
+\begin{itemize}
+    \item Exemplo de entrada (\textit{valores.txt}):
+\end{itemize}
+
+\begin{verbatim}
+Node1,15.5  
+Node2,20.0  
+Node3,10.2     
+\end{verbatim}
+
+\begin{itemize}
+    \item Saída esperada (\textit{estatisticas.txt}):
+\end{itemize}
+\begin{verbatim}
+Soma total: 45.7  
+Maior valor: 20.0  
+\end{verbatim}
+
+\section{Operações com Matrizes a partir de Arquivos}
+
+\textbf{Objetivo}:
+Ler duas matrizes de arquivos \textit{.txt}, realizar operações básicas (soma, subtração) e salvar o resultado em um novo arquivo.
+
+\begin{itemize}
+    \item Utilize dois arquivos (\textit{matrizA.txt} e \textit{matrizB.txt}) no formato onde cada linha representa uma linha da matriz, com valores separados por vírgula:
+\end{itemize}
+
+\begin{verbatim}
+1 2 3
+4 5 6
+7 8 9
+\end{verbatim}
+
+Operações Requeridas:
+\begin{itemize}
+
+
+       \item  Ler as matrizes dos arquivos
+
+      \item   Verificar se pode ser realizada a operação
+
+      \item   Realizar soma ou subtração
+
+      \item   Salvar o resultado em resultado.txt
+\end{itemize}
+\end{document}

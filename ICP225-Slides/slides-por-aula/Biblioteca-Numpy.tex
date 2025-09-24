@@ -1,0 +1,1033 @@
+%----------------------------------------------------------------------------------------
+%    TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title{Biblioteca Numpy}
+
+\author{Prof. Gabriel Rodrigues Caldas de Aquino}
+
+\institute
+{
+    gabrielaquino@ic.ufrj.br\\
+
+    Instituto de Computação -
+    Universidade Federal do Rio de Janeiro % Your institution for the title page
+}
+\date{Compilado em: \\ \today} % Date, can be changed to a custom date
+
+%----------------------------------------------------------------------------------------
+%    PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+%------------------------------------------------
+\section{Biblioteca Numpy}
+%------------------------------------------------
+
+\begin{frame}
+    % Print the title page as the first slide
+    \titlepage
+\end{frame}
+
+
+
+\begin{frame}{NumPy - Introdução}
+
+    \begin{block}{O que é NumPy?}
+        \begin{itemize}
+            \item Pacote fundamental para \textbf{computação científica} em Python
+
+
+        \end{itemize}
+    \end{block}
+
+    \begin{block}{Objeto principal: \texttt{numpy.ndarray}}
+        \begin{itemize}
+            \item Vetor \textbf{n-dimensional} (arrays multidimensionais)
+            \item Características fundamentais:
+                  \begin{itemize}
+                      \item \textbf{Tamanho fixo} (definido na criação)
+                      \item \textbf{Indexado} por tuplas de inteiros positivos
+                      \item \textbf{Homogêneo} - todos elementos do mesmo tipo
+                  \end{itemize}
+        \end{itemize}
+    \end{block}
+
+    \begin{exampleblock}{Documentação Oficial}
+        \centering
+
+        Há diversas métodos e atributos disponíveis no NumPy, os quais podem ser consultados na documentação oficial no endereço:
+        \url{https://numpy.org/doc/stable/index.html}
+
+
+    \end{exampleblock}
+
+
+\end{frame}
+
+\begin{frame}[fragile]{NumPy - Arrays}
+
+    \begin{block}{Importe o módulo e crie arrays a partir de listas}
+
+        \begin{verbatim}
+    import numpy as np
+    np.array(lista)
+    \end{verbatim}
+
+    \end{block}
+    \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+            \begin{exampleblock}{Exemplos}
+                \begin{verbatim}
+# Array 1D (vetor)
+x = np.array([1, 2, 3])
+
+
+# Array 2D (matriz)
+y = np.array([[1., 0., 0.], 
+              [0., 1., 0.]])
+
+\end{verbatim}
+            \end{exampleblock}
+        \end{column}
+
+        \begin{column}{0.5\textwidth}
+            \begin{block}{Saída dos Exemplos}
+                \begin{verbatim}
+#Saída:
+>>> x
+array([1, 2, 3])
+
+>>> y
+array([[1., 0., 0.],
+       [0., 1., 0.]])
+ \end{verbatim}
+            \end{block}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Tipos de Numpy array}
+    \begin{verbatim}
+>>> type(x)
+numpy.ndarray
+
+>>> type(y)
+ numpy.ndarray
+\end{verbatim}
+
+    \begin{block}{Características}
+        \begin{itemize}
+            \item \texttt{x} é um array \textbf{1-dimensional} (vetor)
+            \item \texttt{y} é um array \textbf{2-dimensional} (matriz)
+            \item Ambos são do tipo \texttt{numpy.ndarray}
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]{NumPy - O Atributo \texttt{dtype}}
+
+    \begin{block}{Definição}
+        O \texttt{dtype} define o tipo dos elementos armazenados no array NumPy
+    \end{block}
+
+    \begin{exampleblock}{Exemplo Inicial}
+        \begin{verbatim}
+minhalista = [1, 2, 3, 4, 5]
+arr = np.array(minhalista)
+print(arr)          # array([1, 2, 3, 4, 5])
+print(type(arr))    # <class 'numpy.ndarray'>
+print(arr.dtype)    # dtype('int64')
+\end{verbatim}
+    \end{exampleblock}
+
+    \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+            \begin{alertblock}{Com Número Decimal}
+                \begin{verbatim}
+minhalista = [1, 2, 3, 4, 5.5]
+arr = np.array(minhalista)
+print(arr.dtype)  # dtype('float64')
+\end{verbatim}
+            \end{alertblock}
+        \end{column}
+
+        \begin{column}{0.5\textwidth}
+            \begin{alertblock}{Com String}
+                \begin{verbatim}
+minhalista = [1, 2, 3, 4, "ola"]
+arr = np.array(minhalista)
+print(arr.dtype)  # dtype('<U21')
+\end{verbatim}
+            \end{alertblock}
+        \end{column}
+    \end{columns}
+
+
+\end{frame}
+
+
+\begin{frame}[fragile]{NumPy - Propriedades de Arrays}
+
+    \begin{block}{Criação de Array 2D}
+        \begin{verbatim}
+arr2 = np.array([[1, 2], 
+                 [3, 4]])
+\end{verbatim}
+    \end{block}
+
+    \begin{columns}[T]
+        \begin{column}{0.6\textwidth}
+            \begin{exampleblock}{Propriedades Fundamentais}
+                \begin{itemize}
+                    \item \texttt{.ndim} - Número de dimensões
+                    \item \texttt{.shape} - Tupla com tamanho em cada dimensão
+                    \item \texttt{.size} - Número total de elementos
+                    \item \texttt{.dtype} - Tipo dos dados
+                \end{itemize}
+            \end{exampleblock}
+        \end{column}
+
+        \begin{column}{0.4\textwidth}
+            \begin{alertblock}{Aplicado ao Exemplo}
+                \begin{verbatim}
+>>> arr2.ndim
+2
+>>> arr2.shape
+(2, 2)
+>>> arr2.size
+4
+>>> arr2.dtype
+dtype('int64')
+\end{verbatim}
+            \end{alertblock}
+
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{NumPy - Propriedades Básicas de Arrays}
+
+    \centering
+    \begin{tabular}{|l|p{8cm}|}
+        \hline
+        \textbf{Propriedade}   & \textbf{Descrição}                                                                                                                                                                                                        \\
+        \hline
+        \texttt{ndarray.ndim}  & Número de eixos (dimensões) do array.                                                                                                                                                                                     \\
+        \hline
+        \texttt{ndarray.shape} & Dimensões do array. Uma tupla de inteiros indicando o tamanho em cada dimensão. Para uma matriz com n linhas e m colunas, shape será (n, m). O comprimento da tupla shape é igual ao número de dimensões (\texttt{ndim}). \\
+        \hline
+        \texttt{ndarray.size}  & Número total de elementos do array.                                                                                                                                                                                       \\
+        \hline
+        \texttt{ndarray.dtype} & Objeto que descreve o tipo dos elementos no array. Podem ser usados tipos padrão do Python ou tipos específicos do NumPy como \texttt{numpy.int32}, \texttt{numpy.int16} e \texttt{numpy.float64}.                        \\
+        \hline
+    \end{tabular}
+
+
+
+
+
+
+\end{frame}
+
+
+\begin{frame}[fragile]{NumPy – Arrays com Valores Pré-definidos}
+
+    \begin{block}{Por que usar valores pré-definidos?}
+        \begin{itemize}
+            \item Facilita a \textbf{inicialização} de matrizes antes do preenchimento com dados
+            \item Evita \textbf{erros} na alocação de memória para grandes arrays
+            \item Útil para \textbf{cálculos numéricos} e simulações
+
+        \end{itemize}
+    \end{block}
+
+    \begin{block}{Funções de Criação}
+        \begin{tabular}{ll}
+            \textbf{Função}          & \textbf{Descrição}                         \\
+            \hline
+            \texttt{np.zeros(shape)} & Cria array preenchido com \textbf{zeros}   \\
+            \texttt{np.ones(shape)}  & Cria array preenchido com \textbf{uns}     \\
+            \texttt{np.empty(shape)} & Cria array com \textbf{valores aleatórios} \\
+        \end{tabular}
+    \end{block}
+
+\end{frame}
+
+\begin{frame}[fragile]{NumPy – Arrays 1D com Valores Pré-definidos}
+    \begin{exampleblock}{Exemplos 1D}
+        \begin{verbatim}
+# Array de 5 zeros
+np.zeros(5)
+
+# Array de 3 uns
+np.ones(3)
+
+# Array vazio 4 posições
+np.empty(4)
+\end{verbatim}
+    \end{exampleblock}
+
+    \begin{alertblock}{Dica Importante}
+        Especifique sempre o \texttt{dtype} para controle preciso do tipo numérico:\\
+        \texttt{np.zeros(5, dtype=np.float32)}
+    \end{alertblock}
+\end{frame}
+
+\begin{frame}[fragile]{NumPy – Arrays 2D com Valores Pré-definidos}
+    \begin{exampleblock}{Exemplos 2D}
+        \begin{verbatim}
+# Matriz 2x3 de zeros
+np.zeros((2,3))
+
+# Matriz 3x3 de uns
+np.ones((3,3))
+
+# Matriz 2x2 vazia
+np.empty((2,2))
+\end{verbatim}
+    \end{exampleblock}
+
+    \begin{alertblock}{Dica Importante}
+        Ao criar arrays multidimensionais, lembre-se de usar dois parênteses:\\
+        o primeiro envolve a tupla com as dimensões, o segundo é da chamada da função.\\[0.3em]
+        \textbf{Exemplo correto:} \texttt{np.ones((3,3), dtype=int)}
+    \end{alertblock}
+
+\end{frame}
+
+
+\begin{frame}[fragile]{Exemplo: Criação de Arrays com Zeros}
+
+    \begin{verbatim}
+# importando o módulo
+import numpy as np
+
+# criando um array com cinco elementos sendo zeros
+array_zeros = np.zeros(5)
+print(array_zeros)
+# Saída: [0. 0. 0. 0. 0.] 
+
+# criando uma matriz 3x4 preenchida com zeros
+matriz_zeros = np.zeros((3, 4)) 
+print(matriz_zeros)
+# Saída: [[0. 0. 0. 0.] 
+          [0. 0. 0. 0.] 
+          [0. 0. 0. 0.]]
+\end{verbatim}
+
+\end{frame}
+\begin{frame}[fragile]{Exemplo: Criação de Arrays com np.empty}
+
+    \begin{verbatim}
+# importando o módulo
+import numpy as np
+
+# criando uma matriz 3x3 sem inicialização garantida
+array_empty = np.empty((3, 3)) 
+print(array_empty)
+# Saída: [[4.67296746e-307 1.69121096e-306 1.37959131e-306]
+          [1.11261162e-306 1.11260619e-306 9.34609790e-307] 
+          [8.45559303e-307 9.34600963e-307 1.37959740e-306]]
+\end{verbatim}
+
+    \begin{alertblock}{Observação}
+        Os valores podem ser aleatórios, pois \texttt{np.empty} não inicializa os elementos, apenas aloca espaço na memória.
+    \end{alertblock}
+
+\end{frame}
+
+\begin{frame}[fragile]{Criando Arrays com \texttt{np.arange()}}
+    \begin{block}{Array 1D (Vetor)}
+        \begin{verbatim}
+# Vetor de 0 a 8
+v = np.arange(9)
+print(v)
+# [0 1 2 3 4 5 6 7 8]
+
+# Vetor de 0 a 8 pulando de 2 em 2
+v2 = np.arange(0, 9, 2)
+print(v2)
+# [0 2 4 6 8]
+\end{verbatim}
+    \end{block}
+
+    \begin{alertblock}{Dica}
+        \texttt{np.arange(início, fim, passo)} cria um vetor com espaçamento definido.\\
+        O valor final \textbf{não é incluído}. O passo pode ser positivo ou negativo!
+    \end{alertblock}
+\end{frame}
+
+
+\begin{frame}[fragile]{Criando Matrizes com \texttt{reshape()}}
+    \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+            \begin{block}{Matriz 2x2}
+                \begin{verbatim}
+# Criar e redimensionar
+m2x2 = np.arange(1,5).reshape(2,2)
+print(m2x2)
+# [[1 2]
+#  [3 4]]
+\end{verbatim}
+            \end{block}
+        \end{column}
+
+        \begin{column}{0.5\textwidth}
+            \begin{block}{Matriz 3x3}
+                \begin{verbatim}
+# Criar e redimensionar
+m3x3 = np.arange(9).reshape(3,3)
+print(m3x3)
+# [[0 1 2]
+#  [3 4 5]
+#  [6 7 8]]
+\end{verbatim}
+            \end{block}
+        \end{column}
+    \end{columns}
+
+    \begin{alertblock}{Dica}
+        \begin{itemize}
+            \item \texttt{reshape(linhas, colunas)} para transformar um array 1D em matriz.
+
+            \item \textbf{O número total de elementos deve ser compatível}
+
+        \end{itemize}
+    \end{alertblock}
+\end{frame}
+
+
+\begin{frame}[fragile]{NumPy – Entendendo Eixos (Axes)}
+    \begin{block}{O que são eixos em NumPy?}
+        Em arrays multidimensionais, os eixos representam as direções ao longo das quais as operações podem ser aplicadas.
+        \begin{itemize}
+            \item \texttt{axis=0}: opera coluna por coluna\\
+                  \textit{Saída:} \texttt{[coluna1, coluna2, coluna3]}
+
+            \item \texttt{axis=1}: opera  linha por linha\\
+                  \textit{Saída:} \texttt{[linha1, linha2, linha3]}
+        \end{itemize}
+    \end{block}
+
+    \begin{alertblock}{Dica Visual}
+        Pense que o \texttt{axis} é a dimensão que será “reduzida”.\\
+        \texttt{axis=0} colapsa cada coluna.\\
+        \texttt{axis=1} colapsa cada linha.
+    \end{alertblock}
+\end{frame}
+
+
+\begin{frame}[fragile]{NumPy – Exemplo Prático com Eixos}
+    \begin{exampleblock}{Soma com \texttt{axis=0} e \texttt{axis=1}}
+        \begin{verbatim}
+import numpy as np
+matriz = np.array([[1, 2, 3],
+                   [4, 5, 6],
+                   [7, 8, 9]])
+
+# Soma por colunas (axis=0)
+print(np.sum(matriz, axis=0))
+# Saída: [12 15 18]
+
+# Soma por linhas (axis=1)
+print(np.sum(matriz, axis=1))
+# Saída: [ 6 15 24]
+\end{verbatim}
+    \end{exampleblock}
+\end{frame}
+
+
+\begin{frame}{Operações ao Longo dos Eixos em NumPy}
+
+    \centering
+    \begin{tabular}{|l|p{5cm}|p{5cm}|}
+        \hline
+        \textbf{Operação}  & \textbf{axis = 0 (colunas)} & \textbf{axis = 1 (linhas)} \\
+        \hline
+        \texttt{np.sum()}  & Soma por coluna             & Soma por linha             \\
+        \hline
+        \texttt{np.mean()} & Média por coluna            & Média por linha            \\
+        \hline
+        \texttt{np.max()}  & Máximo por coluna           & Máximo por linha           \\
+        \hline
+        \texttt{np.min()}  & Mínimo por coluna           & Mínimo por linha           \\
+        \hline
+    \end{tabular}
+
+
+\end{frame}
+
+\begin{frame}[fragile]{Exemplo: Matriz de vendas}
+    \begin{itemize}
+        \item Linhas representam lojas
+        \item Colunas representam produtos (Lápis, borracha, caderno)
+    \end{itemize}
+    \begin{block}{Codigo}
+        \begin{verbatim}
+vendas = np.array([
+    [10, 20, 30],  # Loja 1
+    [15, 25, 35],  # Loja 2
+    [12, 18, 28],  # Loja 3
+    [8, 22, 26],   # Loja 4
+])
+np.sum(vendas, axis=0) # Soma por coluna (produtos)
+# [45 85 119]
+np.sum(vendas, axis=1) # Soma por linha (lojas)
+# [60 75 58 56]
+np.mean(vendas, axis=0) # Média por produto (em todas as lojas)
+# [11.25 21.25 29.75]
+\end{verbatim}
+    \end{block}
+
+\end{frame}
+
+
+\begin{frame}[fragile]{Operações Aritméticas em NumPy – Adição Escalar (Vetor)}
+    \begin{block}{Adição Escalar}
+        \begin{verbatim}
+import numpy as np
+
+A = np.arange(1, 10)
+print(A)
+# [1 2 3 4 5 6 7 8 9]
+
+print(A + 5)  # Adição escalar
+# [ 6  7  8  9 10 11 12 13 14]
+\end{verbatim}
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Operações Aritméticas em NumPy – Matriz + Escalar}
+    \begin{exampleblock}{Adição Escalar em Matrizes}
+        \begin{verbatim}
+import numpy as np
+
+B = np.random.randint(0, 10, (3,3))
+print(B)
+# [[4 3 1]
+#  [6 0 7]
+#  [9 3 3]]
+
+print(B + 5)
+# [[ 9  8  6]
+#  [11  5 12]
+#  [14  8  8]]
+\end{verbatim}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Exemplo: Estoque em Papelarias}
+    \begin{itemize}
+        \item Cada linha representa uma loja;
+        \item Cada coluna representa um item: lápis, borracha e caderno.
+    \end{itemize}
+    \begin{block}{Código}
+        \begin{verbatim}
+import numpy as np
+# Quantidade atual em 3 lojas
+estoque = np.array([[10, 5, 2],    
+                    [3,  8, 4],    
+                    [6,  2, 7]])   
+
+novo_estoque = estoque + 5 # Reposição de 5 unidades em cada item
+
+print(novo_estoque)
+# [[15 10  7]
+#  [ 8 13  9]
+#  [11  7 12]]
+\end{verbatim}
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Operações entre Vetores em NumPy - Soma}
+
+    \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+            \begin{block}{Vetor A}
+                \begin{verbatim}
+import numpy as np
+
+A = np.array([1, 2, 3, 4, 5])
+print(A)
+# [1 2 3 4 5]
+\end{verbatim}
+            \end{block}
+        \end{column}
+
+        \begin{column}{0.5\textwidth}
+            \begin{block}{Vetor B}
+                \begin{verbatim}
+B = np.array([10, 20, 30, 40, 50])
+print(B)
+# [10 20 30 40 50]
+\end{verbatim}
+            \end{block}
+        \end{column}
+    \end{columns}
+
+    \vspace{0.3cm}
+    \begin{exampleblock}{Soma A + B}
+        \begin{verbatim}
+print(A + B)
+# [11 22 33 44 55]
+\end{verbatim}
+    \end{exampleblock}
+
+\end{frame}
+
+\begin{frame}[fragile]{Soma de Vetores com NumPy – Exemplo}
+
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{block}{Forças}
+                \begin{verbatim}
+import numpy as np
+
+F1 = np.array([3, 4])
+F2 = np.array([2, 1])
+
+F_total = F1 + F2
+print(F_total)
+# [5 5]
+\end{verbatim}
+            \end{block}
+        \end{column}
+
+        \begin{column}{0.5\textwidth}
+            \centering
+            \begin{tikzpicture}[scale=0.7, >=stealth]
+
+                % Eixos
+                \draw[->] (0,0) -- (7,0) node[right] {Leste (x)};
+                \draw[->] (0,0) -- (0,7) node[above] {Norte (y)};
+
+                % Vetor F1
+                \draw[->, thick, blue] (0,0) -- (3,4) node[midway, above left] {$\vec{F_1}$};
+
+                % Vetor F2
+                \draw[->, thick, red] (0,0) -- (2,1) node[midway, below right] {$\vec{F_2}$};
+
+                % Vetor F_total = F1 + F2
+                \draw[->, thick, green] (0,0) -- (5,5) node[midway, above right] {$\vec{F}_{total}$};
+
+                % Vetor F2 a partir da ponta de F1 para mostrar soma
+                \draw[->, thick, red, dashed] (3,4) -- (5,5);
+
+                % Pontos
+                \fill (3,4) circle (2pt);
+                \fill (2,1) circle (2pt);
+                \fill (5,5) circle (2pt);
+
+            \end{tikzpicture}
+        \end{column}
+    \end{columns}
+
+\end{frame}
+
+
+
+
+\begin{frame}[fragile]{Operações entre Matrizes em NumPy - Soma}
+    \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+            \begin{block}{Matriz B}
+                \begin{verbatim}
+B = np.random.randint(0, 10, (3,3))
+print(B)
+# [[4 3 1]
+#  [6 0 7]
+#  [9 3 3]]
+\end{verbatim}
+            \end{block}
+        \end{column}
+
+        \begin{column}{0.5\textwidth}
+            \begin{block}{Matriz C}
+                \begin{verbatim}
+C = np.random.randint(0, 10, (3,3))
+print(C)
+# [[3 7 1]
+#  [6 4 5]
+#  [0 1 7]]
+\end{verbatim}
+            \end{block}
+        \end{column}
+    \end{columns}
+
+
+    \begin{exampleblock}{Soma B + C}
+        \begin{verbatim}
+print(B + C)
+# [[ 7 10  2]
+#  [12  4 12]
+#  [ 9  4 10]]
+\end{verbatim}
+    \end{exampleblock}
+
+
+
+
+
+
+\end{frame}
+
+\begin{frame}[fragile]{Operações entre Matrizes – Compras em uma Loja}
+
+    Cada linha é um cliente e cada coluna um item comprado (lápis, caneta, caderno).
+
+    \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+            \begin{block}{Compras no Dia 1}
+                \begin{verbatim}
+dia1 = np.array([
+    [1, 2, 0],  # Cliente 1
+    [0, 1, 3],  # Cliente 2
+    [2, 0, 1]   # Cliente 3
+])
+\end{verbatim}
+            \end{block}
+        \end{column}
+
+        \begin{column}{0.5\textwidth}
+            \begin{block}{Compras no Dia 2}
+                \begin{verbatim}
+dia2 = np.array([
+    [0, 1, 2],
+    [1, 0, 1],
+    [1, 2, 1]
+])
+\end{verbatim}
+            \end{block}
+        \end{column}
+    \end{columns}
+
+    \vspace{0.3cm}
+    \begin{exampleblock}{Total de Compras (Dia 1 + Dia 2)}
+        \begin{verbatim}
+total = dia1 + dia2
+print(total)
+# [[1 3 2]
+#  [1 1 4]
+#  [3 2 2]]
+\end{verbatim}
+    \end{exampleblock}
+
+\end{frame}
+
+
+\begin{frame}[fragile]{Multiplicação Escalar de Vetor}
+
+    \begin{columns}
+        \begin{column}{0.55\textwidth}
+            \begin{block}{Código NumPy – Multiplicação Escalar}
+                \begin{verbatim}
+import numpy as np
+
+F = np.array([3, 4])
+print(F)
+#[3 4]
+
+# Multiplicando por 2
+print(2 * F)
+#[6 8]
+\end{verbatim}
+            \end{block}
+
+            \vspace{0.3cm}
+            \begin{block}{Vetores}
+                $\vec{F} = \begin{bmatrix} 3 \\ 4 \end{bmatrix}$ \quad
+                $2 \cdot \vec{F} = \begin{bmatrix} 6 \\ 8 \end{bmatrix}$
+            \end{block}
+        \end{column}
+
+        \begin{column}{0.45\textwidth}
+            \begin{center}
+                \begin{tikzpicture}[scale=0.5, >=stealth]
+                    % Eixos
+                    \draw[->] (-1,0) -- (10,0) node[right] {\textbf{x}};
+                    \draw[->] (0,-1) -- (0,10) node[above] {\textbf{y}};
+
+                    % Vetor original F
+                    \draw[->, thick, blue] (0,0) -- (3,4) node[midway, below left] {$\vec{F}$};
+
+                    % Vetor escalado 2F
+                    \draw[->, thick, red] (0,0) -- (6,8) node[midway, above right] {$2 \cdot \vec{F}$};
+
+                    % Pontos finais
+                    \filldraw[blue] (3,4) circle (2pt);
+                    \filldraw[red] (6,8) circle (2pt);
+                \end{tikzpicture}
+            \end{center}
+        \end{column}
+    \end{columns}
+
+\end{frame}
+
+
+\begin{frame}[fragile]{NumPy - Multiplicação Element-wise}
+    \begin{block}{Exemplo: Receita por produto (quantidade × preço)}
+        \begin{verbatim}
+import numpy as np
+
+Quantidade_produtos = np.array([10, 5, 2])
+Preco_produtos = np.array([1, 0.5, 20])        
+
+# Gasto por produto
+print(Quantidade_produtos * Preco_produtos)
+# [10.   2.5 40. ]
+\end{verbatim}
+    \end{block}
+\end{frame}
+
+
+\begin{frame}[fragile]{Multiplicação de cada elemento}
+
+    \begin{block}{Cenário}
+        Cada linha representa uma loja.Cada coluna representa um produto (Lápis, Borracha, Caderno).
+        Queremos saber a receita por produto em cada loja (quantidade $\times$ preço unitário).
+    \end{block}
+
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{block}{Quantidade Vendida (B)}
+                \begin{verbatim}
+B = np.array([[4, 3, 1],
+              [6, 0, 7],
+              [9, 3, 3]])
+\end{verbatim}
+            \end{block}
+
+            \begin{block}{Preço Unitário (C)}
+                \begin{verbatim}
+C = np.array([[3, 7, 1],
+              [6, 4, 5],
+              [0, 1, 7]])
+\end{verbatim}
+            \end{block}
+        \end{column}
+
+        \begin{column}{0.5\textwidth}
+            \begin{exampleblock}{Receita por Loja e Produto (B * C)}
+                \begin{verbatim}
+print(B * C)
+# [[12 21  1]
+#  [36  0 35]
+#  [ 0  3 21]]
+\end{verbatim}
+            \end{exampleblock}
+        \end{column}
+    \end{columns}
+
+\end{frame}
+
+
+\begin{frame}[fragile]{Multiplicação Matricial com \texttt{np.dot()}}
+
+    \begin{columns}[T]
+        \begin{column}{0.4\textwidth}
+            \begin{block}{Matriz B (3x3)}
+                \begin{verbatim}
+B = np.array([[4, 3, 1],
+              [6, 0, 7],
+              [9, 3, 3]])
+\end{verbatim}
+            \end{block}
+
+            \begin{block}{Matriz C (3x3)}
+                \begin{verbatim}
+C = np.array([[3, 7, 1],
+              [6, 4, 5],
+              [0, 1, 7]])
+\end{verbatim}
+            \end{block}
+        \end{column}
+
+        \begin{column}{0.6\textwidth}
+            \begin{exampleblock}{Resultado \texttt{np.dot(B, C)}}
+                \begin{verbatim}
+print(np.dot(B, C))
+# [[ 30  41  26]
+#  [ 18  55  41]
+#  [ 45  78  45]]
+\end{verbatim}
+            \end{exampleblock}
+        \end{column}
+    \end{columns}
+
+
+
+
+    \begin{alertblock}{Diferença Fundamental}
+        \begin{itemize}
+            \item \texttt{B * C}: Multiplicação elemento a elemento
+            \item \texttt{np.dot(B,C)}: Multiplicação de matrizes
+        \end{itemize}
+    \end{alertblock}
+\end{frame}
+
+\begin{frame}{Explicação: Multiplicação Matricial com \texttt{np.dot()}}
+
+    Dado que temos duas matrizes quadradas \textbf{B} e \textbf{C}, ambas de dimensão $3 \times 3$.
+    Estamos comparando duas formas distintas de multiplicação em NumPy: a multiplicação elemento a elemento (\texttt{*}) e a multiplicação matricial (\texttt{np.dot()}).
+
+    \bigskip
+
+    \textbf{A diferença das duas operações}:
+
+    Diferente da multiplicação elemento a elemento (que faz $B[i][j] \times C[i][j]$), a multiplicação matricial segue a regra:
+
+    \textbf{Para cada elemento da matriz resultante, fazemos o produto escalar da linha $i$ de \textbf{B} pela coluna $j$ de \textbf{C}.}
+
+    \bigskip
+
+    \textbf{Exemplo prático:}
+
+    Para calcular o valor na posição (0,0) do resultado:
+
+    \[
+        4 \times 3 + 3 \times 6 + 1 \times 0 = 12 + 18 + 0 = 30
+    \]
+
+    Esse processo se repete para cada posição da matriz resultante.
+
+    \bigskip
+
+
+
+\end{frame}
+
+
+\begin{frame}[fragile]{Transposição de Matrizes em NumPy}
+
+    \begin{block}{Matriz Original}
+        \begin{verbatim}
+B = np.array([[4, 3, 1],
+              [6, 0, 7],
+              [9, 3, 3]])
+\end{verbatim}
+    \end{block}
+
+    \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+            \begin{exampleblock}{Método 1: Atributo .T}
+                \begin{verbatim}
+print(B.T)
+# [[4 6 9]
+#  [3 0 3]
+#  [1 7 3]]
+\end{verbatim}
+            \end{exampleblock}
+        \end{column}
+
+        \begin{column}{0.5\textwidth}
+            \begin{exampleblock}{Método 2: Função transpose()}
+                \begin{verbatim}
+print(B.transpose())
+# [[4 6 9]
+#  [3 0 3]
+#  [1 7 3]]
+\end{verbatim}
+            \end{exampleblock}
+        \end{column}
+    \end{columns}
+
+
+\end{frame}
+
+\begin{frame}[fragile]{Resolver Sistema Linear (np.linalg.solve(a,b))}
+    \begin{columns}[T] % alinhamento no topo
+        \column{0.48\textwidth}
+        Considere o sistema linear:
+        \[
+            \begin{cases}
+                2x + 3y - z = 5 \\
+                4x + y + 2z = 6 \\
+                -3x + 2y + z = -4
+            \end{cases}
+        \]
+
+        \column{0.48\textwidth}
+        Representamos na forma matricial \(Ax = b\):
+        \[
+            A = \begin{bmatrix}
+                2  & 3 & -1 \\
+                4  & 1 & 2  \\
+                -3 & 2 & 1
+            \end{bmatrix},
+            \quad
+            b = \begin{bmatrix}
+                5 \\ 6 \\ -4
+            \end{bmatrix}
+        \]
+    \end{columns}
+
+    \vspace{0.4cm}
+
+    Código Python para resolver usando NumPy:
+    \begin{verbatim}
+import numpy as np
+A = np.array([[2, 3, -1],
+              [4, 1, 2],
+              [-3, 2, 1]])
+b = np.array([5, 6, -4])
+x = np.linalg.solve(A, b)
+print("Solução: ", x)
+  \end{verbatim}
+\end{frame}
+
+\begin{frame}{Resolva}
+    Considere o seguinte sistema linear:
+
+    \[
+        \begin{cases}
+            3x_1 - 2x_2 + 4x_3 + x_4 - x_5 + 2x_6 = 7  \\
+            -2x_1 + x_2 - x_3 + 3x_4 + 5x_5 - x_6 = -3 \\
+            x_1 + x_2 + x_3 + x_4 + x_5 + x_6 = 10     \\
+            4x_1 - x_2 + 2x_3 - x_4 + 3x_5 - 2x_6 = 2  \\
+            -3x_1 + 5x_2 - x_3 + 2x_4 - 4x_5 + x_6 = 5 \\
+            2x_1 + 3x_2 - 2x_3 + x_4 + x_5 - 3x_6 = -1
+        \end{cases}
+    \]
+\end{frame}
+
+\begin{frame}{Forma Matricial}
+    Representamos o sistema como \(Ax = b\):
+
+    \[
+        A = \begin{bmatrix}
+            3  & -2 & 4  & 1  & -1 & 2  \\
+            -2 & 1  & -1 & 3  & 5  & -1 \\
+            1  & 1  & 1  & 1  & 1  & 1  \\
+            4  & -1 & 2  & -1 & 3  & -2 \\
+            -3 & 5  & -1 & 2  & -4 & 1  \\
+            2  & 3  & -2 & 1  & 1  & -3
+        \end{bmatrix}, \quad
+        b = \begin{bmatrix}
+            7 \\ -3 \\ 10 \\ 2 \\ 5 \\ -1
+        \end{bmatrix}
+    \]
+\end{frame}
+
+\begin{frame}[fragile]{Resolvendo com NumPy}
+    Código Python para resolver o sistema com NumPy:
+
+    \begin{verbatim}
+import numpy as np
+
+A = np.array([
+    [3, -2, 4, 1, -1, 2],
+    [-2, 1, -1, 3, 5, -1],
+    [1, 1, 1, 1, 1, 1],
+    [4, -1, 2, -1, 3, -2],
+    [-3, 5, -1, 2, -4, 1],
+    [2, 3, -2, 1, 1, -3]
+])
+
+b = np.array([7, -3, 10, 2, 5, -1])
+
+x = np.linalg.solve(A, b)
+print("Solução:", x)
+\end{verbatim}
+\end{frame}
+
+

@@ -1,0 +1,112 @@
+\title{Lista de Revisão para P1}
+\author{Prof. Gabriel Rodrigues Caldas de Aquino}
+\date{Compilado em: \\ \today}
+
+\begin{document}
+
+\maketitle
+
+\section{Polimorfismo e Sobrescrita de Métodos}
+Implemente, do zero, um sistema de veículos que utilize herança e polimorfismo.  
+Siga as instruções abaixo:
+
+\begin{enumerate}
+    \item Crie uma classe \texttt{Veiculo} com:
+    \begin{itemize}
+        \item Um atributo \texttt{marca} definido no método \texttt{\_\_init\_\_}.
+        \item Um método \texttt{descricao()} que retorna a frase: \texttt{"Veículo da marca <marca>"}.
+        \item Um método \texttt{tipo()} que retorna a string: \texttt{"Genérico"}.
+    \end{itemize}
+
+    \item Crie uma classe \texttt{Carro} que herda de \texttt{Veiculo}:
+    \begin{itemize}
+        \item Adicione um atributo \texttt{modelo}.
+        \item Sobrescreva o método \texttt{descricao()} para retornar: \texttt{"Carro <marca> - Modelo <modelo>"}.
+        \item Sobrescreva o método \texttt{tipo()} para retornar \texttt{"Carro"}.
+    \end{itemize}
+
+    \item Crie uma classe \texttt{Moto} que herda de \texttt{Veiculo}:
+    \begin{itemize}
+        \item Adicione um atributo \texttt{cilindradas}.
+        \item Sobrescreva o método \texttt{tipo()} para retornar \texttt{"Moto"}.
+    \end{itemize}
+
+    \item No final do programa:
+    \begin{itemize}
+        \item Crie um objeto \texttt{Carro} com marca \texttt{"Toyota"} e modelo \texttt{"Corolla"}.
+        \item Crie um objeto \texttt{Moto} com marca \texttt{"Honda"} e \texttt{250} cilindradas.
+        \item Imprima o resultado de \texttt{tipo()} e \texttt{descricao()} para cada objeto, no formato:
+        \begin{verbatim}
+Carro - Carro Toyota - Modelo Corolla
+Moto - Veículo da marca Honda
+        \end{verbatim}
+    \end{itemize}
+\end{enumerate}
+\begin{itemize}
+    \item[(a)] Explique o conceito de \textbf{polimorfismo} presente neste código e como ele aparece no exemplo.
+    \item[(b)] Explique o que será impresso em cada linha dos \texttt{print()}.
+    \item[(c)] Explique o que aconteceria se a classe \texttt{Carro} não tivesse sobrescrito o método \texttt{descricao}.
+\end{itemize}
+
+\section{Classe Abstrata}
+Implemente uma classe abstrata \texttt{Funcionario} com os seguintes requisitos:
+\begin{itemize}
+    \item Atributos: \texttt{nome} e \texttt{salario}.
+    \item Método abstrato \texttt{calcular\_bonus()}.
+\end{itemize}
+
+Depois, crie duas subclasses:
+\begin{itemize}
+    \item \texttt{Gerente}: bônus de 20\% do salário.
+    \item \texttt{Vendedor}: bônus de 10\% do salário.
+\end{itemize}
+
+Por fim, crie uma lista contendo objetos de \texttt{Gerente} e \texttt{Vendedor} e mostre na tela o nome e o valor do bônus de cada funcionário.
+
+\section{Encapsulamento e Name Mangling}
+Considere a classe \texttt{Conta} a seguir:
+
+\begin{verbatim}
+class Conta:
+        numero = 1
+        saldo = 1
+\end{verbatim}
+
+\begin{itemize}
+    \item[(a)] Modifique a classe para que o atributo \texttt{saldo} seja privado, usando \textbf{name mangling}.
+    \item[(b)] Crie métodos \texttt{depositar(valor)}, \texttt{sacar(valor)} e \texttt{consultar\_saldo()}.
+    \item[(c)] Explique por que não é recomendado alterar o saldo diretamente fora da classe.
+\end{itemize}
+
+\section{Métodos Mágicos}
+Crie uma classe \texttt{Ponto} para representar pontos em um plano cartesiano.  
+Ela deve conter:
+\begin{itemize}
+    \item Atributos: \texttt{x} e \texttt{y}.
+    \item Método mágico \texttt{\_\_add\_\_} para somar dois pontos (\texttt{x} com \texttt{x} e \texttt{y} com \texttt{y}).
+    
+\end{itemize}
+
+Dica: a distância de um ponto $(x, y)$ à origem pode ser calculada como $\sqrt{x^2 + y^2}$.
+
+
+
+
+\section{Conta Bancária Segura}
+Crie uma classe \texttt{ContaBancaria} com:
+\begin{itemize}
+    \item Atributos privados \texttt{saldo} e \texttt{senha}.
+    \item Método \texttt{depositar(valor)} que só funciona se a senha informada estiver correta.
+    \item Método \texttt{sacar(valor)} que só permite saque se houver saldo suficiente e a senha estiver correta.
+    \item Método \texttt{consultar\_saldo()} que retorna o saldo atual.
+\end{itemize}
+
+\section{Comparando Livros}
+Crie uma classe \texttt{Livro} com atributos \texttt{titulo}, \texttt{autor} e \texttt{paginas}.
+\begin{itemize}
+    \item Implemente \texttt{\_\_gt\_\_} para que seja possível comparar dois livros pelo número de páginas.
+    \item Implemente \texttt{\_\_add\_\_} para somar as páginas de dois livros e retornar um \texttt{int} com o total.
+    \item Teste criando dois livros e usando os operadores \texttt{>} e \texttt{+}.
+\end{itemize}
+
+\end{document}

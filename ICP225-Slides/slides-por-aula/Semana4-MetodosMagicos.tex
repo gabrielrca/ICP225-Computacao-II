@@ -1,0 +1,202 @@
+\title{POO - Métodos Mágicos}
+
+\author{Prof. Gabriel Rodrigues Caldas de Aquino}
+
+\institute
+{
+    gabrielaquino@ic.ufrj.br\\
+    
+    Instituto de Computação -
+    Universidade Federal do Rio de Janeiro % Your institution for the title page
+}
+\date{Compilado em: \\ \today} % Date, can be changed to a custom date
+
+%----------------------------------------------------------------------------------------
+%    PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+%------------------------------------------------
+\section{Revisão Inicial}
+%------------------------------------------------
+
+\begin{frame}
+    % Print the title page as the first slide
+    \titlepage
+\end{frame}
+
+\begin{frame}{Métodos Mágicos (Dunder)}
+
+\begin{block}{Definição}
+Métodos Mágicos são métodos pré-definidos que podem ser sobrescritos para definir como os objetos de uma classe irão interagir com operadores, funções específicas e instruções da linguagem Python.
+\end{block}
+
+\begin{block}{Características}
+\begin{itemize}
+    \item O nome dos métodos mágicos \textbf{inicia e termina com dois underlines} (\_\_).
+    \item Também são chamados de \textbf{métodos Dunder} (“Double Underscore”).
+    \item Permitem personalizar comportamento de operadores e funções nativas, como:
+    \begin{itemize}
+        \item \_\_str\_\_ → define como o objeto é convertido em string
+        \item \_\_add\_\_ → define o comportamento do operador +
+    \end{itemize}
+\end{itemize}
+\end{block}
+
+\end{frame}
+
+\begin{frame}[fragile]{Método Mágico \_\_str\_\_}
+
+\begin{block}{Relembrando}
+O método \texttt{\_\_str\_\_} é um dos métodos mágicos que já vimos e é usado para definir como um objeto será convertido em string.  
+Ele é chamado automaticamente quando usamos o \texttt{print} com um objeto.
+\end{block}
+
+\begin{exampleblock}{Exemplo}
+\begin{verbatim}
+class Pessoa:
+    def __init__(self, nome, idade):
+        self.nome = nome
+        self.idade = idade
+    def __str__(self):
+        return f"{self.nome}, {self.idade} anos"
+p = Pessoa("Maria", 20)
+print(p)   # chama automaticamente p.__str__()
+# Saída: Maria, 20 anos
+\end{verbatim}
+\end{exampleblock}
+
+\end{frame}
+
+
+\begin{frame}{Alguns Métodos Mágicos (Dunder)}
+
+\begin{columns}[T] % T para alinhamento no topo
+
+\begin{column}{0.48\textwidth}
+\begin{block}{Operadores Aritméticos}
+\begin{tabular}{ll}
+\texttt{\_\_add\_\_(self, other)} & + \\
+\texttt{\_\_sub\_\_(self, other)} & - \\
+\texttt{\_\_mul\_\_(self, other)} & * \\
+\texttt{\_\_truediv\_\_(self, other)} & / \\
+\texttt{\_\_floordiv\_\_(self, other)} & // \\
+\texttt{\_\_mod\_\_(self, other)} & \% \\
+\texttt{\_\_pow\_\_(self, other)} & **
+\end{tabular}
+\end{block}
+\end{column}
+
+\begin{column}{0.48\textwidth}
+\begin{block}{Operadores de Comparação e Condicionais}
+\begin{tabular}{ll}
+\texttt{\_\_eq\_\_(self, other)} & == \\
+\texttt{\_\_ne\_\_(self, other)} & != \\
+\texttt{\_\_lt\_\_(self, other)} & $<$ \\
+\texttt{\_\_le\_\_(self, other)} & $<=$ \\
+\texttt{\_\_gt\_\_(self, other)} & $>$ \\
+\texttt{\_\_ge\_\_(self, other)} & $>=$ \\
+\texttt{\_\_contains\_\_(self, other)} & in
+\end{tabular}
+\end{block}
+\end{column}
+
+\end{columns}
+
+\end{frame}
+
+
+
+\begin{frame}[fragile]{Sobrescrita do operador + (\_\_add\_\_)}
+
+\begin{verbatim}
+class ContaBancaria:
+    def __init__(self, banco, saldo):
+        self.banco = banco
+        self.saldo = saldo
+    def __add__(self, outra):
+        return self.saldo + outra.saldo
+    def __str__(self):
+        return f"{self.banco}: R$ {self.saldo}"
+c1 = ContaBancaria("Santander", 1000)
+c2 = ContaBancaria("Itau", 500)
+print(c1 + c2)   # 1500
+\end{verbatim}
+
+
+\end{frame}
+\begin{frame}[fragile]{Sobrescrita do operador  $>$ (\_\_gt\_\_)}
+
+
+\begin{verbatim}
+class ContaBancaria:
+    def __init__(self, banco, saldo):
+        self.banco = banco
+        self.saldo = saldo
+    def __gt__(self, outra):
+        return self.saldo > outra.saldo
+    def __str__(self):
+        return f"{self.banco}: R$ {self.saldo}"
+c1 = ContaBancaria("Bradesco", 1000)
+c2 = ContaBancaria("Banco do Brasil", 500)
+if c1 > c2:
+    print(f"A conta {c1.banco} tem mais dinheiro")
+else:
+    print(f"A conta {c2.banco} tem mais dinheiro")
+
+\end{verbatim}
+
+\end{frame}
+
+\begin{frame}{Alguns Outros Métodos Mágicos (Dunder)}
+
+\begin{block}{Funções Comuns}
+\begin{tabular}{ll}
+\texttt{\_\_repr\_\_(self)} & \texttt{repr()} \\
+\texttt{\_\_str\_\_(self)} & \texttt{str()} \\
+\texttt{\_\_len\_\_(self)} & \texttt{len()} \\
+\texttt{\_\_abs\_\_(self)} & \texttt{abs()} \\
+\end{tabular}
+\end{block}
+
+\begin{block}{Operadores em Objetos Indexáveis}
+\begin{tabular}{ll}
+\texttt{\_\_getitem\_\_(self, key)} & \texttt{x = obj[key]} \\
+\texttt{\_\_setitem\_\_(self, key, value)} & \texttt{obj[key] = value} \\
+\texttt{\_\_delitem\_\_(self, key)} & \texttt{del obj[key]} \\
+\end{tabular}
+\end{block}
+
+\begin{block}{Instruções Especiais}
+\begin{tabular}{ll}
+\texttt{\_\_iter\_\_(self), \_\_next\_\_(self)} & \texttt{for} \\
+\texttt{\_\_enter\_\_(self), \_\_exit\_\_(self, exc\_type, exc\_value, traceback)} & \texttt{with} \\
+\end{tabular}
+\end{block}
+
+\end{frame}
+
+\begin{frame}[fragile]{Exemplo de \_\_getitem\_\_}
+
+\begin{exampleblock}{Classe que armazena notas de uma disciplina}
+\begin{verbatim}
+class  Notas_disciplina:
+    def __init__(self, disciplina, notas):
+        self.disciplina = disciplina
+        self.notas = notas  # lista de notas
+
+    def __getitem__(self, indice):
+        # permite acessar notas como se fosse uma lista
+        return self.notas[indice]
+
+Comp2 = Notas_disciplina("Comp2", [7, 8, 9, 10])
+
+print(Comp2[0])  # 7
+print(Comp2[2])  # 9
+\end{verbatim}
+\end{exampleblock}
+
+
+
+
+\end{frame}
+

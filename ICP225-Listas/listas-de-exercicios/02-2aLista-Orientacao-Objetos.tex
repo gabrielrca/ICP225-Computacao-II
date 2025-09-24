@@ -1,0 +1,108 @@
+\title{Lista de Exercícios: Definições básicas de classes}
+\author{Prof. Gabriel Rodrigues Caldas de Aquino}
+
+\date{Compilado em: \\ \today}
+
+\begin{document}
+
+\maketitle
+
+\section{Classe Animal}
+Crie uma classe \texttt{Animal} com:
+\begin{itemize}
+\item Atributos: \texttt{nome}, \texttt{especie}, \texttt{idade}
+\item Método \texttt{emitir\_som()} que imprime um som genérico
+\item Método \texttt{envelhecer()} que aumenta a idade em 1 ano
+\end{itemize}
+
+\section{Classe Retângulo}
+Implemente uma classe \texttt{Retangulo} com:
+\begin{itemize}
+\item Atributos: \texttt{base}, \texttt{altura}
+\item Métodos: \texttt{calcular\_area()} e \texttt{calcular\_perimetro()}
+\item Método \texttt{\_\_str\_\_} que mostra as dimensões
+\end{itemize}
+
+\section{Classe Conta Bancária}
+Desenvolva uma classe \texttt{ContaBancaria} com:
+\begin{itemize}
+\item Atributos: \texttt{titular}, \texttt{saldo} (inicia com 0)
+\item Métodos: \texttt{depositar(valor)}, \texttt{sacar(valor)} e \texttt{consultar\_saldo()}
+\item Valide para não permitir saque maior que o saldo
+\end{itemize}
+
+\section{Classe Produto}
+Crie uma classe \texttt{Produto} para sistema de estoque:
+\begin{itemize}
+\item Atributos: \texttt{codigo}, \texttt{nome}, \texttt{preco}, \texttt{quantidade\_estoque}
+\item Métodos: \texttt{aplicar\_desconto(percentual)} e \texttt{vender(quantidade)}
+\end{itemize}
+
+\section{Classe Carro}
+Implemente uma classe \texttt{Carro} com:
+\begin{itemize}
+\item Atributos: \texttt{marca}, \texttt{modelo}, \texttt{ano}, \texttt{quilometragem}
+\item Métodos: \texttt{dirigir(km)} (aumenta quilometragem) e \texttt{avaliar\_estado()} (retorna "novo", "semi-novo" ou "usado" baseado na km)
+\end{itemize}
+
+\section{Classe Aluno}
+Crie uma classe \texttt{Aluno} para sistema escolar:
+\begin{itemize}
+\item Atributos: \texttt{matricula}, \texttt{nome}, \texttt{notas} (lista)
+\item Métodos: \texttt{adicionar\_nota(nota)}, \texttt{calcular\_media()} e \texttt{situacao()} (aprovado se média ≥ 6)
+\end{itemize}
+
+\section{Classe Contato}
+Desenvolva uma classe \texttt{Contato} para agenda telefônica:
+\begin{itemize}
+\item Atributos: \texttt{nome}, \texttt{telefone}, \texttt{email}
+\item Método \texttt{exibir\_contato()} que mostra todos os dados formatados
+\item Método \texttt{atualizar\_telefone(novo\_numero)}
+\end{itemize}
+
+\section{Bônus: Classe Jogo}
+Implemente uma classe \texttt{PersonagemJogo} com:
+\begin{itemize}
+\item Atributos: \texttt{nome}, \texttt{vida}, \texttt{energia}, \texttt{habilidades} (lista de strings)
+\item Métodos: \texttt{aprender\_habilidade(nova\_habilidade)}, \texttt{usar\_habilidade()} (consome energia) e \texttt{descansar()} (recupera energia)
+\end{itemize}
+
+\pagebreak
+
+{\huge Parte 2: Utilize como base os exemplos apresentados em aula para os exercícios seguintes}
+
+
+\section{Criação de Classe}
+Crie uma classe \texttt{Monstro} com os atributos: \texttt{nome}, \texttt{vida} e \texttt{forca}. Adicione um método \texttt{apresentar()} que mostra esses valores.
+
+\section{Método Construtor}
+Implemente a classe \texttt{Arma} com \texttt{\_\_init\_\_} que recebe \texttt{nome} e \texttt{dano}. Crie duas instâncias: "Espada" (dano 15) e "Arco" (dano 10).
+
+%\section{Métodos Simples}
+%Na classe \texttt{Personagem} do slide, adicione um método \texttt{comemorar()} que aumenta a vida em 10 pontos e imprime "Comemoração!".
+
+\section{Interação entre Objetos}
+Crie um método \texttt{usar\_arma(self, arma, alvo)} na classe \texttt{Personagem} que reduz a vida do alvo pelo dano da arma.
+
+\section{Método Especial \_\_str\_\_}
+Modifique a classe \texttt{Personagem} para mostrar nome e vida quando imprimir o objeto (usando \texttt{\_\_str\_\_}).
+
+\section{Lista de Objetos}
+Crie 3 instâncias de \texttt{Personagem} com diferentes atributos e armazene numa lista. Percorra a lista chamando o método \texttt{apresentar()} de cada um.
+
+\section{Atributo com Valor Padrão}
+Adicione um atributo \texttt{nivel} na classe \texttt{Personagem} que começa com valor 1. Crie um método \texttt{subir\_nivel()} que incrementa esse valor.
+
+\section{Validação Simples}
+Modifique o método \texttt{defender()} para garantir que a vida nunca fique negativa (se ficar, defina como 0).
+
+\section{Bônus: Sistema de Batalha}
+Crie um loop onde:
+\begin{itemize}
+\item Seu personagem ataca um monstro
+\item O monstro ataca de volta
+\item Repete até alguém ter vida ≤ 0
+\item Mostre o vencedor
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,143 @@
+\title{Lista de exercícios 4: Persistência de Dados e Numpy}
+\author{Prof. Gabriel Rodrigues Caldas de Aquino}
+\date{05/06/2025}
+
+\begin{document}
+
+\maketitle
+
+\section{Leitura de arquivo para vetor NumPy}
+
+\textbf{Descrição:} Crie um arquivo chamado \textit{valores.txt} contendo 10 números inteiros separados por espaço (todos na mesma linha). Depois, escreva um programa que:
+\begin{enumerate}
+    \item Leia o conteúdo do arquivo usando o \textit{modo r}.
+    \item Use split() para separar os números.
+    \item Converta essa lista em um vetor NumPy de inteiros
+    \item Exiba o vetor e sua soma
+\end{enumerate}
+
+\textbf{Exemplo}:
+\begin{verbatim}
+import numpy as np
+a = np.array([1,2,3,4,5])
+print(a)
+#resultado: [1 2 3 4 5]
+print(a.sum())
+#resultado: 15
+\end{verbatim}
+
+\section{Escrita com \textit{w} e leitura com \textit{r}}
+
+\textbf{Descrição:} Escreva um programa que:
+
+\begin{enumerate}
+    \item Gere 20 números inteiros aleatórios entre 1 e 100 e salve todos no arquivo \textit{random.txt} em uma única linha, separados por espaço, usando o modo \textit{w}.
+    \item Depois, abra o mesmo arquivo no modo \textit{r}, leia a linha, use \textit{split()} e crie um vetor NumPy com esses números.
+    \item Exiba o maior e o menor valor do vetor.
+\end{enumerate}
+
+\textbf{Exemplo}:
+\begin{verbatim}
+import numpy as np
+B = np.random.randint(0, 100, size=20)
+print(B)
+#resultado: [11 98  6 57 74 10 47 64 46 34  1 74 37 28 80 89 14 99 63 29]
+print(B.min())
+#resultado: 1
+print(B.max())
+#resultado: 99
+\end{verbatim}
+
+
+\section{Leitura e escrita com \textit{r+}}
+
+\textbf{Descrição:} Crie um arquivo \textit{dados.txt} com 5 números reais separados por espaço. Faça um programa que:
+
+\begin{enumerate}
+    \item  Abra o arquivo no modo \textit{r+} e leia os dados.
+    \item  Converta os dados em um vetor NumPy de float.
+    \item  Calcule a média dos números.
+    \item Ao final do arquivo, escreva a seguinte linha: \textit{Media: X}, onde X é a média calculada.
+\end{enumerate}
+
+\textbf{Exemplo}:
+\begin{verbatim}
+import numpy as np  
+C = np.array([3.3,4.2,1,7])
+print(C)
+#resultado: [3.3 4.2 1.  7. ]
+print(C.mean())
+#resultado: 3.875
+\end{verbatim}
+
+\section{Manipulação de arquivos e vetores}
+
+\textbf{Descrição:} Crie um arquivo entrada.txt com 8 números inteiros, um por linha. Escreva um programa que:
+
+\begin{enumerate}
+    \item Leia cada linha do arquivo, remova o \textbackslash n, e crie um vetor NumPy com esses números.
+    \item Calcule o produto de todos os números.
+    \item Grave o resultado no arquivo saida.txt.
+\end{enumerate}
+
+\textbf{Exemplo}:
+\begin{verbatim}
+import numpy as np  
+D =  np.array([1, 2, 3, 4, 5])
+print(D.prod())
+#resultado: 120
+\end{verbatim}
+
+\section{Escrita e multiplicação com NumPy}
+
+\textbf{Descrição:} Faça o seguinte programa:
+
+\begin{enumerate}
+    \item Gere 10 números inteiros aleatórios entre 1 e 10.
+    \item Salve os números no arquivo \textit{numeros.txt}, separados por espaço, usando o modo \textit{w}.
+    \item Leia o arquivo com o modo \textit{r}, use \textit{split()} e crie um vetor NumPy.
+    \item Multiplique cada elemento do vetor por 3 e exiba o novo vetor.
+\end{enumerate}
+
+\textbf{Exemplo}:
+\begin{verbatim}
+E = np.array([1, 2, 3, 4, 5])
+print(E * 3)
+#resultado: [ 3  6  9 12 15]
+\end{verbatim}
+
+\section{Soma de linhas e colunas}
+
+\textbf{Descrição:} Crie um arquivo \textit{matriz.txt} com 3 linhas e 4 números inteiros por linha, separados por espaço.
+
+\begin{enumerate}
+    \item Abra o arquivo com o modo \textit{r}, leia todas as linhas.
+    \item Para cada linha, use \textit{split()} e converta em um matriz NumPy.
+    \item Some todos os vetores para obter a soma de cada coluna e exiba o vetor soma.
+    \item Exiba o maior e menor valor por coluna
+    \item Exiba o maior e menor valor por linha
+\end{enumerate}
+
+\textbf{Exemplo}:
+\begin{verbatim}
+F = np.array([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])
+print(F)
+#resultado: 
+[[ 1  2  3  4]
+ [ 5  6  7  8]
+ [ 9 10 11 12]]
+soma_linhas = np.sum(F, axis=1)
+print(soma_linhas)
+#resultado: [10 26 42]
+soma_colunas = np.sum(F, axis=0)
+print(soma_colunas)
+#resultado: [15 18 21 24]
+maior_linhas = np.max(F, axis=1)
+print(maior_linhas)
+#resultado: [ 4  8 12]
+menor_colunas = np.min(F, axis=0)
+print(menor_colunas)
+#resultado: [1 2 3 4]
+\end{verbatim}
+
+\end{document}

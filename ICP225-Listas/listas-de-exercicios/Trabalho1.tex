@@ -1,0 +1,104 @@
+\title{Trabalho 1 - Modelagem de classes}
+\author{Prof. Gabriel Rodrigues Caldas de Aquino}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+Este trabalho consiste em propor uma modelagem e implementar um programa em python de acordo com um cenário escolhido.
+
+
+
+    
+
+
+\textbf{Entregas Esperadas}:
+
+
+\begin{itemize}
+
+    \item  Diagrama com as classes representando a estrutura do sistema.
+
+    \item  Implementação em Python de todas as classes, com os métodos e atributos necessários.
+
+       \item  Utilize herança, polimorfismo, classes abstratas e encapsulamento. Você pode propor o seu jeito, só precisa justificar o motivo.
+
+       \item  Garanta que os métodos mágicos estejam implementados corretamente. Exemplos de uso das funcionalidades (comparação, soma, exibição de detalhes).
+
+     \item Simulação de interação entre usuários e conteúdos, incluindo reprodução e registro no histórico.
+   
+\end{itemize}
+
+\textbf{Você será avaliado pela capacidade de modelar e propor o sistema. Pode tomar as decisões que achar melhor, mas precisa justificar. O importante é usar os conceitos aprendidos durante o nosso curso.}
+
+\section{Cenário 1: Sistema de Gerenciamento para Plataforma de Streaming Multimídia}
+
+\textbf{Contexto}:
+ Você foi contratado para desenvolver o núcleo de um sistema de gerenciamento de conteúdo para uma nova plataforma de streaming multimídia. A plataforma oferece diversos tipos de conteúdo, como filmes, séries e podcasts, e deve atender a diferentes perfis de usuários, cada um com suas respectivas permissões e limitações. Seu objetivo é modelar e implementar as classes e funcionalidades necessárias para garantir o funcionamento básico do sistema, seguindo os requisitos orientados a objetos e as regras de negócio descritas abaixo.
+
+\textbf{Requisitos do Sistema}:
+\begin{itemize}
+    
+
+   \item  \textbf{Modelagem de Conteúdos}:
+    Todos os conteúdos disponíveis na plataforma (filmes, séries e podcasts) devem herdar de uma classe abstrata chamada Midia. Esta classe define os métodos essenciais: reproduzir(), pausar() e avaliar().
+
+        Séries devem ser compostas por múltiplos episódios (classe Episodio), enquanto filmes e podcasts são conteúdos únicos.
+
+        Cada conteúdo deve ter atributos como título, duração, avaliação média e identificador único.
+
+    \item \textbf{Tipos de Usuários}:
+    O sistema deve suportar três tipos de usuários:
+
+        Gratuitos: Possuem limite de reprodução diário (ex: 2 horas) e acesso restrito a certos conteúdos.
+
+        Premium: Acesso ilimitado a todo o catálogo, sem restrições de reprodução.
+
+        Admin: Permissões para gerenciar o catálogo (adicionar, remover ou editar conteúdos) e acessar estatísticas do sistema.
+
+    \item \textbf{Funcionalidades Específicas}:
+
+        Comparação de Conteúdos: Deve ser possível comparar conteúdos (\_\_lt\_\_) com base na duração total ou na avaliação média.
+
+        Soma de Episódios: Séries devem permitir a soma de episódios (\_\_add\_\_) para criar "maratonas" (ex: soma da duração de todos os episódios de uma temporada).
+
+        Exibição de Detalhes: Todos os conteúdos devem implementar um método \_\_str\_\_ para exibir informações detalhadas de forma legível.
+
+    \item \textbf{Histórico de Reprodução}:
+    Cada usuário deve ter um histórico de reprodução, registrando quais conteúdos foram assistidos, com datas e horários. O histórico deve ser acessível e gerenciável conforme o perfil do usuário.
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Cenário 2: Sistema de Logística e Entregas Inteligentes}
+
+\textbf{Contexto}:  
+Uma empresa de logística deseja implementar um sistema inteligente para gerenciar entregas de pacotes utilizando diferentes tipos de veículos. O sistema deve considerar o tipo de carga, o tempo de entrega e o custo. Seu objetivo é modelar e implementar as classes e funcionalidades para simular o processo de logística.
+
+\textbf{Requisitos do Sistema}:  
+\begin{itemize}
+    \item \textbf{Modelagem de Veículos}:  
+    Todos os veículos de entrega (caminhão, moto, drone) devem herdar de uma classe abstrata chamada \texttt{VeiculoEntrega}, que define os métodos \texttt{calcular\_tempo\_entrega(distancia)} e \texttt{calcular\_custo()}.
+
+    \item \textbf{Pacotes}:  
+    Devem ser classificados em \texttt{Pequeno}, \texttt{Médio} e \texttt{Grande}.  
+    Cada tipo de pacote deve ser compatível apenas com determinados veículos.  
+    O método \texttt{\_\_add\_\_} deve permitir a criação de lotes de pacotes.
+
+    \item \textbf{Funcionários}:  
+    O sistema deve gerenciar diferentes tipos de funcionários: \texttt{Motorista}, \texttt{PilotoDrone} e \texttt{GerenteLogistica}.  
+    Cada um deve herdar de uma classe abstrata \texttt{Funcionario} e implementar métodos específicos.
+
+    \item \textbf{Funcionalidades Específicas}:  
+    \begin{itemize}
+        \item Comparar veículos (\texttt{\_\_lt\_\_}) pela velocidade de entrega.  
+        \item Exibir informações detalhadas de pacotes, veículos e funcionários (\texttt{\_\_str\_\_}).  
+        \item Planejar rotas de entrega considerando tipo de veículo, capacidade e prioridade dos pacotes.  
+        \item Permitir que o gerente gere relatórios de eficiência logística.  
+    \end{itemize}
+\end{itemize}
+
+
+    \end{document}

@@ -1,0 +1,260 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+ \usepackage{amsmath}
+
+\title{Lista de Exercícios: Classe abstrata}
+\author{Prof. Gabriel Rodrigues Caldas de Aquino}
+\date{Compilado em: \\ \today}
+
+\begin{document}
+
+\maketitle
+
+\section{Itens de Empréstimo}
+
+Crie um sistema para gerenciar itens que podem ser emprestados em uma biblioteca.
+
+\begin{enumerate}
+    \item Crie uma \textbf{classe abstrata} chamada \texttt{Item}.  
+    Ela deve ter os seguintes atributos:
+    \begin{itemize}
+        \item \texttt{titulo} -- título do item,
+        \item \texttt{nomePessoa} -- nome da pessoa que pegou emprestado,
+        \item \texttt{dataEmprestimo} -- data em que o item foi emprestado.
+    \end{itemize}
+    Além disso, a classe deve possuir um \textbf{método abstrato} chamado \texttt{exibirDetalhes()}, 
+    que será implementado pelas classes filhas para mostrar informações específicas de cada tipo de item.
+
+    \item Crie duas classes concretas que herdem de \texttt{Item}:
+    \begin{enumerate}
+        \item \textbf{\texttt{Livro}}: deve conter os atributos:
+        \begin{itemize}
+            \item \texttt{autor},
+            \item \texttt{numPaginas} -- número de páginas do livro.
+        \end{itemize}
+
+        \item \textbf{\texttt{CD}}: deve conter os atributos:
+        \begin{itemize}
+            \item \texttt{artista},
+            \item \texttt{numFaixas} -- quantidade de faixas do CD.
+        \end{itemize}
+    \end{enumerate}
+
+    \item Crie pelo menos \textbf{3 livros} e \textbf{3 CDs}, cada um emprestado para pessoas diferentes, 
+    e coloque todos os itens em uma única lista.
+
+    \item Percorra essa lista e imprima, para cada item:
+    \begin{itemize}
+        \item o tipo do item,
+        \item o título,
+        \item o nome da pessoa que pegou emprestado,
+        \item a data do empréstimo,
+        \item e os atributos específicos do item (como autor e número de páginas, ou artista e quantidade de faixas).
+    \end{itemize}
+\end{enumerate}
+
+\section{Formas Geométricas}
+
+Crie um sistema para representar formas geométricas utilizando herança e polimorfismo.
+
+\begin{enumerate}
+    \item Crie uma \textbf{classe abstrata} chamada \texttt{Forma}.  
+    Ela deve ter os seguintes atributos:
+    \begin{itemize}
+        \item \texttt{nome} -- nome da forma geométrica,
+        \item \texttt{cor} -- cor da forma,
+        \item \texttt{espessuraBorda} -- espessura da borda,
+        \item \texttt{dataCriacao} -- data em que a forma foi criada.
+    \end{itemize}
+    
+    Além disso, a classe deve possuir um \textbf{método abstrato} chamado \texttt{exibirDetalhes()}, 
+    que será implementado pelas classes filhas para mostrar informações específicas de cada forma.
+
+    \item Crie duas classes concretas que herdem de \texttt{Forma}:
+    \begin{enumerate}
+        \item \textbf{\texttt{Retangulo}}: deve conter os atributos:
+        \begin{itemize}
+            \item \texttt{largura},
+            \item \texttt{altura}.
+        \end{itemize}
+        
+        Também deve possuir:
+        \begin{itemize}
+            \item Um método para calcular a \textbf{área}: \(\text{largura} \times \text{altura}\),
+            \item Um método para calcular o \textbf{perímetro}: \(2 \times (\text{largura} + \text{altura})\).
+        \end{itemize}
+
+        \item \textbf{\texttt{Circulo}}: deve conter o atributo:
+        \begin{itemize}
+            \item \texttt{raio}.
+        \end{itemize}
+        
+        Também deve possuir:
+        \begin{itemize}
+            \item Um método para calcular a \textbf{área}: \(\pi \times \text{raio}^2\),
+            \item Um método para calcular o \textbf{perímetro}: \(2 \times \pi \times \text{raio}\).
+        \end{itemize}
+    \end{enumerate}
+
+    \item Crie diferentes formas geométricas (pelo menos 2 retângulos e 2 círculos) 
+    e armazene todas em uma única lista.
+
+    \item Percorra a lista e utilize o método \texttt{exibirDetalhes()} para mostrar, para cada forma:
+    \begin{itemize}
+        \item nome,
+        \item cor,
+        \item espessura da borda,
+        \item data de criação,
+        \item tipo da forma,
+        \item medidas específicas (largura/altura ou raio),
+        \item área e perímetro calculados.
+    \end{itemize}
+
+    \item Sinta-se livre para adicionar outros tipos de formas, se desejar.
+\end{enumerate}
+
+\section{Animais}
+
+Crie um sistema para representar diferentes tipos de animais utilizando herança e polimorfismo.
+
+\begin{enumerate}
+    \item Crie uma \textbf{classe abstrata} chamada \texttt{Animal}.  
+    Ela deve ter os seguintes atributos:
+    \begin{itemize}
+        \item \texttt{nome} -- nome do animal,
+        \item \texttt{idade} -- idade do animal.
+    \end{itemize}
+
+    A classe deve possuir:
+    \begin{itemize}
+        \item Um \textbf{método abstrato} chamado \texttt{emitir\_som()}, que será implementado pelas subclasses para exibir o som específico de cada animal.
+        \item Um método \texttt{apresentar()} que imprime o nome e a idade do animal.
+    \end{itemize}
+
+    \item Crie três subclasses que herdem de \texttt{Animal}:
+    \begin{enumerate}
+        \item \textbf{\texttt{Cachorro}} -- o método \texttt{emitir\_som()} deve imprimir \texttt{"auau"}.
+        \item \textbf{\texttt{Gato}} -- o método \texttt{emitir\_som()} deve imprimir \texttt{"miau"}.
+        \item \textbf{\texttt{Pato}} -- o método \texttt{emitir\_som()} deve imprimir \texttt{"quack"}.
+    \end{enumerate}
+
+    Além disso, cada subclasse deve sobrescrever o método \texttt{apresentar()} para incluir uma
+    mensagem personalizada, além do nome e idade do animal.
+
+    \item Crie uma lista contendo pelo menos \textbf{uma instância de cada tipo de animal}.
+
+    \item Percorra a lista e, para cada animal, chame:
+    \begin{itemize}
+        \item O método \texttt{emitir\_som()} para exibir o som específico.
+        \item O método \texttt{apresentar()} para mostrar as informações detalhadas.
+    \end{itemize}
+
+    \item Demonstre o uso de \textbf{polimorfismo}, mostrando que, mesmo com uma lista genérica de
+    \texttt{Animal}, cada subclasse executa seu comportamento específico.
+\end{enumerate}
+
+\section{Veículos e Oficina}
+
+Crie um sistema para gerenciar veículos em uma oficina mecânica, utilizando herança e polimorfismo.
+
+\begin{enumerate}
+    \item Crie uma \textbf{classe abstrata} chamada \texttt{Veiculo}.  
+    Ela deve ter os seguintes atributos:
+    \begin{itemize}
+        \item \texttt{marca} -- marca do veículo,
+        \item \texttt{modelo} -- modelo do veículo,
+        \item \texttt{ano} -- ano de fabricação,
+        \item \texttt{dataEntrada} -- data em que o veículo deu entrada na oficina.
+    \end{itemize}
+
+    A classe deve possuir:
+    \begin{itemize}
+        \item Um \textbf{método abstrato} chamado \texttt{calcularOrcamento()}, que retorna o valor estimado do conserto.
+        \item Um método \texttt{exibirDetalhes()} que mostra as informações básicas do veículo.
+    \end{itemize}
+
+    \item Crie as seguintes subclasses que herdem de \texttt{Veiculo}:
+    \begin{enumerate}
+        \item \textbf{\texttt{Carro}}:
+        \begin{itemize}
+            \item Deve ter um atributo \texttt{numPortas}.
+            \item O método \texttt{calcularOrcamento()} deve retornar um valor baseado no ano do carro e na quantidade de portas, considerando que carros mais antigos e com mais portas têm custo de manutenção maior.
+        \end{itemize}
+
+        \item \textbf{\texttt{Moto}}:
+        \begin{itemize}
+            \item Deve ter um atributo \texttt{cilindrada}.
+            \item O método \texttt{calcularOrcamento()} deve retornar um valor baseado na cilindrada, sendo que motos de maior cilindrada têm custo de manutenção mais alto.
+        \end{itemize}
+    \end{enumerate}
+
+    \item Crie uma lista contendo pelo menos \textbf{3 veículos de tipos variados} (por exemplo, 2 carros e 1 moto).
+
+    \item Percorra a lista e, para cada veículo, chame:
+    \begin{itemize}
+        \item O método \texttt{exibirDetalhes()} para mostrar as informações básicas,
+        \item O método \texttt{calcularOrcamento()} para mostrar o valor estimado do conserto.
+    \end{itemize}
+
+    \item Mostre que o mesmo método \texttt{calcularOrcamento()} se comporta de forma diferente para carros e motos, demonstrando \textbf{polimorfismo}.
+\end{enumerate}
+
+\section{Sistema de Pagamentos}
+
+Desenvolva um sistema para gerenciar diferentes formas de pagamento em uma loja virtual, utilizando herança e polimorfismo.
+
+\begin{enumerate}
+    \item Crie uma \textbf{classe abstrata} chamada \texttt{Pagamento}.  
+    Ela deve ter os seguintes atributos:
+    \begin{itemize}
+        \item \texttt{valor} -- valor total da compra,
+        \item \texttt{data} -- data do pagamento,
+        \item \texttt{nomeCliente} -- nome do cliente que realizou a compra.
+    \end{itemize}
+
+    A classe deve possuir:
+    \begin{itemize}
+        \item Um \textbf{método abstrato} chamado \texttt{processar()}, que realiza a lógica de processamento do pagamento.
+        \item Um método \texttt{exibirRecibo()} que imprime as informações básicas da transação (nome do cliente, valor e data).
+    \end{itemize}
+
+    \item Crie as seguintes subclasses que herdem de \texttt{Pagamento}:
+    \begin{enumerate}
+        \item \textbf{\texttt{CartaoCredito}}:
+        \begin{itemize}
+            \item Deve ter um atributo \texttt{parcelas} -- quantidade de parcelas.
+            \item O método \texttt{processar()} deve calcular o valor final com juros de 2\% por parcela e exibir o valor de cada parcela e o total atualizado.
+        \end{itemize}
+
+        \item \textbf{\texttt{Boleto}}:
+        \begin{itemize}
+            \item Deve ter um atributo \texttt{desconto} -- percentual de desconto.
+            \item O método \texttt{processar()} deve aplicar o desconto ao valor original e exibir o valor final.
+        \end{itemize}
+
+        \item \textbf{\texttt{Pix}}:
+        \begin{itemize}
+            \item Não precisa de atributos adicionais.
+            \item O método \texttt{processar()} deve apenas confirmar o pagamento instantâneo, exibindo a mensagem de sucesso.
+        \end{itemize}
+    \end{enumerate}
+
+    \item Crie uma lista contendo pelo menos:
+    \begin{itemize}
+        \item Um pagamento via cartão de crédito,
+        \item Um pagamento via boleto,
+        \item Um pagamento via Pix.
+    \end{itemize}
+
+    \item Percorra a lista e, para cada pagamento:
+    \begin{itemize}
+        \item Chame o método \texttt{exibirRecibo()} para mostrar os dados básicos da transação,
+        \item Em seguida, chame o método \texttt{processar()} para executar a lógica específica daquela forma de pagamento.
+    \end{itemize}
+
+    \item Demonstre \textbf{polimorfismo} mostrando que o mesmo método \texttt{processar()} se comporta de maneira diferente dependendo do tipo de pagamento.
+\end{enumerate}
+
+
+\end{document}

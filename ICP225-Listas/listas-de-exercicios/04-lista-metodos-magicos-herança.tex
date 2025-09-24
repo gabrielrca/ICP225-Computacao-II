@@ -1,0 +1,93 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\title{Lista de Exercícios: Métodos Mágicos e Herança}
+\author{Prof. Gabriel Rodrigues Caldas de Aquino}
+\date{Compilado em: \\ \today}
+
+\begin{document}
+
+\maketitle
+
+
+\section{Métodos Mágicos: Pessoa}
+Crie a classe \texttt{Pessoa} com os seguintes atributos: \texttt{nomePai}, \texttt{nomeMae}, \texttt{nome}, \texttt{idade}, \texttt{cpf} e \texttt{altura}.
+
+Implemente os seguintes métodos mágicos:
+
+\begin{itemize}
+    \item +: ao somar duas pessoas, o resultado deve ser a soma das idades.
+    \item -: ao subtrair duas pessoas, o resultado deve ser a diferença das idades.
+    \item *: ao multiplicar duas pessoas, deve retornar uma nova instância de \texttt{Pessoa}, que seria o filho deles, onde o \texttt{nomePai} e \texttt{nomeMae} são os nomes das duas pessoas, e a idade é 0.
+    \item $>$: retorna \texttt{True} se a primeira pessoa for mais velha que a segunda.
+    \item $<$: retorna \texttt{True} se a primeira pessoa for mais nova que a segunda.
+    \item $==$ retorna \texttt{True} se duas pessoas tiverem o mesmo CPF.
+    \item "len()": retorna a altura da pessoa.
+\end{itemize}
+
+\textbf{Atividades:}
+\begin{enumerate}
+    \item Crie pelo menos 3 pessoas diferentes.
+    \item Mostre o uso de cada método mágico implementado.
+\end{enumerate}
+
+
+\section{Uso Direto de Métodos Mágicos do Tipo Int}
+
+Crie um programa em Python que receba dois números inteiros $a$ e $b$ digitados pelo usuário.  
+
+\textbf{Atividades:}
+\begin{enumerate}
+    \item Realize a soma utilizando diretamente o método mágico do tipo \texttt{int}: \texttt{a.\_\_add\_\_(b)}.
+    \item Realize a subtração com \texttt{a.\_\_sub\_\_(b)}.
+    \item Realize a multiplicação com \texttt{a.\_\_mul\_\_(b)}.
+    \item Realize a divisão com \texttt{a.\_\_truediv\_\_(b)}.
+    \item Imprima os resultados obtidos em cada operação, no formato:  
+    “O resultado de a operação X é Y”.
+\end{enumerate}
+
+
+\section{Herança e Métodos Mágicos}
+
+Crie uma classe \texttt{Funcionario} com os atributos: \texttt{nome} e \texttt{salarioBase}.  
+
+\begin{enumerate}
+    \item Crie uma subclasse \texttt{Gerente}, que herda de \texttt{Funcionario}, e inclua o atributo  \texttt{bonus}.  
+    \item Reescreva o método mágico \texttt{\_\_add\_\_} de forma que o objeto da classe \texttt{Gerente} some o valor no Bonus.  
+    \item Reescreva o método mágico \texttt{\_\_gt\_\_} de forma que a comparação (\texttt{func1 > func2}) 
+    indique qual funcionário tem maior salário total.
+    \item A classe \textit{Gerente} tem salário total = salarioBase + bonus
+    \item A classe \textit{Gerente} e \textit{Funcionario} tem um método chamado SalarioTotal que retorna o salário total. 
+    \item Crie pelo menos dois objetos de cada classe (\texttt{Funcionario} e \texttt{Gerente}) e teste 
+    os métodos mágicos criados.  
+\end{enumerate}
+
+
+\section{Herança e Métodos Mágicos}
+
+Crie uma classe \texttt{Produto} com os atributos: \texttt{nome} e \texttt{preco}.  
+
+\begin{enumerate}
+    \item Crie uma subclasse \texttt{ProdutoImportado}, que herda de \texttt{Produto}, e inclua o atributo \texttt{taxaImportacao}. O preço final será \texttt{preco + taxaImportacao}.  
+    \item Reescreva o método mágico \texttt{\_\_add\_\_} de forma que a soma entre dois objetos da classe \texttt{Produto} ou \texttt{ProdutoImportado} retorne o valor total da compra (considerando preço final quando for importado).  
+    \item Reescreva o método mágico \texttt{\_\_lt\_\_} (\texttt{<}) para indicar se um produto é mais barato que o outro.  
+    \item Reescreva o método mágico \texttt{\_\_str\_\_} para exibir uma string legível com o nome e o preço final do produto.  
+    \item Crie pelo menos dois objetos de cada classe (\texttt{Produto} e \texttt{ProdutoImportado}) e teste os métodos mágicos criados.  
+\end{enumerate}
+
+\section{Herança e Métodos Mágicos}
+
+Crie uma classe \texttt{Veiculo} com os atributos: \texttt{marca}, \texttt{modelo} e \texttt{velocidadeMaxima}.  
+
+\begin{enumerate}
+    \item Crie uma subclasse \texttt{Carro}, que herda de \texttt{Veiculo}, e inclua o atributo \texttt{portas}.  
+    \item Crie uma subclasse \texttt{Moto}, que herda de \texttt{Veiculo}, e inclua o atributo \texttt{cilindradas}.  
+    \item Reescreva o método mágico \texttt{\_\_gt\_\_} para comparar qual veículo é mais rápido pela \texttt{velocidadeMaxima}.  
+    \item Reescreva o método mágico \texttt{\_\_add\_\_} para que, ao somar dois veículos, seja criado um "veículo híbrido" que combina a média das velocidades máximas e concatena os nomes dos modelos.  
+    \item Reescreva o método mágico \texttt{\_\_str\_\_} para exibir as informações do veículo de forma legível.  
+    \item Crie pelo menos dois objetos de cada classe (\texttt{Carro} e \texttt{Moto}) e teste os métodos mágicos criados.  
+\end{enumerate}
+
+
+\end{document}

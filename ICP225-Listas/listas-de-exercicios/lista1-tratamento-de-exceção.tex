@@ -1,0 +1,91 @@
+\title{Lista de exercicios: Tratamento de Exceção}
+\author{Gabriel Rodrigues Caldas de Aquino}
+\date{22/05/2025}
+\begin{document}
+
+
+\maketitle
+
+\section{Conversão de entrada para número inteiro}
+
+\textbf{Descrição:}
+Solicite ao usuário que digite um número inteiro. Utilize \textit{try/except} para capturar o erro caso o usuário insira um valor que não possa ser convertido para inteiro (por exemplo, letras ou símbolos).
+
+\section{Calcular Divisão}
+
+\textbf{Descrição}:
+Peça ao usuário dois números e exiba o resultado da divisão do primeiro pelo segundo. Utilize \textit{try/except} para tratar a exceção de divisão por zero
+
+\section{Acesso a elementos de lista}
+
+\textbf{Descrição}:
+Crie uma lista com alguns elementos e solicite ao usuário que digite um índice para acessar um elemento da lista. Utilize \textit{try/except} para tratar o erro caso o índice informado seja inválido (fora do intervalo da lista).
+
+\section{Soma de elementos de uma lista}
+
+\textbf{Descrição}:
+Solicite ao usuário que insira uma lista de números separados por espaço. Converta os valores para inteiros e calcule a soma. Utilize \textit{try/except} para tratar possíveis erros durante a conversão.
+
+\section{Leitura de arquivo}
+
+\textbf{Descrição}:
+Peça ao usuário o nome de um arquivo para leitura. Utilize \textit{try/except} para tratar a exceção caso o arquivo não exista.
+
+\section{Cálculo de média com tratamento de exceções}
+
+\textbf{Descrição}:
+Solicite ao usuário que insira uma lista de números separados por vírgula. Converta os valores para números e calcule a média. Utilize \textit{try/except} para tratar: (i) possíveis erros durante a conversão; e (ii) divisão por zero.
+
+\section{Leitura de arquivo com tratamento de múltiplas exceções}
+
+\textbf{Descrição}:
+Peça ao usuário o nome de um arquivo e tente abri-lo para leitura. Utilize \textit{try/except} para tratar a seguintes exceções: (i) caso o arquivo não existir; (ii) Adicione também um tratamento para qualquer outra exceção genérica.
+
+\section{Validação de entrada com exceções específicas}
+
+\textbf{Descrição}:
+Solicite ao usuário que insira um número inteiro positivo. Utilize \textit{try/except} para capturar entradas inválidas e levante uma exceção personalizada (use o \textit{raise} com \textit{ValueError}) caso o número seja negativo ou zero.
+
+\section{Manipulação de dicionários com tratamento de exceções}
+
+\textbf{Descrição}:
+Crie um dicionário com alguns pares chave-valor. Solicite ao usuário que insira uma chave e exiba o valor correspondente. Utilize \textit{try/except} para tratar o caso em que a chave não existe no dicionário.
+
+\section{Uso de \textit{else} e \textit{finally} em blocos \textit{try/except}}
+
+\textbf{Descrição}:
+Crie um programa que solicite ao usuário dois números e exiba o resultado da divisão do primeiro pelo segundo. Utilize \textit{try/except} para capturar possíveis exceções, \textit{else} para exibir uma mensagem quando a operação for bem-sucedida e \textit{finally} para exibir uma mensagem final independente do resultado.
+
+
+\pagebreak
+
+
+\section{\textbf{BONUS}: Faça o tratamento dos possíveis erros que podem acontecer neste código mostrado em aula}
+
+\begin{verbatim}
+def calcular_media(valores):
+    soma = sum(valores)
+    media = soma / len(valores)
+    return media
+
+def ler_arquivo(nome_arquivo):
+    with open(nome_arquivo, 'r') as file:
+        dados = file.read().split(',')
+    return [float(dado) for dado in dados]
+
+print("=== Calculadora de Média ===")
+valores = input("Digite números separados por vírgula: ").split(',')
+
+valores = [int(x) for x in valores]
+
+print(f"Valores de entrada: {valores}")
+
+media = calcular_media(valores)
+print(f"Média do teclado: {media}")
+
+dados_arquivo = ler_arquivo('dados.txt')
+print(f"Média do arquivo: {calcular_media(dados_arquivo)}")
+
+\end{verbatim}
+
+\end{document}

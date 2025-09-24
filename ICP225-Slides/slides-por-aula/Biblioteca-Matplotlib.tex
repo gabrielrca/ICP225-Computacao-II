@@ -1,0 +1,685 @@
+%----------------------------------------------------------------------------------------
+%    TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title{Biblioteca Matplotlib}
+
+\author{Prof. Gabriel Rodrigues Caldas de Aquino}
+
+\institute
+{
+    gabrielaquino@ic.ufrj.br\\
+    
+    Instituto de Computação -
+    Universidade Federal do Rio de Janeiro % Your institution for the title page
+}
+\date{Compilado em: \\ \today} % Date, can be changed to a custom date
+
+%----------------------------------------------------------------------------------------
+%    PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+%------------------------------------------------
+\section{Biblioteca Matplotlib}
+%------------------------------------------------
+
+\begin{frame}
+    % Print the title page as the first slide
+    \titlepage
+\end{frame}
+
+
+
+\begin{frame}{Origem e Popularidade do \texttt{Matplotlib}}
+    \begin{itemize}
+        \item Criado por John D. Hunter em 2003 como uma biblioteca de gráficos em Python.
+        \item Inspirado no \texttt{MATLAB}, com o objetivo de permitir a criação de visualizações de alta qualidade por cientistas e engenheiros.
+        \item Atualmente, é amplamente utilizado em áreas como:
+        \begin{itemize}
+            \item Ciência de dados,
+            \item Engenharia,
+            \item Aprendizado de máquina.
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Para que Serve o \texttt{Matplotlib}?}
+    \begin{itemize}
+        \item O \texttt{matplotlib} é usado para:
+        \begin{itemize}
+            \item Criar gráficos e visualizações de dados em Python.
+            \item Analisar visualmente comportamentos, tendências e padrões.
+            \item Produzir figuras de alta qualidade para relatórios, artigos e apresentações.
+        \end{itemize}
+
+        \item Com ele, é possível gerar:
+        \begin{itemize}
+            \item Gráficos de linha, barra, pizza, dispersão (scatter), histogramas, entre outros.
+        \end{itemize}
+
+        \item É uma ferramenta essencial em:
+        \begin{itemize}
+            \item Ciência de dados,
+            \item Engenharia,
+            \item Pesquisa científica,
+            \item Educação.
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Introdução ao \texttt{pyplot}}
+    \begin{itemize}
+        \item \texttt{matplotlib.pyplot} é uma coleção de funções que faz o \texttt{matplotlib} funcionar de forma semelhante ao \texttt{MATLAB}.
+        \item Cada função do \texttt{pyplot} realiza uma alteração na figura: cria uma figura, define uma área de plotagem, desenha linhas, adiciona rótulos, etc.
+        \item O \texttt{pyplot} mantém estados entre chamadas de função, acompanhando a figura e a área de plotagem atual.
+        \item \textbf{Axes} são componentes centrais da figura.
+    \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}[fragile]{Criando Visualizações com \texttt{pyplot}}
+    \begin{itemize}
+        \item Gerar visualizações com \texttt{pyplot} é rápido e simples.
+        \item Exemplo básico:
+    \end{itemize}
+
+    \begin{block}{Exemplo em Python}
+    \begin{verbatim}
+import matplotlib.pyplot as plt
+
+plt.plot([1, 2, 3, 4])
+plt.ylabel('alguns números')
+plt.title('Titulo')
+plt.show()
+    \end{verbatim}
+    \end{block}
+\end{frame}
+
+\begin{frame}{Explicação do Código}
+    \begin{itemize}
+        \item \texttt{import matplotlib.pyplot as plt} \\
+        Importa a biblioteca \texttt{pyplot} do \texttt{matplotlib}  como \texttt{plt} para facilitar o uso.
+        \item \texttt{plt.plot([1, 2, 3, 4])} \\
+        Cria um gráfico de linha simples com os valores fornecidos no eixo y;\\ O eixo x é automático (índices 0 a 3).
+        \item \texttt{plt.ylabel('alguns números')} \\
+        Define o rótulo do eixo y com o texto "alguns números".
+        \item \texttt{plt.title('Titulo')} \\
+        Adiciona um título ao gráfico.
+        \item \texttt{plt.show()} \\
+        Exibe a figura gerada em uma janela ou no ambiente gráfico.
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]{Plotando x versus y com \texttt{pyplot}}
+    Para plotar valores de x contra y, você pode modificar o código anterior assim:
+
+    \begin{block}{Exemplo em Python}
+\begin{verbatim}
+import matplotlib.pyplot as plt
+
+plt.plot([1, 2, 3, 4], [1, 4, 9, 16])
+plt.xlabel('valores de x')
+plt.ylabel('alguns números')
+plt.show()
+\end{verbatim}
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Adicionando Anotações com \texttt{plt.annotate()}}
+    \begin{itemize}
+        \item O método \texttt{plt.annotate()} permite destacar pontos importantes no gráfico com texto e setas.
+        \item Parâmetros usados:
+        \begin{itemize}
+            \item \texttt{xy=(2, 4)}: coordenada do ponto a ser anotado.
+            \item \texttt{xytext=(3, 6)}: posição do texto da anotação.
+            \item \texttt{arrowprops}: define propriedades da seta (ex: cor).
+        \end{itemize}
+    \end{itemize}
+
+    \begin{block}{Exemplo em Python}
+\begin{verbatim}
+import matplotlib.pyplot as plt
+
+plt.plot([1, 2, 3], [1, 4, 9])
+plt.annotate('ponto importante', xy=(2, 4),
+             xytext=(3, 6),
+             arrowprops=dict(facecolor='black'))
+plt.show()
+\end{verbatim}
+    \end{block}
+\end{frame}
+
+
+\begin{frame}[fragile]{Exemplo de Marcadores e Estilo de Linha em \texttt{pyplot}}
+    \begin{itemize}
+        \item O parâmetro \texttt{markersize} ajusta o tamanho dos marcadores nos pontos do gráfico.
+        \item O estilo \texttt{'ko:'} significa:
+        \begin{itemize}
+            \item \texttt{k}: cor preta (black).
+            \item \texttt{o}: marcador circular.
+            \item \texttt{:}: linha pontilhada.
+        \end{itemize}
+    \end{itemize}
+
+    \begin{block}{Exemplo em Python}
+\begin{verbatim}
+import matplotlib.pyplot as plt
+
+plt.plot([2, 1], [3, 1], 'ko:', markersize=10)
+plt.xlabel('x')
+plt.ylabel('y')
+plt.show()
+\end{verbatim}
+    \end{block}
+\begin{itemize}
+    \item  \url{https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Adicionando Grid ao Gráfico}
+    \begin{itemize}
+        \item O método \texttt{plt.grid(True)} adiciona uma grade (grid) ao gráfico, facilitando a leitura dos valores.
+        \item É especialmente útil para visualizações com muitos dados ou comparações visuais.
+    \end{itemize}
+
+    \begin{block}{Exemplo em Python}
+\begin{verbatim}
+import matplotlib.pyplot as plt
+
+plt.plot([1, 2, 3, 4], [1, 4, 9, 16], 'bo-')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.grid(True)
+plt.show()
+\end{verbatim}
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Definindo os Limites dos Eixos com \texttt{plt.axis}}
+    \begin{itemize}
+        \item O método \texttt{plt.axis()} permite definir manualmente os limites dos eixos do gráfico.
+        \item A sintaxe \texttt{plt.axis((xmin, xmax, ymin, ymax))} define:
+        \begin{itemize}
+            \item \texttt{xmin = 0}, \texttt{xmax = 6}
+            \item \texttt{ymin = 0}, \texttt{ymax = 20}
+        \end{itemize}
+        \item Isso pode ser útil para controlar o zoom do gráfico ou garantir uma escala fixa.
+    \end{itemize}
+
+    \begin{block}{Exemplo em Python}
+\begin{verbatim}
+import matplotlib.pyplot as plt
+
+plt.plot([1, 2, 3, 4], [1, 4, 9, 16], 'ro-')
+plt.axis((0, 6, 0, 20))
+plt.grid(True)
+plt.show()
+\end{verbatim}
+    \end{block}
+\end{frame}
+
+\begin{frame}{Gráfico do crescimento populacional}
+
+Vá na página da Wikipédia que contém dados reais de crescimento populacional mundial  \url{https://pt.wikipedia.org/wiki/Crescimento_populacional} e crie um gráfico com o crescimento populacional ao longo dos anos
+
+    
+\end{frame}
+
+
+\begin{frame}[fragile]{Evitando Notação Científica no Eixo Y}
+    \begin{itemize}
+        \item Quando os valores do eixo Y são muito grandes, o \texttt{matplotlib} ativa a notação científica automaticamente (ex: \texttt{1e6}).
+        \item Para desativar essa notação e mostrar os números completos, usamos:
+        \begin{itemize}
+            \item \texttt{plt.ticklabel\_format(style='plain', axis='y')}
+        \end{itemize}
+        
+    \end{itemize}
+
+    \begin{block}{Exemplo em Python}
+\begin{verbatim}
+ano = [1750, 1800, 1850, 1900, 1950, 1955, 1960, 1965,
+       1970, 1975, 1980, 1985, 1990, 1995, 2000, 2005]
+populacao = [791000, 978000, 1262000, 1650000, 2518629,
+             2755823, 3021475, 3334874, 3692492, 4063587,
+             4434682, 4830979, 5263593, 5674380, 6070581, 6453628]
+plt.plot(ano, populacao)
+plt.ticklabel_format(style='plain', axis='y')  
+plt.show()
+\end{verbatim}
+    \end{block}
+\end{frame}
+
+
+
+\begin{frame}[fragile]{Gráfico de Barras: Crescimento Populacional}
+    \begin{itemize}
+        \item Podemos usar \texttt{plt.bar()} para representar os dados como um gráfico de barras.
+        \item Útil para destacar visualmente a variação entre os anos.
+    \end{itemize}
+
+    \begin{block}{Exemplo com \texttt{plt.bar()}}
+\begin{verbatim}
+plt.bar(ano, populacao)
+plt.xlabel('Ano')
+plt.ylabel('População')
+plt.ticklabel_format(style='plain', axis='y')
+plt.grid(True)
+plt.title('Crescimento Populacional Mundial')
+plt.show()
+\end{verbatim}
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Gráfico de Barras - Tamanho das barras}
+    \begin{itemize}
+        \item Podemos usar \texttt{plt.bar()} para representar os dados como um gráfico de barras.
+        \item O parâmetro \texttt{width} controla a largura das barras.
+    \end{itemize}
+
+    \begin{block}{Exemplo com \texttt{plt.bar(..., width=20)}}
+\begin{verbatim}
+
+plt.bar(ano, populacao, width=20)
+...
+plt.show()
+\end{verbatim}
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]{\texttt{plot()} vs \texttt{scatter()}}
+    \begin{itemize}
+        \item Tanto \texttt{plt.plot(..., marker='o')} quanto \texttt{plt.scatter(...)} podem ser usados para representar pontos.
+        \item \texttt{plot()} com marcador desenha uma linha conectando os pontos (a menos que especificado para não fazê-lo).
+        \item \texttt{scatter()} desenha apenas os pontos individuais, sem conectá-los.
+        \item \texttt{scatter()} também permite personalizar tamanho, cor e transparência ponto a ponto.
+    \end{itemize}
+
+    \begin{block}{Exemplo em Python}
+\begin{verbatim}
+a = np.array([0, 2, 4, 0, 2, 2, 3, 2])
+b = np.array([0, 1, 0, 0, 0, 2, 1, 1.2])
+
+plt.scatter(a, b, marker='o')  # ou plt.plot(a, b)
+plt.grid(True)
+plt.show()
+\end{verbatim}
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Plotando Múltiplas Curvas}
+    \begin{itemize}
+        \item Podemos usar \texttt{plt.plot()} várias vezes para desenhar múltiplas curvas no mesmo gráfico.
+        \item Cada chamada adiciona uma nova série de dados com estilo independente.
+    \end{itemize}
+
+    \begin{block}{Exemplo em Python}
+\begin{verbatim}
+import matplotlib.pyplot as plt
+
+plt.plot([1, 2, 3, 4], [1, 4, 9, 16], 'bo-', label='y = x²')
+plt.plot([1, 2, 3, 4], [1, 2, 3, 4], 'rs--', label='y = x')
+
+plt.xlabel('x')
+plt.ylabel('y')
+plt.grid(True)
+plt.legend()
+plt.show()
+\end{verbatim}
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Posicionando a Legenda com \texttt{loc}}
+    \begin{itemize}
+        \item Use o parâmetro \texttt{loc} para escolher onde a legenda aparece.
+        \item Exemplo simples:
+    \end{itemize}
+
+    \begin{block}{Código Exemplo}
+\begin{verbatim}
+import matplotlib.pyplot as plt
+
+plt.plot([1, 2, 3], label='Linha 1')
+plt.plot([3, 2, 1], label='Linha 2')
+
+plt.legend(loc='upper right')  # legenda no canto superior direito
+plt.show()
+\end{verbatim}
+    \end{block}
+\end{frame}
+
+\begin{frame}{Opções de Localização da Legenda (\texttt{loc})}
+    \begin{itemize}
+        \item A posição da legenda pode ser controlada com o parâmetro \texttt{loc} da função \texttt{plt.legend()}.
+        \item A tabela abaixo mostra 5 posições comuns:
+    \end{itemize}
+
+    \vspace{0.5em}
+    \begin{table}[]
+    \centering
+    \begin{tabular}{|c|l|}
+        \hline
+        \textbf{Código}         & \textbf{Descrição}              \\ \hline
+        \texttt{'upper right'}  & Canto superior direito          \\ \hline
+        \texttt{'upper left'}   & Canto superior esquerdo         \\ \hline
+        \texttt{'lower left'}   & Canto inferior esquerdo         \\ \hline
+        \texttt{'lower right'}  & Canto inferior direito          \\ \hline
+        \texttt{'center'}       & Centro da área de plotagem      \\ \hline
+    \end{tabular}
+    \end{table}
+
+    \vspace{0.5em}
+    \begin{itemize}
+        \item Também é possível usar \texttt{loc='best'} para posicionamento automático.
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]{Plotando com \texttt{np.linspace} e \texttt{np.zeros\_like}}
+    \begin{itemize}
+        \item \texttt{np.linspace(0, 2, 100)} cria 100 pontos igualmente espaçados entre 0 e 2.
+        \item \texttt{np.zeros\_like(x)} gera um array de zeros com o mesmo formato de \texttt{x}.
+        \item Podemos usar ambos para construir múltiplas curvas no mesmo gráfico.
+    \end{itemize}
+
+    \begin{block}{Exemplo em Python}
+\begin{verbatim}
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(0, 2, 100)
+y = np.zeros_like(x)
+
+plt.plot(x, y, 'g-')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.grid(True)
+plt.show()
+\end{verbatim}
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Mais de uma curva}
+    \begin{itemize}
+        \item Podemos construir múltiplas curvas no mesmo gráfico.
+    \end{itemize}
+
+    \begin{block}{Exemplo em Python}
+\begin{verbatim}
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(0, 2, 100)
+y1 = x**2
+y2 = np.zeros_like(x)
+plt.plot(x, y1, 'g-', label='y = x²')
+plt.plot(x, y2, 'r--', label='y = 0')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.grid(True)
+plt.legend()
+plt.show()
+\end{verbatim}
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Cuidado com a Escala dos Dados}
+    \begin{itemize}
+        \item Funções com crescimento rápido (como \texttt{x\^{}20}) .. (ou também outros dados) .. podem gerar distorções visuais ou comprimir outras curvas.
+        \item No exemplo abaixo, a curva \texttt{y = x²} fica quase invisível perto de \texttt{y = x\^{}20}.
+    \end{itemize}
+
+    \begin{block}{Exemplo em Python}
+\begin{verbatim}
+x = np.linspace(-2, 2, 100)
+y1 = x**2
+y2 = x**20
+plt.plot(x, y1, 'g-', label='y = x²')
+plt.plot(x, y2, 'r--', label='y = x^20')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.ticklabel_format(style='plain', axis='y')
+plt.grid(True)
+plt.legend()
+plt.show()
+\end{verbatim}
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Cuidado com o Recorte da Visualização}
+    \begin{itemize}
+        \item Agora, considere o seguinte trecho: \texttt{plt.axis((-2, 2, 0, 4))}
+        
+        \item \alert{Pergunta: O que acontece com a curva \texttt{y = x\^{}20} ao aplicar esse recorte?}
+    \end{itemize}
+
+    \begin{block}{Código de exemplo}
+\begin{verbatim}
+x = np.linspace(-2, 2, 100)
+y1 = x**2
+y2 = x**20
+plt.plot(x, y1, 'g-', label='y = x²')
+plt.plot(x, y2, 'r--', label='y = x^20')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.ticklabel_format(style='plain', axis='y')
+plt.axis((-2, 2, 0, 4))  
+plt.grid(True)
+plt.legend()
+plt.show()
+\end{verbatim}
+    \end{block}
+\end{frame}
+
+\begin{frame}{O que acontece com \texttt{y = x\^{}20}?}
+    \begin{itemize}
+        \item A função \texttt{y = x\^{}20}  cresce rapidamente para \texttt{x} próximos de -2 e 2.
+        \item Ao limitar o eixo y com \texttt{plt.axis((-2, 2, 0, 4))}, estamos forçando o gráfico a exibir apenas valores de y entre 0 e 4.
+        \item Como \texttt{y = x\^{}20} atinge valores muito maiores que 4 perto das extremidades,
+              esses valores ficam \textbf{fora da área visível} e não aparecem no gráfico.
+        \item O resultado é que a curva \texttt{y = x\^{}20} parece \textbf{"ir pra fora"} da visualização.
+    \end{itemize}
+
+
+    \begin{alertblock}{Conclusão}
+        Sempre verifique se os limites definidos com \texttt{plt.axis()} não estão escondendo partes importantes dos dados.
+    \end{alertblock}
+\end{frame}
+
+
+\begin{frame}[fragile]{Usando Funções com \texttt{def} e \texttt{return}}
+    \begin{itemize}
+        \item Definir funções matemáticas em Python com \texttt{def} para organizar melhor o código.
+        \item Isso facilita a reutilização da função em diferentes contextos.
+    \end{itemize}
+
+    \begin{block}{Exemplo em Python}
+\begin{verbatim}
+def f(x):
+    return x**2 + 2*x + 1  # função quadrática
+
+x = np.linspace(-3, 3, 100)
+y = f(x)
+plt.plot(x, y, label='f(x) = x² + 2x + 1')
+plt.xlabel('x')
+plt.ylabel('f(x)')
+plt.title('Gráfico de uma Função')
+plt.grid(True)
+plt.legend()
+plt.show()
+\end{verbatim}
+    \end{block}
+    
+\end{frame}
+
+\begin{frame}[fragile]{Salvando Gráficos com \texttt{savefig}}
+    \begin{itemize}
+        \item Podemos salvar o gráfico diretamente como uma imagem, sem exibi-lo na tela.
+        \item O comando \texttt{plt.savefig("grafico.png", dpi=300)} salva a figura no arquivo \texttt{grafico.png}.
+        \item O parâmetro \texttt{dpi} (dots per inch) define a resolução da imagem.
+        \item É importante chamar \texttt{savefig()} \textbf{antes} de \texttt{plt.show()}.
+    \end{itemize}
+
+    \begin{block}{Exemplo em Python}
+\begin{verbatim}
+plt.plot([1, 2, 3, 4], [1, 4, 9, 16])
+plt.xlabel('x')
+plt.ylabel('y')
+plt.title('Gráfico de exemplo')
+plt.savefig("grafico.png", dpi=300)  # Salva a figura
+plt.show()  # Exibe a figura
+\end{verbatim}
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Gráfico de Pizza com \texttt{plt.pie()}}
+    \begin{itemize}
+        \item O método \texttt{plt.pie()} cria um gráfico de setores (pizza).
+        \item A lista \texttt{sizes} define os tamanhos relativos de cada fatia.
+        \item A lista \texttt{labels} define os rótulos das fatias.
+        \item O parâmetro \texttt{autopct='\%1.1f\%\%'} exibe os valores percentuais com uma casa decimal.
+        \item \texttt{plt.axis('equal')} garante que o gráfico fique como um círculo (e não ovalado).
+    \end{itemize}
+
+    \begin{block}{Exemplo em Python}
+\begin{verbatim}
+import matplotlib.pyplot as plt
+
+labels = ['A', 'B', 'C']
+sizes = [40, 35, 25]
+
+plt.pie(sizes, labels=labels, autopct='%1.1f%%')
+plt.axis('equal')  # Mantém formato circular
+plt.show()
+\end{verbatim}
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Cuidados com Gráficos de Pizza}
+    \begin{itemize}
+        \item O que acontece aqui?
+    \end{itemize}
+
+    \begin{block}{Código}
+\begin{verbatim}
+labels = ['A', 'B', 'C']
+sizes = [4312, 35, 25]
+
+plt.pie(sizes, labels=labels, autopct='%1.1f%%')
+plt.axis('equal')
+plt.show()
+\end{verbatim}
+    \end{block}
+
+    \begin{itemize}
+        \item Soma total: $4312 + 35 + 25 = 4372$
+        \item Porcentagens:
+        \begin{itemize}
+            \item A: $\frac{4312}{4372} \approx 98.6\%$
+            \item B: $\frac{35}{4372} \approx 0.8\%$
+            \item C: $\frac{25}{4372} \approx 0.6\%$
+        \end{itemize}
+        \item As fatias B e C são praticamente invisíveis.
+
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{\texttt{plot()} vs \texttt{hist()}: Diferença Conceitual}
+    \begin{itemize}
+        \item \texttt{plt.plot(...)} é usado para criar gráficos de linha, que mostram a relação entre pares de valores (como \(x\) e \(y\)).
+        \begin{itemize}
+            \item Exibe como os valores mudam ao longo de um eixo.
+            \item Útil para funções matemáticas ou séries temporais.
+        \end{itemize}
+        \item \texttt{plt.hist(...)} cria um histograma, que mostra a distribuição de frequências de um conjunto de dados.
+        \begin{itemize}
+            \item Divide os dados em faixas (bins) e conta quantos valores caem em cada faixa.
+            \item Mostra \textbf{frequências absolutas} (ou relativas, com \texttt{density=True}).
+        \end{itemize}
+        \item Ou seja:
+        \begin{itemize}
+            \item \texttt{plot()} → representação de valores organizados.
+            \item \texttt{hist()} → distribuição dos dados brutos.
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]{Criando um Histograma com \texttt{plt.hist()}}
+    \begin{itemize}
+        \item Histograma mostra a distribuição de uma variável contínua dividida em \textit{bins}.
+        \item Exemplo: histograma com dados gerados aleatoriamente de uma distribuição normal.
+    \end{itemize}
+
+    \begin{block}{Código em Python}
+\begin{verbatim}
+data = np.random.normal(0, 1, 1000)
+plt.hist(data, bins=30, edgecolor='black')
+plt.xlabel('Valor')
+plt.ylabel('Frequência')
+plt.title('Histograma de Dados Aleatórios')
+plt.grid(True)
+plt.show()
+\end{verbatim}
+    \end{block}
+
+    \begin{itemize}
+        \item \texttt{np.random.normal(0, 1, 1000)} gera 1000 valores com média 0 e desvio padrão 1.
+        \item \texttt{bins=30} define o número de intervalos.
+        \item \texttt{edgecolor='black'} desenha contornos pretos nas barras para melhor visualização.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Histograma com Distribuição Exponencial}
+    \begin{itemize}
+        \item Podemos visualizar dados de uma distribuição exponencial com \texttt{plt.hist()}.
+        \item A distribuição exponencial é assimétrica e decresce rapidamente.
+    \end{itemize}
+
+    \begin{block}{Código em Python}
+\begin{verbatim}
+data = np.random.exponential(scale=1.0, size=1000)
+plt.hist(data, bins=30, edgecolor='black')
+plt.xlabel('Valor')
+plt.ylabel('Frequência')
+plt.title('Histograma de Distribuição Exponencial')
+plt.grid(True)
+plt.show()
+\end{verbatim}
+    \end{block}
+
+    \begin{itemize}
+        \item \texttt{np.random.exponential(scale=1.0, size=1000)} gera 1000 valores exponenciais com média 1.
+        \item A maioria dos valores está concentrada próximo de 0, com uma cauda longa à direita.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Explore Dados Reais no \texttt{Kaggle}}
+    \begin{itemize}
+        \item O \textbf{Kaggle} é uma plataforma online voltada para:
+        \begin{itemize}
+            \item Ciência de dados,
+            \item Machine learning,
+            \item Competição com conjuntos de dados reais.
+        \end{itemize}
+
+        \item É um excelente local para:
+        \begin{itemize}
+            \item Encontrar conjuntos de dados interessantes,
+            \item Ver exemplos de visualização com \texttt{matplotlib}, \texttt{seaborn}, \texttt{pandas} etc.,
+            \item Praticar suas habilidades com notebooks Python.
+        \end{itemize}
+
+        \item Acesse: \url{https://www.kaggle.com}
+    \end{itemize}
+
+    \vspace{1em}
+    \begin{alertblock}{Dica}
+        Navegue pelas abas \texttt{Datasets} e \texttt{Code} para se inspirar e experimentar!
+    \end{alertblock}
+\end{frame}
+
+

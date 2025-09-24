@@ -1,0 +1,63 @@
+\title{Lista de exercícios 2: Tratamento de Exceção}
+\author{Gabriel Rodrigues Caldas de Aquino}
+\date{27/05/2025}
+
+\begin{document}
+
+\maketitle
+
+\section{Projeto de Controle de Vazão de Água}
+
+Um sistema de controle de vazão de água precisa calcular o fluxo com base nos seguintes parâmetros fornecidos pelo usuário:
+
+\begin{itemize}
+    \item Área da Seção Transversal do Cano (m²).
+    \item Velocidade do Fluxo (m/s).
+\end{itemize}
+
+A fórmula para o cálculo do fluxo é:
+
+\begin{itemize}
+    \item \textit{Q=A*V}
+\end{itemize}
+
+
+Onde: \begin{itemize}
+    \item Q é o fluxo (em m³/s)
+    \item A é a área (em m²)
+    \item V é a velocidade (em m/s).
+\end{itemize} 
+O programa deve:
+\begin{enumerate}
+    \item Capturar os valores de entrada para A e V.
+    \item Tratar as seguintes exceções:
+    \begin{itemize}
+        \item ValueError: Caso o usuário digite um valor não numérico.
+        \item ZeroDivisionError: Caso a área da seção transversal A seja zero.
+        \item Exceção Personalizada: Lançar uma exceção caso a área ou a velocidade sejam valores negativos.
+    \end{itemize}
+\end{enumerate}
+
+
+
+\section{Exercicio}
+
+Crie uma função que valida entradas numéricas e lança uma exceção personalizada se o número não estiver no intervalo [1, 100].
+
+
+\section{Exercicio}
+
+Crie uma função para validar uma senha fornecida pelo usuário. As regras são:
+\begin{itemize}
+    \item A senha deve ter pelo menos 8 caracteres.
+    \item Deve conter ao menos um número.
+    \item Deve conter ao menos uma letra maiúscula.
+\end{itemize}
+
+Se a senha não atender a uma das condições acima:
+\begin{itemize}
+    \item Lançar uma exceção personalizada com uma mensagem indicando o erro.
+\end{itemize}
+
+
+\end{document}

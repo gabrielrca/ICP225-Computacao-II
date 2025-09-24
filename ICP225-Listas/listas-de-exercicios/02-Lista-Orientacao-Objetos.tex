@@ -1,0 +1,42 @@
+\title{Lista de Exercícios: Classes e Instâncias Básicas}
+\author{Prof. Gabriel Rodrigues Caldas de Aquino}
+\date{Compilado em: \\ \today}
+
+\begin{document}
+
+\maketitle
+
+\section{Criação de Classe}
+Crie uma classe \texttt{Monstro} com os atributos: \texttt{nome}, \texttt{vida} e \texttt{forca}. Adicione um método \texttt{apresentar()} que mostra esses valores.
+
+\section{Método Construtor}
+Implemente a classe \texttt{Arma} com \texttt{\_\_init\_\_} que recebe \texttt{nome} e \texttt{dano}. Crie duas instâncias: "Espada" (dano 15) e "Arco" (dano 10).
+
+%\section{Métodos Simples}
+%Na classe \texttt{Personagem} do slide, adicione um método \texttt{comemorar()} que aumenta a vida em 10 pontos e imprime "Comemoração!".
+
+\section{Interação entre Objetos}
+Crie um método \texttt{usar\_arma(self, arma, alvo)} na classe \texttt{Personagem} que reduz a vida do alvo pelo dano da arma.
+
+\section{Método Especial \_\_str\_\_}
+Modifique a classe \texttt{Personagem} para mostrar nome e vida quando imprimir o objeto (usando \texttt{\_\_str\_\_}).
+
+\section{Lista de Objetos}
+Crie 3 instâncias de \texttt{Personagem} com diferentes atributos e armazene numa lista. Percorra a lista chamando o método \texttt{apresentar()} de cada um.
+
+\section{Atributo com Valor Padrão}
+Adicione um atributo \texttt{nivel} na classe \texttt{Personagem} que começa com valor 1. Crie um método \texttt{subir\_nivel()} que incrementa esse valor.
+
+\section{Validação Simples}
+Modifique o método \texttt{defender()} para garantir que a vida nunca fique negativa (se ficar, defina como 0).
+
+\section{Bônus: Sistema de Batalha}
+Crie um loop onde:
+\begin{itemize}
+\item Seu personagem ataca um monstro
+\item O monstro ataca de volta
+\item Repete até alguém ter vida ≤ 0
+\item Mostre o vencedor
+\end{itemize}
+
+\end{document}

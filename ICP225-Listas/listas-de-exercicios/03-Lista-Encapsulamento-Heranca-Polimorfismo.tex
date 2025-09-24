@@ -1,0 +1,99 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\title{Lista de Exercícios: Herança, Polimorfismo e Encapsulamento}
+\author{Prof. Gabriel Rodrigues Caldas de Aquino}
+\date{Compilado em: \\ \today}
+
+\begin{document}
+
+\maketitle
+
+\section{Itens de empréstimo}
+Crie a classe \texttt{Item} com os atributos privados: \texttt{título}, \texttt{nomePessoa}, \texttt{telefonePessoa} e 
+\texttt{dataEmprestimo}, com seus getters (função para consultar valor) e setters (função para colocar valor) públicos.
+
+\begin{enumerate}
+    \item Crie a classe \texttt{Livro} e a classe \texttt{CD}, que herdem de \texttt{Item} e tenham os atributos 
+    \texttt{autor} e \texttt{artista}, respectivamente, também privados, com getters e setters públicos. 
+    \item Livros devem ter número de páginas
+    \item CDs devem ter quantidade de faixas
+    \item Em uma lista, coloque pelo menos 3 itens diferentes de cada tipo, emprestados para pessoas diferentes. 
+    \item Percorra essa lista imprimindo o que foi emprestado, para quem e quando e os seus atributos 
+
+
+
+\end{enumerate}
+
+
+\section{Formas Geométricas}
+Crie a classe \texttt{Forma} com os atributos privados: \texttt{nome}, \texttt{cor}, \texttt{espessuraBorda} e
+\texttt{dataCriacao}, com seus getters (função para consultar valor) e setters (função para colocar valor) públicos.
+
+\begin{enumerate}
+\item Crie a classe \texttt{Retangulo} e a classe \texttt{Circulo}, que herdem de \texttt{Forma} e tenham os atributos
+\texttt{largura} e \texttt{altura} para Retângulo, e \texttt{raio} para Círculo, também privados, com getters emétodo abstrato chamado exibirDetalhes(), que será implementado pelas classes filhas para mostrar informações específicas do item setters públicos.
+\item Retângulos devem ter um método para calcular área (largura × altura)
+\item Círculos devem ter um método para calcular área ($\pi \times \textrm{raio}^2$)
+\item Retângulos devem ter um método para calcular perímetro (2 × (largura + altura))
+\item Círculos devem ter um método para calcular perímetro ($2 \times \pi \times raio$)
+\item Crie diferentes formas geométricas
+\item Sinta-se livre para criar formas que você quiser
+
+\end{enumerate}
+
+\section{Funcionários e Departamentos}
+Crie a classe \texttt{Funcionario} com os atributos privados: \texttt{nome}, \texttt{cpf}, \texttt{telefone} e 
+\texttt{salario}, com seus getters (função para consultar valor) e setters (função para colocar valor) públicos.
+
+\begin{enumerate}
+    \item Crie a classe \texttt{Gerente} e a classe \texttt{Estagiario}, que herdem de \texttt{Funcionario}. 
+    \item Gerentes devem ter o atributo privado \texttt{departamento} e estagiários devem ter o atributo privado \texttt{universidade}, ambos com getters e setters públicos.
+    \item Gerentes devem ter um método para escrever seu  \texttt{nome}, \texttt{cpf}, \texttt{telefone}, 
+\texttt{salario} e \texttt{departamento}.
+    \item Estagiários devem ter um método para escrever seu  \texttt{nome}, \texttt{cpf}, \texttt{telefone}, 
+\texttt{salario} e \texttt{universidade}.
+\item Utilize o polimorfismo
+   
+\end{enumerate}
+
+
+\section{Veículos}
+Crie a classe \texttt{Veiculo} com os atributos privados: \texttt{marca}, \texttt{modelo}, \texttt{ano} e 
+\texttt{preco}, com seus getters (função para consultar valor) e setters (função para colocar valor) públicos.
+
+\begin{enumerate}
+    \item Crie a classe \texttt{Carro} e a classe \texttt{Moto}, que herdem de \texttt{Veiculo}. 
+    \item Carros devem ter o atributo privado \texttt{quantidadePortas}, enquanto motos devem ter o atributo privado \texttt{cilindrada}, ambos com getters e setters públicos.
+    \item Carros devem ter um método para calcular o valor do seguro (5\% do preço).
+    \item Motos devem ter um método para calcular o valor do seguro (3\% do preço).
+    
+\end{enumerate}
+
+\section{Animais}
+Crie a classe \texttt{Animal} com os atributos privados: \texttt{nome} e \texttt{idade}, com seus getters e setters públicos, e um método \texttt{emitir\_som()} que imprime um som genérico.
+
+\begin{enumerate}
+    \item Crie as classes \texttt{Cachorro}, \texttt{Gato} e \texttt{Pato}, que herdem de \texttt{Animal} e sobrescrevam o método \texttt{emitir\_som()} para imprimir sons específicos: "auau", "miau" e "quack", respectivamente.
+    \item Crie uma lista contendo pelo menos uma instância de cada tipo de animal.
+    \item Percorra a lista chamando o método \texttt{emitir\_som()} de cada animal, demonstrando polimorfismo.
+    \item Crie um método adicional \texttt{apresentar()} na classe \texttt{Animal} que imprime o nome e a idade, e sobrescreva esse método nas subclasses para incluir uma mensagem específica de cada animal.
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
