@@ -1,20 +1,22 @@
-\frametitle{Resolvendo com NumPy}
-Código Python para resolver o sistema com NumPy:
+\frametitle{Histograma com Distribuição Exponencial}
+\begin{itemize}
+        \item Podemos visualizar dados de uma distribuição exponencial com \texttt{plt.hist()}.
+        \item A distribuição exponencial é assimétrica e decresce rapidamente.
+    \end{itemize}
 
-    \begin{verbatim}
-import numpy as np
-
-A = np.array([
-    [3, -2, 4, 1, -1, 2],
-    [-2, 1, -1, 3, 5, -1],
-    [1, 1, 1, 1, 1, 1],
-    [4, -1, 2, -1, 3, -2],
-    [-3, 5, -1, 2, -4, 1],
-    [2, 3, -2, 1, 1, -3]
-])
-
-b = np.array([7, -3, 10, 2, 5, -1])
-
-x = np.linalg.solve(A, b)
-print("Solução:", x)
+    \begin{block}{Código em Python}
+        \begin{verbatim}
+data = np.random.exponential(scale=1.0, size=1000)
+plt.hist(data, bins=30, edgecolor='black')
+plt.xlabel('Valor')
+plt.ylabel('Frequência')
+plt.title('Histograma de Distribuição Exponencial')
+plt.grid(True)
+plt.show()
 \end{verbatim}
+    \end{block}
+
+    \begin{itemize}
+        \item \texttt{np.random.exponential(scale=1.0, size=1000)} gera 1000 valores exponenciais com média 1.
+        \item A maioria dos valores está concentrada próximo de 0, com uma cauda longa à direita.
+    \end{itemize}

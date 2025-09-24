@@ -5,7 +5,7 @@
 \institute
 {
     gabrielaquino@ic.ufrj.br\\
-    
+
     Instituto de Computação -
     Universidade Federal do Rio de Janeiro % Your institution for the title page
 }
@@ -27,23 +27,23 @@
 
 \begin{frame}{Encapsulamento}
 
-\begin{itemize}
-    \item \textbf{Objetivo}: Esconder os detalhes internos de uma classe e expor apenas o que for necessário por meio de uma interface controlada
+    \begin{itemize}
+        \item \textbf{Objetivo}: Esconder os detalhes internos de uma classe e expor apenas o que for necessário por meio de uma interface controlada
 
-    \item \textbf{Ideia}: Os atributos (dados) de um objeto fiquem protegidos contra acessos e modificações indevidas, e que a interação externa aconteça de forma controlada através de métodos
-\end{itemize}
+        \item \textbf{Ideia}: Os atributos (dados) de um objeto fiquem protegidos contra acessos e modificações indevidas, e que a interação externa aconteça de forma controlada através de métodos
+    \end{itemize}
 
 
 
-\begin{block}{Então, basicamente:}
-\begin{itemize}
-    \item Você coloca os dados e os métodos que operam sobre esses dados dentro da mesma classe.
+    \begin{block}{Então, basicamente:}
+        \begin{itemize}
+            \item Você coloca os dados e os métodos que operam sobre esses dados dentro da mesma classe.
 
-\item Controla quem pode acessar ou modificar esses dados usando modificadores de acesso (como público, protegido, privado).
+            \item Controla quem pode acessar ou modificar esses dados usando modificadores de acesso (como público, protegido, privado).
 
-\item Com isso, aumenta a segurança, reutilização e manutenibilidade do código.
-\end{itemize}
-\end{block}
+            \item Com isso, aumenta a segurança, reutilização e manutenibilidade do código.
+        \end{itemize}
+    \end{block}
 
 \end{frame}
 
@@ -53,51 +53,51 @@
 
 \begin{frame}{Encapsulamento}
 
-\begin{block}{Então, na aula passada criamos métodos e os atributos...}
-\begin{itemize}
-    \item Precisamos agora definir a visibilidade para atributos e métodos.
-    \item Ver como podemos controlar o acesso e a manipulação dos dados da classe.
-
-    \item Com isso vamos expor apenas o necessário para o uso correto da classe.
-
-        \item O Fim é proteger a integridade dos dados, escondendo detalhes internos.
+    \begin{block}{Então, na aula passada criamos métodos e os atributos...}
         \begin{itemize}
-          \item Usuários sabem o que a classe faz, mas não como ela faz.
-    \item Permite alterar a implementação sem impactar código externo.
+            \item Precisamos agora definir a visibilidade para atributos e métodos.
+            \item Ver como podemos controlar o acesso e a manipulação dos dados da classe.
+
+            \item Com isso vamos expor apenas o necessário para o uso correto da classe.
+
+            \item O Fim é proteger a integridade dos dados, escondendo detalhes internos.
+                  \begin{itemize}
+                      \item Usuários sabem o que a classe faz, mas não como ela faz.
+                      \item Permite alterar a implementação sem impactar código externo.
+                  \end{itemize}
         \end{itemize}
-\end{itemize}
-\end{block}
+    \end{block}
 
 
 
-\begin{block}{Níveis de acesso (\textcolor{yellow}{\textbf{Convenção do Python!}})}
-\begin{itemize}
-    \item \textbf{Público}: acessível de qualquer lugar.
-    \item \textbf{Protegido} (\_): acessível na classe e subclasses.
-    \item \textbf{Privado} (\_\_): acessível apenas dentro da própria classe.
+    \begin{block}{Níveis de acesso (\textcolor{yellow}{\textbf{Convenção do Python!}})}
+        \begin{itemize}
+            \item \textbf{Público}: acessível de qualquer lugar.
+            \item \textbf{Protegido} (\_): acessível na classe e subclasses.
+            \item \textbf{Privado} (\_\_): acessível apenas dentro da própria classe.
 
-\end{itemize}
-\end{block}
+        \end{itemize}
+    \end{block}
 
 \end{frame}
 
 \begin{frame}[fragile]{Métodos Protegidos e Privados em Python}
-\begin{itemize}
-    \item \textbf{Métodos Protegidos (\texttt{\_método})}
     \begin{itemize}
-\item Prefixados com \texttt{\_}.
-\item Indicativo para programadores: não usar fora da classe.
-\item \textbf{Não impedem} o acesso externo — podem ser chamados normalmente.
-\item São uma \textbf{convenção} para organizar o código.
-\end{itemize}
-\item \textbf{Métodos Privados (\texttt{\_\_método})}
-\begin{itemize}
-\item Prefixados com \texttt{\_\_}.
-\item Python faz \textbf{name mangling} para dificultar o acesso externo.
-\item Ainda podem ser acessados, mas não diretamente — é desencorajado.
-\item Oferecem um nível maior de “proteção” que métodos protegidos.
-\end{itemize}
-\end{itemize}
+        \item \textbf{Métodos Protegidos (\texttt{\_método})}
+              \begin{itemize}
+                  \item Prefixados com \texttt{\_}.
+                  \item Indicativo para programadores: não usar fora da classe.
+                  \item \textbf{Não impedem} o acesso externo — podem ser chamados normalmente.
+                  \item São uma \textbf{convenção} para organizar o código.
+              \end{itemize}
+        \item \textbf{Métodos Privados (\texttt{\_\_método})}
+              \begin{itemize}
+                  \item Prefixados com \texttt{\_\_}.
+                  \item Python faz \textbf{name mangling} para dificultar o acesso externo.
+                  \item Ainda podem ser acessados, mas não diretamente — é desencorajado.
+                  \item Oferecem um nível maior de “proteção” que métodos protegidos.
+              \end{itemize}
+    \end{itemize}
 
 
 
@@ -110,18 +110,18 @@
 
 \begin{frame}[fragile]{Atributos e Métodos Públicos}
 
-\begin{itemize}
-    \item \textbf{Atributos Públicos}
-Podem ser acessados e modificados diretamente fora da classe.
-\item \textbf{Métodos Públicos}
-Também podem ser chamados livremente de fora da classe.
-\end{itemize}
+    \begin{itemize}
+        \item \textbf{Atributos Públicos}
+              Podem ser acessados e modificados diretamente fora da classe.
+        \item \textbf{Métodos Públicos}
+              Também podem ser chamados livremente de fora da classe.
+    \end{itemize}
 
 
 
 
-\begin{exampleblock}{Exemplo em Python}
-\begin{verbatim}
+    \begin{exampleblock}{Exemplo em Python}
+        \begin{verbatim}
 class Pessoa:
     def __init__(self, nome, idade):
         self.nome = nome      # atributo público
@@ -133,18 +133,18 @@ print(p.nome)       # acesso direto ao atributo público
 p.idade = 31       # modificação direta
 p.apresentar()      # chamada do método público
 \end{verbatim}
-\end{exampleblock}
+    \end{exampleblock}
 
 \end{frame}
 
 \begin{frame}[fragile]{Métodos Protegidos}
 
-\begin{block}{Definição}
-Métodos protegidos não devem ser acessados ou modificados diretamente fora da classe. \textbf{Servem para detalhes internos}. Na \textbf{prática, é possível}, mas não foi feito para ser chamado diretamente por código externo.
-\end{block}
+    \begin{block}{Definição}
+        Métodos protegidos não devem ser acessados ou modificados diretamente fora da classe. \textbf{Servem para detalhes internos}. Na \textbf{prática, é possível}, mas não foi feito para ser chamado diretamente por código externo.
+    \end{block}
 
-\begin{exampleblock}{Exemplo em Python}
-\begin{verbatim}
+    \begin{exampleblock}{Exemplo em Python}
+        \begin{verbatim}
 class Pessoa:
     def __init__(self, nome):
         self.nome = nome
@@ -155,14 +155,14 @@ class Pessoa:
 p = Pessoa("Ana")
 p._falar()   # possível, mas não recomendado acessar diretamente
 \end{verbatim}
-\end{exampleblock}
+    \end{exampleblock}
 
 \end{frame}
 
 
 \begin{frame}[fragile]{Exemplo de Método Protegido}
 
-\begin{verbatim}
+    \begin{verbatim}
 class Documento:
     def __init__(self, conteudo):
         self.conteudo = conteudo
@@ -186,13 +186,13 @@ class Documento:
 
 \begin{frame}[fragile]{Métodos Privados}
 
-\begin{block}{Definição}
-Métodos privados são usados para \textbf{detalhes internos da classe} que não devem ser acessados ou modificados fora dela. 
-No Python, começam com \texttt{\_\_} (dois underlines) e sofrem \textbf{name mangling}, dificultando o acesso externo.
-\end{block}
+    \begin{block}{Definição}
+        Métodos privados são usados para \textbf{detalhes internos da classe} que não devem ser acessados ou modificados fora dela.
+        No Python, começam com \texttt{\_\_} (dois underlines) e sofrem \textbf{name mangling}, dificultando o acesso externo.
+    \end{block}
 
-\small
-\begin{verbatim}
+    \small
+    \begin{verbatim}
 class Conta:
     def __init__(self, saldo):
         self.__saldo = saldo
@@ -211,8 +211,8 @@ c.depositar(50)
 
 
 \begin{frame}[fragile]{Exemplo de Método Privado em Python}
-\small
-\begin{verbatim}
+    \small
+    \begin{verbatim}
 class ContaBancaria:
     def __init__(self, saldo):
         self.__saldo = saldo  # atributo privado
@@ -239,28 +239,28 @@ conta.mostrar_saldo()
 
 \begin{frame}[fragile]{Name Mangling em Python}
 
-\begin{block}{O que é Name Mangling?}
-\begin{itemize}
-\item Técnica do Python para “esconder” atributos/métodos privados.
-\item Atributos que começam com \_\_ (dois underlines) são renomeados internamente.
-\item Exemplo: \texttt{\_\_saldo} vira \texttt{\_NomeDaClasse\_\_saldo}.
-\item Evita acesso direto acidental e conflitos em herança.
-\end{itemize}
-\end{block}
+    \begin{block}{O que é Name Mangling?}
+        \begin{itemize}
+            \item Técnica do Python para “esconder” atributos/métodos privados.
+            \item Atributos que começam com \_\_ (dois underlines) são renomeados internamente.
+            \item Exemplo: \texttt{\_\_saldo} vira \texttt{\_NomeDaClasse\_\_saldo}.
+            \item Evita acesso direto acidental e conflitos em herança.
+        \end{itemize}
+    \end{block}
 
-\begin{block}{Importante}
-\begin{itemize}
-\item Não é proteção total, apenas dificulta o acesso direto.
-\item Ainda é possível acessar via \texttt{\_NomeDaClasse\_\_atributo}, mas não recomendado.
-\item Indica que o membro é “privado” e não deve ser acessado externamente.
-\end{itemize}
-\end{block}
+    \begin{block}{Importante}
+        \begin{itemize}
+            \item Não é proteção total, apenas dificulta o acesso direto.
+            \item Ainda é possível acessar via \texttt{\_NomeDaClasse\_\_atributo}, mas não recomendado.
+            \item Indica que o membro é “privado” e não deve ser acessado externamente.
+        \end{itemize}
+    \end{block}
 \end{frame}
 
 
 \begin{frame}[fragile]{Name Mangling em Python}
-\begin{exampleblock}{Exemplo}
-\begin{verbatim}
+    \begin{exampleblock}{Exemplo}
+        \begin{verbatim}
 class Conta:
 def init(self):
 self.__saldo = 100
@@ -269,58 +269,58 @@ c = Conta()
 print(c._Conta__saldo) # Acesso via name mangling 
 #(funciona, mas não é recomendado)
 \end{verbatim}
-\end{exampleblock}
+    \end{exampleblock}
 
 \end{frame}
 
 \begin{frame}{Herança}
 
-\begin{block}{Definição}
-\begin{itemize}
-    \item Herança é o relacionamento entre classes em que uma classe chamada de 
-\textbf{subclasse} (ou classe filha) é uma \textbf{extensão} ou \textbf{subtipo} 
-de outra classe chamada de \textbf{superclasse} (ou classe pai/mãe).
+    \begin{block}{Definição}
+        \begin{itemize}
+            \item Herança é o relacionamento entre classes em que uma classe chamada de
+                  \textbf{subclasse} (ou classe filha) é uma \textbf{extensão} ou \textbf{subtipo}
+                  de outra classe chamada de \textbf{superclasse} (ou classe pai/mãe).
 
-\item A subclasse consegue \textbf{reaproveitar os atributos e métodos} da superclasse. 
-Além do que for herdado, a subclasse pode definir seus próprios membros 
-(atributos e métodos).
-\end{itemize}
+            \item A subclasse consegue \textbf{reaproveitar os atributos e métodos} da superclasse.
+                  Além do que for herdado, a subclasse pode definir seus próprios membros
+                  (atributos e métodos).
+        \end{itemize}
 
 
-\end{block}
+    \end{block}
 
 \end{frame}
 
 \begin{frame}[fragile]{Herança e o uso do \texttt{super()}}
 
-\begin{block}{Relação de Herança}
-Estabelecemos a relação de herança ao indicar a \textbf{superclasse} entre parênteses na definição da subclasse:
+    \begin{block}{Relação de Herança}
+        Estabelecemos a relação de herança ao indicar a \textbf{superclasse} entre parênteses na definição da subclasse:
 
-\begin{verbatim}
+        \begin{verbatim}
 class Subclasse(Superclasse):
     ...
 \end{verbatim}
-\end{block}
+    \end{block}
 
-\begin{block}{Uso do \texttt{super()}}
-Utilizamos o método \texttt{super()} para acessar a superclasse e, então, \textbf{reaproveitar seu construtor ou outros métodos}:
+    \begin{block}{Uso do \texttt{super()}}
+        Utilizamos o método \texttt{super()} para acessar a superclasse e, então, \textbf{reaproveitar seu construtor ou outros métodos}:
 
-\begin{verbatim}
+        \begin{verbatim}
 class Aluno(Pessoa):
     def __init__(self, nome, cpf, dre):
         super().__init__(nome, cpf)  # chama __init__ de Pessoa
         self.dre = dre
 \end{verbatim}
-\end{block}
+    \end{block}
 
 \end{frame}
 
 \begin{frame}[fragile]{O que é \texttt{super()}}
-\begin{itemize}
-    \item \texttt{super()} retorna um objeto temporário da superclasse.
-    \item Permite chamar métodos da superclasse sem repetir código.
-    \item Fundamental para reaproveitar atributos e lógica já definida.
-\end{itemize}
+    \begin{itemize}
+        \item \texttt{super()} retorna um objeto temporário da superclasse.
+        \item Permite chamar métodos da superclasse sem repetir código.
+        \item Fundamental para reaproveitar atributos e lógica já definida.
+    \end{itemize}
 
 \end{frame}
 
@@ -328,9 +328,9 @@ class Aluno(Pessoa):
 
 \begin{frame}[fragile]{Exemplo de Herança: Classe Aluno}
 
-\small
+    \small
 
-\begin{verbatim}
+    \begin{verbatim}
 class Pessoa:
     def __init__(self, nome):
         self.nome = nome
@@ -356,8 +356,8 @@ a.exibir_informacoes()
 
 \begin{frame}[fragile]{Exemplo 2: Pessoa, aluno e professor}
 
-\small
-\begin{verbatim}
+    \small
+    \begin{verbatim}
 class Pessoa:
     def __init__(self, nome, cpf):
         self.nome = nome
@@ -391,17 +391,17 @@ pe.print_dados_pessoais()
 
 \begin{frame}[fragile]{Função \texttt{isinstance()}}
 
-\begin{block}{Definição}
-A função \texttt{isinstance(objeto, classe)} verifica se um objeto é uma instância de uma classe específica ou de suas subclasses.
+    \begin{block}{Definição}
+        A função \texttt{isinstance(objeto, classe)} verifica se um objeto é uma instância de uma classe específica ou de suas subclasses.
 
-\begin{itemize}
-    \item Retorna \texttt{True} se o objeto for da classe ou de uma subclasse.
-    \item Retorna \texttt{False} caso contrário.
-\end{itemize}
-\end{block}
+        \begin{itemize}
+            \item Retorna \texttt{True} se o objeto for da classe ou de uma subclasse.
+            \item Retorna \texttt{False} caso contrário.
+        \end{itemize}
+    \end{block}
 
-\begin{exampleblock}{Exemplo em Python}
-\begin{verbatim}
+    \begin{exampleblock}{Exemplo em Python}
+        \begin{verbatim}
 class Pessoa:
     pass
 class Aluno(Pessoa):
@@ -411,38 +411,38 @@ print(isinstance(a, Aluno))   # True
 print(isinstance(a, Pessoa))  # True, pois Aluno herda Pessoa
 print(isinstance(a, dict))    # False
 \end{verbatim}
-\end{exampleblock}
+    \end{exampleblock}
 
 \end{frame}
 
 \begin{frame}{Polimorfismo em POO}
 
-\begin{block}{Definição}
-Polimorfismo significa que o \textbf{significado de uma operação depende do objeto} em que ela é aplicada.  
-Ou seja, o código não precisa se importar com o tipo exato do objeto, apenas com o que ele faz.
-\end{block}
+    \begin{block}{Definição}
+        Polimorfismo significa que o \textbf{significado de uma operação depende do objeto} em que ela é aplicada.
+        Ou seja, o código não precisa se importar com o tipo exato do objeto, apenas com o que ele faz.
+    \end{block}
 
-\begin{block}{Polimorfismo e Sobrescrita}
-Na prática, o polimorfismo ocorre principalmente através da \textbf{sobrescrita de métodos}:
+    \begin{block}{Polimorfismo e Sobrescrita}
+        Na prática, o polimorfismo ocorre principalmente através da \textbf{sobrescrita de métodos}:
 
-\begin{itemize}
-    \item Subclasses podem redefinir métodos da superclasse.
-    \item Estabelece uma \textbf{interface comum} para todas as classes que herdam da mesma superclasse.
-\end{itemize}
-\end{block}
+        \begin{itemize}
+            \item Subclasses podem redefinir métodos da superclasse.
+            \item Estabelece uma \textbf{interface comum} para todas as classes que herdam da mesma superclasse.
+        \end{itemize}
+    \end{block}
 
-\begin{block}{Benefício}
-Podemos manipular objetos da superclasse de forma genérica, sem nos preocupar com a subclasse exata, sabendo que todos implementam os métodos comuns.  
-O comportamento dos métodos pode variar dependendo da subclasse do objeto.
-\end{block}
+    \begin{block}{Benefício}
+        Podemos manipular objetos da superclasse de forma genérica, sem nos preocupar com a subclasse exata, sabendo que todos implementam os métodos comuns.
+        O comportamento dos métodos pode variar dependendo da subclasse do objeto.
+    \end{block}
 
 \end{frame}
 
 
 \begin{frame}[fragile]{Exemplo de Polimorfismo: Animais}
 
-\begin{exampleblock}{Definição de classes e métodos}
-\begin{verbatim}
+    \begin{exampleblock}{Definição de classes e métodos}
+        \begin{verbatim}
 class Animal:
     def fazer_som(self):
         print("arrrww")   # som genérico
@@ -461,15 +461,15 @@ animais = [Animal(), Gato(), Cachorro()]
 for a in animais:
     a.fazer_som()   # polimorfismo: cada objeto responde de forma diferente
 \end{verbatim}
-\end{exampleblock}
+    \end{exampleblock}
 
-\begin{block}{Saída Esperada}
-\begin{verbatim}
+    \begin{block}{Saída Esperada}
+        \begin{verbatim}
 arrrww
 miau
 auau
 \end{verbatim}
-\end{block}
+    \end{block}
 
 \end{frame}
 
@@ -477,7 +477,7 @@ auau
 \begin{frame}[fragile]{Exemplo de Polimorfismo: Aprovação em Disciplina}
 
 
-\begin{verbatim}
+    \begin{verbatim}
 class Aluno:
     def __init__(self, nome):
         self.nome = nome

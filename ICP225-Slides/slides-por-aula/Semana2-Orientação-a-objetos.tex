@@ -5,7 +5,7 @@
 \institute
 {
     gabrielaquino@ic.ufrj.br\\
-    
+
     Instituto de Computação -
     Universidade Federal do Rio de Janeiro % Your institution for the title page
 }
@@ -26,42 +26,42 @@
 
 \begin{frame}{Programação Orientada a Objetos}
 
-\begin{block}{O que é um Objeto?}
-\begin{itemize}
-    \item Unidade de software que \textbf{encapsula dados e algoritmos}.
-    \item Representa conceitos ou entidades do mundo real ou conceitual.
-    \item Relaciona-se com outras entidades, assim como na vida cotidiana.
-\end{itemize}
-\end{block}
+    \begin{block}{O que é um Objeto?}
+        \begin{itemize}
+            \item Unidade de software que \textbf{encapsula dados e algoritmos}.
+            \item Representa conceitos ou entidades do mundo real ou conceitual.
+            \item Relaciona-se com outras entidades, assim como na vida cotidiana.
+        \end{itemize}
+    \end{block}
 
-\begin{block}{Por que usar?}
-\begin{itemize}
-    \item Estruturação clara e organizada do código.
-    \item Especialmente útil para \textbf{projetos extensos}.
-    \item Facilita o desenvolvimento de sistemas:
-    \begin{itemize}
-        \item Modulares
-        \item Reutilizáveis
-        \item De fácil manutenção
-    \end{itemize}
-\end{itemize}
-\end{block}
+    \begin{block}{Por que usar?}
+        \begin{itemize}
+            \item Estruturação clara e organizada do código.
+            \item Especialmente útil para \textbf{projetos extensos}.
+            \item Facilita o desenvolvimento de sistemas:
+                  \begin{itemize}
+                      \item Modulares
+                      \item Reutilizáveis
+                      \item De fácil manutenção
+                  \end{itemize}
+        \end{itemize}
+    \end{block}
 
 \end{frame}
 
 \begin{frame}[fragile]{Classe em Python}
 
-\begin{block}{O que é uma Classe?}
-\begin{itemize}
-    \item Unidade inicial e mínima para código orientado a objetos.
-    \item Abstrai conceitos, definições e comportamentos.
-    \item Descreve atributos (dados) e métodos (ações) dos objetos.
-    \item Objetos são \textbf{instanciados} a partir de classes.
-\end{itemize}
-\end{block}
+    \begin{block}{O que é uma Classe?}
+        \begin{itemize}
+            \item Unidade inicial e mínima para código orientado a objetos.
+            \item Abstrai conceitos, definições e comportamentos.
+            \item Descreve atributos (dados) e métodos (ações) dos objetos.
+            \item Objetos são \textbf{instanciados} a partir de classes.
+        \end{itemize}
+    \end{block}
 
-\begin{block}{Exemplo em Python}
-\begin{verbatim}
+    \begin{block}{Exemplo em Python}
+        \begin{verbatim}
 class Pessoa:
     def __init__(self, nome, idade):
         self.nome = nome
@@ -71,13 +71,13 @@ class Pessoa:
 p1 = Pessoa("Maria", 20)
 p1.apresentar()
 \end{verbatim}
-\end{block}
+    \end{block}
 
 \end{frame}
 
 \begin{frame}[fragile]{Exemplo em Python - Personagem de RPG}
 
-\begin{verbatim}
+    \begin{verbatim}
 class Personagem:
     def __init__(self, vida, forca, inteligencia):
         self.vida = vida
@@ -100,35 +100,35 @@ print("Vida:", heroi.vida)
 
 \begin{frame}[fragile]{Exemplo com Conceitos de POO}
 
-\begin{itemize}
-    \item \textbf{Classe}:
-Projeto de um personagem de RPG.
-\item \textbf{Objeto}:
-Cada personagem criado com base nesse projeto.
-\end{itemize}
-
-\begin{itemize}
-    \item \textbf{Atributos}
     \begin{itemize}
-    \item Vida
-    \item Força
-    \item Inteligência 
+        \item \textbf{Classe}:
+              Projeto de um personagem de RPG.
+        \item \textbf{Objeto}:
+              Cada personagem criado com base nesse projeto.
     \end{itemize}
-    \item \textbf{Métodos}
-    \begin{itemize}
-    \item Atacar
-    \item Defender
-    \item Usar magia
-\end{itemize}
-    
-\end{itemize}
 
-\begin{exampleblock}{Trecho de Código}
-\begin{verbatim}
+    \begin{itemize}
+        \item \textbf{Atributos}
+              \begin{itemize}
+                  \item Vida
+                  \item Força
+                  \item Inteligência
+              \end{itemize}
+        \item \textbf{Métodos}
+              \begin{itemize}
+                  \item Atacar
+                  \item Defender
+                  \item Usar magia
+              \end{itemize}
+
+    \end{itemize}
+
+    \begin{exampleblock}{Trecho de Código}
+        \begin{verbatim}
 heroi = Personagem(100, 20, 15)
 heroi.atacar()
 \end{verbatim}
-\end{exampleblock}
+    \end{exampleblock}
 
 \end{frame}
 
@@ -136,72 +136,72 @@ heroi.atacar()
 
 \begin{frame}{Atributos em POO}
 
-\begin{block}{Definição}
-\begin{itemize}
-    \item Representam as características do objeto.
-    \item Definidos dentro da classe.
-    \item Armazenam valores que caracterizam o objeto.
-\end{itemize}
-\end{block}
+    \begin{block}{Definição}
+        \begin{itemize}
+            \item Representam as características do objeto.
+            \item Definidos dentro da classe.
+            \item Armazenam valores que caracterizam o objeto.
+        \end{itemize}
+    \end{block}
 
-\begin{exampleblock}{Exemplo: Classe \texttt{Personagem}}
-\begin{itemize}
-    \item \textbf{vida} – Pontos de vida do personagem.
-    \item \textbf{força} – Poder de ataque físico.
-    \item \textbf{inteligência} – Capacidade para magia ou estratégias.
-\end{itemize}
-\end{exampleblock}
+    \begin{exampleblock}{Exemplo: Classe \texttt{Personagem}}
+        \begin{itemize}
+            \item \textbf{vida} – Pontos de vida do personagem.
+            \item \textbf{força} – Poder de ataque físico.
+            \item \textbf{inteligência} – Capacidade para magia ou estratégias.
+        \end{itemize}
+    \end{exampleblock}
 
-\begin{block}{Observação}
-Cada objeto criado a partir da classe \texttt{Personagem} terá seus próprios valores para esses atributos.
-\end{block}
+    \begin{block}{Observação}
+        Cada objeto criado a partir da classe \texttt{Personagem} terá seus próprios valores para esses atributos.
+    \end{block}
 
 \end{frame}
 
 \begin{frame}[fragile]{Métodos em POO}
 
-\begin{block}{Definição}
-\begin{itemize}
-    \item São as ações que o objeto pode executar.
-    \item Definidos como funções dentro da classe.
-    \item Podem usar e alterar os atributos do objeto.
-\end{itemize}
-\end{block}
+    \begin{block}{Definição}
+        \begin{itemize}
+            \item São as ações que o objeto pode executar.
+            \item Definidos como funções dentro da classe.
+            \item Podem usar e alterar os atributos do objeto.
+        \end{itemize}
+    \end{block}
 
-\begin{exampleblock}{Exemplo: Classe \texttt{Personagem}}
-\begin{itemize}
-    \item \textbf{atacar()} – Realiza um ataque.
-    \item \textbf{defender()} – Executa defesa.
-    \item \textbf{usar\_magia()} – Lança um feitiço.
-\end{itemize}
-\end{exampleblock}
+    \begin{exampleblock}{Exemplo: Classe \texttt{Personagem}}
+        \begin{itemize}
+            \item \textbf{atacar()} – Realiza um ataque.
+            \item \textbf{defender()} – Executa defesa.
+            \item \textbf{usar\_magia()} – Lança um feitiço.
+        \end{itemize}
+    \end{exampleblock}
 
-\begin{exampleblock}{Trecho de Código}
-\begin{verbatim}
+    \begin{exampleblock}{Trecho de Código}
+        \begin{verbatim}
 heroi.defender()
 heroi.usar_magia()
 \end{verbatim}
-\end{exampleblock}
+    \end{exampleblock}
 
 \end{frame}
 
 \begin{frame}[fragile]{Método Construtor em Python}
 
-\begin{block}{Definição}
-\begin{itemize}
-    \item Método especial chamado automaticamente ao criar um objeto.
-    \item Usado para inicializar os atributos da nova instância.
-    \item Em Python, o construtor é o método \texttt{\_\_init\_\_()}.
-\item O construtor:
-    \begin{itemize}
-    \item Facilita a inicialização de atributos obrigatórios.
-    \item Se não for definido, Python usa um construtor default que não faz nada.
-\end{itemize}
-\end{itemize}
-\end{block}
+    \begin{block}{Definição}
+        \begin{itemize}
+            \item Método especial chamado automaticamente ao criar um objeto.
+            \item Usado para inicializar os atributos da nova instância.
+            \item Em Python, o construtor é o método \texttt{\_\_init\_\_()}.
+            \item O construtor:
+                  \begin{itemize}
+                      \item Facilita a inicialização de atributos obrigatórios.
+                      \item Se não for definido, Python usa um construtor default que não faz nada.
+                  \end{itemize}
+        \end{itemize}
+    \end{block}
 
-\begin{exampleblock}{Exemplo simples}
-\begin{verbatim}
+    \begin{exampleblock}{Exemplo simples}
+        \begin{verbatim}
 class Personagem:
     def __init__(self, vida, forca):
         self.vida = vida
@@ -209,23 +209,23 @@ class Personagem:
 
 heroi = Personagem(100, 20)
 \end{verbatim}
-\end{exampleblock}
+    \end{exampleblock}
 
 \end{frame}
 
 \begin{frame}[fragile]{O parâmetro \texttt{self} em Métodos}
 
-\begin{block}{Definição}
-\begin{itemize}
-    \item Deve ser o primeiro parâmetro em métodos de instância.
-    \item Representa o próprio objeto que chama o método.
-    \item Permite acessar atributos e outros métodos do objeto.
-    \item É obrigatório explicitar no código, mas não na chamada do método.
-\end{itemize}
-\end{block}
+    \begin{block}{Definição}
+        \begin{itemize}
+            \item Deve ser o primeiro parâmetro em métodos de instância.
+            \item Representa o próprio objeto que chama o método.
+            \item Permite acessar atributos e outros métodos do objeto.
+            \item É obrigatório explicitar no código, mas não na chamada do método.
+        \end{itemize}
+    \end{block}
 
-\begin{exampleblock}{Exemplo simples}
-\begin{verbatim}
+    \begin{exampleblock}{Exemplo simples}
+        \begin{verbatim}
 class Personagem:
     def apresentar(self):
         print("Eu sou um personagem!")
@@ -233,12 +233,12 @@ class Personagem:
 p = Personagem()
 p.apresentar()  # 'self' é passado automaticamente
 \end{verbatim}
-\end{exampleblock}
+    \end{exampleblock}
 
 \end{frame}
 \begin{frame}[fragile]{Classe Personagem - Método \texttt{defender}}
 
-\begin{verbatim}
+    \begin{verbatim}
 class Personagem:
     def __init__(self, vida, forca, inteligencia):
         self.vida = vida
@@ -260,7 +260,7 @@ print("Vida do heroi:", heroi.vida)
 
 \begin{frame}[fragile]{Classe Personagem - Método \texttt{ganhar\_healthpack}}
 
-\begin{verbatim}
+    \begin{verbatim}
 class Personagem:
     def __init__(self, vida, forca, inteligencia):
         self.vida = vida
@@ -283,7 +283,7 @@ heroi.ganhar_healthpack(50)
 
 \begin{frame}[fragile]{Deixando mais pessoal - Personagem com nome}
 
-\begin{verbatim}
+    \begin{verbatim}
 class Personagem:
     def __init__(self, nome, vida, forca, inteligencia):
         self.nome = nome
@@ -301,27 +301,27 @@ heroi = Personagem("Arthur", 100, 20, 15)
 
 \begin{frame}[fragile]{Por que o \texttt{print} mostra o nome do personagem?}
 
-\begin{block}{O método \texttt{\_\_str\_\_()}}
-\begin{itemize}
-    \item O Python usa o método especial \texttt{\_\_str\_\_()} para definir como representar um objeto como texto.
-    \item Quando usamos \texttt{print(objeto)}, o Python chama \texttt{objeto.\_\_str\_\_()} automaticamente.
-    \item No exemplo, \texttt{\_\_str\_\_()} foi definido para retornar o nome do personagem.
-    \item Por isso, o \texttt{print(heroi)} exibe o nome ao invés do endereço de memória.
-\end{itemize}
-\end{block}
+    \begin{block}{O método \texttt{\_\_str\_\_()}}
+        \begin{itemize}
+            \item O Python usa o método especial \texttt{\_\_str\_\_()} para definir como representar um objeto como texto.
+            \item Quando usamos \texttt{print(objeto)}, o Python chama \texttt{objeto.\_\_str\_\_()} automaticamente.
+            \item No exemplo, \texttt{\_\_str\_\_()} foi definido para retornar o nome do personagem.
+            \item Por isso, o \texttt{print(heroi)} exibe o nome ao invés do endereço de memória.
+        \end{itemize}
+    \end{block}
 
-\begin{exampleblock}{Trecho do código}
-\begin{verbatim}
+    \begin{exampleblock}{Trecho do código}
+        \begin{verbatim}
 def __str__(self):
     return self.nome
 \end{verbatim}
-\end{exampleblock}
+    \end{exampleblock}
 
 \end{frame}
 
 \begin{frame}[fragile]{Método \texttt{atacar} com interação entre objetos}
 
-\begin{verbatim}
+    \begin{verbatim}
 class Personagem:
     def __init__(self, nome, vida, forca, inteligencia):
         self.nome = nome
@@ -344,27 +344,27 @@ heroi.atacar(inimigo)
 
 \begin{frame}{Discussão em Grupo: Modelando Tipos de Dano}
 
-\begin{block}{Desafio}
-Como podemos implementar diferentes tipos de dano em nosso jogo?  
+    \begin{block}{Desafio}
+        Como podemos implementar diferentes tipos de dano em nosso jogo?
 
-\begin{itemize}
-    \item Dano pode ser igual à força do personagem.
-    \item Pode ser o dobro (exemplo: fogo contra planta).
-    \item Pode ser metade (exemplo: água contra planta).
-    \item Ou igual para ataques contra o mesmo tipo.
-\end{itemize}
+        \begin{itemize}
+            \item Dano pode ser igual à força do personagem.
+            \item Pode ser o dobro (exemplo: fogo contra planta).
+            \item Pode ser metade (exemplo: água contra planta).
+            \item Ou igual para ataques contra o mesmo tipo.
+        \end{itemize}
 
 
-\begin{block}{Pontos para pensar}
-\begin{itemize}
-    \item Como representar os tipos dos personagens e dos ataques?
-    \item Como aplicar multiplicadores diferentes para cada tipo de dano?
-    \item Qual estrutura de dados usar para armazenar essas regras?
-    \item Como modificar o método \texttt{atacar} para considerar isso?
-\end{itemize}
-\end{block}
+        \begin{block}{Pontos para pensar}
+            \begin{itemize}
+                \item Como representar os tipos dos personagens e dos ataques?
+                \item Como aplicar multiplicadores diferentes para cada tipo de dano?
+                \item Qual estrutura de dados usar para armazenar essas regras?
+                \item Como modificar o método \texttt{atacar} para considerar isso?
+            \end{itemize}
+        \end{block}
 
-\end{block}
+    \end{block}
 
 \end{frame}
 
@@ -372,7 +372,7 @@ Como podemos implementar diferentes tipos de dano em nosso jogo?
 \begin{frame}[fragile]{Tipos de dano}
 
 
-\begin{verbatim}
+    \begin{verbatim}
 class Personagem:
     def __init__(self, nome, vida, forca, inteligencia, tipo):
         (...)
@@ -394,28 +394,28 @@ inimigo = Personagem("Treant", 80, 15, 10, "planta")
 
 
 \end{frame}
- \begin{frame}{Exercício: Modelando Formas Geométricas}
+\begin{frame}{Exercício: Modelando Formas Geométricas}
 
-\textbf{Desafio:} Crie classes em Python para representar formas geométricas básicas.
+    \textbf{Desafio:} Crie classes em Python para representar formas geométricas básicas.
 
-\begin{itemize}
-\item Comece com duas formas: \texttt{Retangulo} e \texttt{Circulo}.
-\item Cada classe deve ter:
-\begin{itemize}
-\item Atributos para as dimensões (ex: base e altura para retângulo, raio para círculo).
-\item Método para calcular a área.
-\item Método para calcular o perímetro (ou circunferência no caso do círculo).
-\end{itemize}
-\item Crie objetos de cada classe e imprima a área e perímetro.
-\end{itemize}
+    \begin{itemize}
+        \item Comece com duas formas: \texttt{Retangulo} e \texttt{Circulo}.
+        \item Cada classe deve ter:
+              \begin{itemize}
+                  \item Atributos para as dimensões (ex: base e altura para retângulo, raio para círculo).
+                  \item Método para calcular a área.
+                  \item Método para calcular o perímetro (ou circunferência no caso do círculo).
+              \end{itemize}
+        \item Crie objetos de cada classe e imprima a área e perímetro.
+    \end{itemize}
 
 
 \end{frame}
 
 \begin{frame}[fragile]{Exemplo: Classe Retângulo}
 
-\begin{block}{Classe \texttt{Retangulo}}
-\begin{verbatim}
+    \begin{block}{Classe \texttt{Retangulo}}
+        \begin{verbatim}
 class Retangulo:
 def init(self, base, altura):
 self.base = base
@@ -425,12 +425,12 @@ def area(self):
 def perimetro(self):
     return 2 * (self.base + self.altura)
 \end{verbatim}
-\end{block}
+    \end{block}
 \end{frame}
 \begin{frame}[fragile]{Exemplo: Classe Círculo}
 
-\begin{block}{Classe \texttt{Circulo}}
-\begin{verbatim}
+    \begin{block}{Classe \texttt{Circulo}}
+        \begin{verbatim}
 class Circulo:
 def init(self, raio):
 self.raio = raio
@@ -440,6 +440,6 @@ def area(self):
 def perimetro(self):
     return 2 * 3.1416 * self.raio
 \end{verbatim}
-\end{block}
+    \end{block}
 
 \end{frame}

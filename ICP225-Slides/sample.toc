@@ -1,1 +1,11 @@
-\beamer@sectionintoc {1}{Biblioteca Numpy}{1}{0}{1}
+\beamer@sectionintoc {1}{Apresentação do curso}{1}{0}{1}
+\beamer@sectionintoc {2}{Revisão Inicial}{3}{0}{2}
+\beamer@sectionintoc {3}{Revisão Inicial}{32}{0}{3}
+\beamer@sectionintoc {4}{Revisão Inicial}{51}{0}{4}
+\beamer@sectionintoc {5}{Revisão Inicial}{71}{0}{5}
+\beamer@sectionintoc {6}{Revisão Inicial}{79}{0}{6}
+\beamer@sectionintoc {7}{Revisão Inicial}{98}{0}{7}
+\beamer@sectionintoc {8}{Tratamento de Exceções}{111}{0}{8}
+\beamer@sectionintoc {9}{Persistência de Dados}{144}{0}{9}
+\beamer@sectionintoc {10}{Biblioteca Numpy}{167}{0}{10}
+\beamer@sectionintoc {11}{Biblioteca Matplotlib}{202}{0}{11}

@@ -1,7 +1,7 @@
 INFO:  latexindent.pl version 3.24.4, 2024-07-18, a script to indent .tex files
        latexindent.pl lives here: /usr/share/texmf-dist/scripts/latexindent/
-       Tue Sep 23 21:43:53 2025
-       Filename: /home/gabrielaquino/Documents/docker-workspace/docker-latex/Projects/ICP225-Computação-II/ICP225-Slides/slides-por-aula/__latexindent_temp_Biblioteca-Numpy.tex
+       Tue Sep 23 21:55:32 2025
+       Filename: /home/gabrielaquino/Documents/docker-workspace/docker-latex/Projects/ICP225-Computação-II/ICP225-Slides/slides-por-aula/__latexindent_temp_Tratamento-de-Exceções.tex
 INFO:  Processing switches:
        -y|--yaml: YAML settings specified via command line
        -c|--cruft: cruft directory

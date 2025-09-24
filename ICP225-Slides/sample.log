@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.9.23)  23 SEP 2025 21:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.9.23)  23 SEP 2025 21:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -659,7 +659,11 @@ File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count358
 \l__pdf_internal_box=\box102
-) (./sample.aux)
+) (./sample.aux
+
+LaTeX Warning: Label `fig:placeholder' multiply defined.
+
+)
 \openout1 = `sample.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
@@ -800,58 +804,52 @@ Dictionary: translator-months-dictionary, Language: English
 Dictionary: translator-numbers-dictionary, Language: English 
 ) (/usr/share/texmf-dist/tex/latex/translator/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
-) (./sample.nav) (./slides-por-aula/Biblioteca-Numpy.tex
+) (./sample.nav) (./slides-por-aula/Semana1-Apresentação-do-Curso.tex
 
 Package hyperref Warning: Option `pdfauthor' has already been used,
-(hyperref)                setting the option has no effect on input line 7.
+(hyperref)                setting the option has no effect on input line 3.
 
 
 
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 65.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 56.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 65.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 56.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on input line 65.
+LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on input line 56.
  (/usr/share/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/mathkerncmss.
 )
+Overfull \vbox (9.92389pt too high) detected at line 56
+ []
+
+
 
 [2
 
-]
-\openout4 = `sample.vrb'.
+]) (./slides-por-aula/Semana1-Revisão-Inicial.tex
 
- (./sample.vrb)
+Package hyperref Warning: Option `pdfauthor' has already been used,
+(hyperref)                setting the option has no effect on input line 3.
+
+
 
 [3
 
 ]
-\openout4 = `sample.vrb'.
-
- (./sample.vrb)
 
 [4
 
 ]
 \openout4 = `sample.vrb'.
 
- (./sample.vrb
-Overfull \hbox (1.23077pt too wide) in paragraph at lines 24--24
-[]\OT1/cmtt/m/n/10.95 print(arr.dtype)  # dtype('float64')[] 
- []
-
-)
-Overfull \vbox (3.97868pt too high) detected at line 166
- []
-
-
+ (./sample.vrb)
 
 [5
 
@@ -863,6 +861,9 @@ Overfull \vbox (3.97868pt too high) detected at line 166
 [6
 
 ]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
 
 [7
 
@@ -870,6 +871,10 @@ Overfull \vbox (3.97868pt too high) detected at line 166
 \openout4 = `sample.vrb'.
 
  (./sample.vrb)
+Overfull \vbox (13.29958pt too high) detected at line 133
+ []
+
+
 
 [8
 
@@ -883,14 +888,28 @@ Overfull \vbox (3.97868pt too high) detected at line 166
 ]
 \openout4 = `sample.vrb'.
 
- (./sample.vrb)
+ (./sample.vrb
+Overfull \hbox (3.71274pt too wide) in paragraph at lines 13--13
+[]\OT1/cmtt/m/n/10.95 soma = 5 + 3.2         #Result: 8.2[] 
+ []
+
+
+Overfull \hbox (3.71274pt too wide) in paragraph at lines 13--13
+[]\OT1/cmtt/m/n/10.95 divisao = 15 / 2       #Result: 7.5[] 
+ []
+
+)
 
 [10
 
-]
+{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
 \openout4 = `sample.vrb'.
 
  (./sample.vrb)
+Overfull \vbox (4.33282pt too high) detected at line 230
+ []
+
+
 
 [11
 
@@ -912,6 +931,10 @@ Overfull \vbox (3.97868pt too high) detected at line 166
 \openout4 = `sample.vrb'.
 
  (./sample.vrb)
+Overfull \vbox (13.7029pt too high) detected at line 336
+ []
+
+
 
 [14
 
@@ -925,11 +948,21 @@ Overfull \vbox (3.97868pt too high) detected at line 166
 ]
 \openout4 = `sample.vrb'.
 
- (./sample.vrb)
+ (./sample.vrb
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 7.
+)
 
 [16
 
 ]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+Overfull \vbox (1.16803pt too high) detected at line 443
+ []
+
+
 
 [17
 
@@ -937,7 +970,7 @@ Overfull \vbox (3.97868pt too high) detected at line 166
 \openout4 = `sample.vrb'.
 
  (./sample.vrb)
-Overfull \vbox (8.48541pt too high) detected at line 482
+Overfull \vbox (12.38205pt too high) detected at line 470
  []
 
 
@@ -954,15 +987,34 @@ Overfull \vbox (8.48541pt too high) detected at line 482
 ]
 \openout4 = `sample.vrb'.
 
- (./sample.vrb)
+ (./sample.vrb
+Overfull \hbox (2.13687pt too wide) in paragraph at lines 28--28
+[]\OT1/cmtt/m/n/10.95 lista.append(4)# [1, 2, 3, 4][] 
+ []
+
+
+Overfull \hbox (2.13687pt too wide) in paragraph at lines 28--28
+[]\OT1/cmtt/m/n/10.95 [0] + lista    # [0, 1, 2, 3][] 
+ []
+
+)
 
 [20
 
 ]
 \openout4 = `sample.vrb'.
 
- (./sample.vrb)
-Overfull \vbox (6.9646pt too high) detected at line 540
+ (./sample.vrb
+LaTeX Font Info:    Trying to load font information for OMS+cmtt on input line 6.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 6.
+
+
+LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbraceleft' on input line 6.
+
+)
+Overfull \vbox (10.94041pt too high) detected at line 568
  []
 
 
@@ -979,12 +1031,11 @@ Overfull \vbox (6.9646pt too high) detected at line 540
 ]
 \openout4 = `sample.vrb'.
 
- (./sample.vrb
-Overfull \hbox (7.22932pt too wide) in paragraph at lines 19--45
- [][] 
+ (./sample.vrb)
+Overfull \vbox (1.61122pt too high) detected at line 630
  []
 
-)
+
 
 [23
 
@@ -999,10 +1050,6 @@ Overfull \hbox (7.22932pt too wide) in paragraph at lines 19--45
 \openout4 = `sample.vrb'.
 
  (./sample.vrb)
-Overfull \vbox (8.25128pt too high) detected at line 715
- []
-
-
 
 [25
 
@@ -1010,10 +1057,6 @@ Overfull \vbox (8.25128pt too high) detected at line 715
 \openout4 = `sample.vrb'.
 
  (./sample.vrb)
-Overfull \vbox (7.4346pt too high) detected at line 764
- []
-
-
 
 [26
 
@@ -1024,14 +1067,10 @@ Overfull \vbox (7.4346pt too high) detected at line 764
 
 [27
 
-{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+]
 \openout4 = `sample.vrb'.
 
  (./sample.vrb)
-Overfull \vbox (1.45787pt too high) detected at line 821
- []
-
-
 
 [28
 
@@ -1043,6 +1082,13 @@ Overfull \vbox (1.45787pt too high) detected at line 821
 [29
 
 ]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+Overfull \vbox (11.58209pt too high) detected at line 803
+ []
+
+
 
 [30
 
@@ -1053,12 +1099,10 @@ Overfull \vbox (1.45787pt too high) detected at line 821
 
 [31
 
-]
-\openout4 = `sample.vrb'.
+]) (./slides-por-aula/Semana2-Orientação-a-objetos.tex
 
- (./sample.vrb)
-Overfull \vbox (0.81703pt too high) detected at line 976
- []
+Package hyperref Warning: Option `pdfauthor' has already been used,
+(hyperref)                setting the option has no effect on input line 3.
 
 
 
@@ -1069,8 +1113,1277 @@ Overfull \vbox (0.81703pt too high) detected at line 976
 [33
 
 ]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb
+Overfull \hbox (2.46155pt too wide) in paragraph at lines 22--22
+[]        \OT1/cmtt/m/n/10.95 print(f"Ol^^Sa, meu nome ^^Se {self.nome} e tenho {self.idade} anos.")[] 
+ []
+
+)
+Overfull \vbox (15.98624pt too high) detected at line 76
+ []
+
+
 
 [34
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+Overfull \vbox (1.16803pt too high) detected at line 98
+ []
+
+
+
+[35
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[36
+
+]
+
+[37
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[38
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+Overfull \vbox (12.70984pt too high) detected at line 214
+ []
+
+
+
+[39
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[40
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb
+Overfull \hbox (117.4353pt too wide) in paragraph at lines 19--19
+[]        \OT1/cmtt/m/n/10.95 print(f"{self} defendeu e recebeu {dano_final} de dano. Vida restante: {self.vida}")[] 
+ []
+
+)
+Overfull \vbox (1.16803pt too high) detected at line 259
+ []
+
+
+
+[41
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb
+Overfull \hbox (117.4353pt too wide) in paragraph at lines 20--20
+[]        \OT1/cmtt/m/n/10.95 print(f"{self} defendeu e recebeu {dano_final} de dano. Vida restante: {self.vida}")[] 
+ []
+
+
+Overfull \hbox (117.4353pt too wide) in paragraph at lines 20--20
+[]        \OT1/cmtt/m/n/10.95 print(f"{self} recebeu {vida_restaurada} de Healthpack. Vida restante: {self.vida}")[] 
+ []
+
+)
+Overfull \vbox (14.76804pt too high) detected at line 282
+ []
+
+
+
+[42
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[43
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[44
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+Overfull \vbox (14.76804pt too high) detected at line 343
+ []
+
+
+
+[45
+
+]
+
+[46
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+Overfull \vbox (14.76804pt too high) detected at line 396
+ []
+
+
+
+[47
+
+]
+
+[48
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[49
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[50
+
+]) (./slides-por-aula/Semana3-Heranca-Polimorfismo.tex
+
+Package hyperref Warning: Option `pdfauthor' has already been used,
+(hyperref)                setting the option has no effect on input line 3.
+
+
+
+[51
+
+]
+
+[52
+
+]
+
+[53
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[54
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[55
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+Overfull \vbox (6.69458pt too high) detected at line 160
+ []
+
+
+
+[56
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+Overfull \vbox (14.76804pt too high) detected at line 184
+ []
+
+
+
+[57
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[58
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[59
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[60
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[61
+
+]
+
+[62
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[63
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[64
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[65
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+Overfull \vbox (108.95683pt too high) detected at line 389
+ []
+
+
+
+[66
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+Overfull \vbox (10.56541pt too high) detected at line 416
+ []
+
+
+
+[67
+
+]
+Overfull \vbox (13.2662pt too high) detected at line 439
+ []
+
+
+
+[68
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb
+Overfull \hbox (19.70761pt too wide) in paragraph at lines 22--22
+[]    \OT1/cmtt/m/n/10.95 a.fazer_som()   # polimorfismo: cada objeto responde de forma diferente[] 
+ []
+
+)
+Overfull \vbox (110.47588pt too high) detected at line 474
+ []
+
+
+
+[69
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+Overfull \vbox (1.16803pt too high) detected at line 501
+ []
+
+
+
+[70
+
+]) (./slides-por-aula/Semana4-MetodosMagicos.tex
+
+Package hyperref Warning: Option `pdfauthor' has already been used,
+(hyperref)                setting the option has no effect on input line 3.
+
+
+
+[71
+
+]
+
+[72
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+Overfull \vbox (5.54457pt too high) detected at line 68
+ []
+
+
+
+[73
+
+]
+
+[74
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[75
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[76
+
+]
+Overfull \vbox (6.93274pt too high) detected at line 176
+ []
+
+
+
+[77
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[78
+
+]) (./slides-por-aula/Semana5-ClasseAbstrata.tex
+
+Package hyperref Warning: Option `pdfauthor' has already been used,
+(hyperref)                setting the option has no effect on input line 3.
+
+
+
+[79
+
+]
+
+[80
+
+]
+
+[81
+
+]
+
+[82
+
+]
+
+[83
+
+]
+
+[84
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[85
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[86
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb
+Overfull \hbox (7.25688pt too wide) in paragraph at lines 22--22
+[]        \OT1/cmtt/m/n/10 return 3.14159 * self.raio ** 2[] 
+ []
+
+
+Overfull \hbox (2.00693pt too wide) in paragraph at lines 22--22
+[]        \OT1/cmtt/m/n/10 return 2 * 3.14159 * self.raio[] 
+ []
+
+)
+
+[87
+
+]
+
+[88
+
+]
+
+[89
+
+]
+
+[90
+
+]
+<Images/classe-abstrata-erro.png, id=1942, 720.44156pt x 328.97906pt>
+File: Images/classe-abstrata-erro.png Graphic file (type png)
+<use Images/classe-abstrata-erro.png>
+Package pdftex.def Info: Images/classe-abstrata-erro.png  used on input line 240.
+(pdftex.def)             Requested size: 411.44397pt x 187.87642pt.
+
+
+[91
+
+ <./Images/classe-abstrata-erro.png>]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[92
+
+]
+
+[93
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[94
+
+]
+<Images/classe-abstrata-animal.png, id=1989, 495.35063pt x 310.15875pt>
+File: Images/classe-abstrata-animal.png Graphic file (type png)
+<use Images/classe-abstrata-animal.png>
+Package pdftex.def Info: Images/classe-abstrata-animal.png  used on input line 302.
+(pdftex.def)             Requested size: 205.72198pt x 128.80814pt.
+
+pdfTeX warning (ext4): destination with the same identifier (name{fig:placeholder}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.302 \end{frame}
+                 
+
+[95
+
+ <./Images/classe-abstrata-animal.png>]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[96
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[97
+
+]) (./slides-por-aula/Semana6-HerancaMultipla.tex
+
+Package hyperref Warning: Option `pdfauthor' has already been used,
+(hyperref)                setting the option has no effect on input line 3.
+
+
+
+[98
+
+]
+
+[99
+
+]
+
+[100
+
+]
+<Images/heranca-multipla.png, id=2064, 688.07062pt x 308.65312pt>
+File: Images/heranca-multipla.png Graphic file (type png)
+<use Images/heranca-multipla.png>
+Package pdftex.def Info: Images/heranca-multipla.png  used on input line 68.
+(pdftex.def)             Requested size: 329.15642pt x 147.65259pt.
+
+
+[101
+
+ <./Images/heranca-multipla.png>]
+
+[102
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb
+<Images/tratamento-processo-qualidade.png, id=2076, 688.07062pt x 392.21532pt>
+File: Images/tratamento-processo-qualidade.png Graphic file (type png)
+<use Images/tratamento-processo-qualidade.png>
+Package pdftex.def Info: Images/tratamento-processo-qualidade.png  used on input line 4.
+(pdftex.def)             Requested size: 370.29706pt x 211.07495pt.
+)
+Overfull \vbox (6.80956pt too high) detected at line 105
+ []
+
+
+
+[103
+
+ <./Images/tratamento-processo-qualidade.png>]
+
+[104
+
+]
+
+[105
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+Overfull \vbox (0.95683pt too high) detected at line 162
+ []
+
+
+
+[106
+
+]
+<Images/mro-saida-2.png, id=2111, 1166.10657pt x 151.3153pt>
+File: Images/mro-saida-2.png Graphic file (type png)
+<use Images/mro-saida-2.png>
+Package pdftex.def Info: Images/mro-saida-2.png  used on input line 184.
+(pdftex.def)             Requested size: 370.29706pt x 48.05014pt.
+
+
+[107
+
+ <./Images/mro-saida-2.png>]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+Overfull \vbox (14.7346pt too high) detected at line 209
+ []
+
+
+
+[108
+
+]
+
+[109
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[110
+
+]) (./slides-por-aula/Tratamento-de-Exceções.tex
+
+Package hyperref Warning: Option `pdfauthor' has already been used,
+(hyperref)                setting the option has no effect on input line 7.
+
+
+
+[111
+
+]
+
+[112
+
+]
+
+[113
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[114
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+Overfull \vbox (11.23546pt too high) detected at line 131
+ []
+
+
+
+[115
+
+]
+
+[116
+
+]
+
+[117
+
+]
+<Images/python-division-error.png, id=2313, 575.14874pt x 161.10187pt>
+File: Images/python-division-error.png Graphic file (type png)
+<use Images/python-division-error.png>
+Package pdftex.def Info: Images/python-division-error.png  used on input line 226.
+(pdftex.def)             Requested size: 205.72198pt x 57.62297pt.
+
+
+[118
+
+ <./Images/python-division-error.png>]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb
+Overfull \hbox (3.71274pt too wide) in paragraph at lines 30--30
+[]    \OT1/cmtt/m/n/10.95 print("Erro: Divis~ao por zero")[] 
+ []
+
+
+Overfull \hbox (3.71274pt too wide) in paragraph at lines 30--30
+[]    \OT1/cmtt/m/n/10.95 c = float('inf') # Valor padr~ao[] 
+ []
+
+)
+
+[119
+
+]
+
+[120
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[121
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[122
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[123
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[124
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[125
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[126
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[127
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[128
+
+]
+
+[129
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[130
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[131
+
+]
+<Images/python_exception_hierarchy.png, id=2615, 557.08125pt x 290.58563pt>
+File: Images/python_exception_hierarchy.png Graphic file (type png)
+<use Images/python_exception_hierarchy.png>
+Package pdftex.def Info: Images/python_exception_hierarchy.png  used on input line 538.
+(pdftex.def)             Requested size: 329.15642pt x 171.69676pt.
+
+Overfull \vbox (4.62804pt too high) detected at line 538
+ []
+
+
+
+[132
+
+ <./Images/python_exception_hierarchy.png>]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[133
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+Overfull \vbox (4.72629pt too high) detected at line 577
+ []
+
+
+
+[134
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[135
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[136
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[137
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[138
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[139
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[140
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[141
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+Overfull \vbox (34.7346pt too high) detected at line 754
+ []
+
+
+
+[142
+
+]
+
+[143
+
+]) (./slides-por-aula/Persistência-de-Dados.tex
+
+Package hyperref Warning: Option `pdfauthor' has already been used,
+(hyperref)                setting the option has no effect on input line 7.
+
+
+
+[144
+
+]
+
+[145
+
+]
+
+[146
+
+]
+
+[147
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[148
+
+]
+
+[149
+
+]
+<Images/diagrama-modos-leitura.png, id=2995, 657.45625pt x 252.945pt>
+File: Images/diagrama-modos-leitura.png Graphic file (type png)
+<use Images/diagrama-modos-leitura.png>
+Package pdftex.def Info: Images/diagrama-modos-leitura.png  used on input line 180.
+(pdftex.def)             Requested size: 329.15642pt x 126.63815pt.
+
+
+[150
+
+ <./Images/diagrama-modos-leitura.png>]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[151
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[152
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[153
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[154
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb
+LaTeX Font Info:    Trying to load font information for OMS+cmss on input line 11.
+LaTeX Font Info:    No file OMScmss.fd. on input line 11.
+
+
+LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbackslash' on input line 11.
+
+)
+
+[155
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[156
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[157
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[158
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[159
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[160
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[161
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[162
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[163
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[164
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[165
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[166
+
+]) (./slides-por-aula/Biblioteca-Numpy.tex
+
+Package hyperref Warning: Option `pdfauthor' has already been used,
+(hyperref)                setting the option has no effect on input line 7.
+
+
+
+[167
+
+]
+
+[168
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[169
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[170
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb
+Overfull \hbox (1.23077pt too wide) in paragraph at lines 24--24
+[]\OT1/cmtt/m/n/10.95 print(arr.dtype)  # dtype('float64')[] 
+ []
+
+)
+Overfull \vbox (3.97868pt too high) detected at line 166
+ []
+
+
+
+[171
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[172
+
+]
+
+[173
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[174
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[175
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[176
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[177
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[178
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[179
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[180
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[181
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[182
+
+]
+
+[183
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+Overfull \vbox (8.48541pt too high) detected at line 482
+ []
+
+
+
+[184
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[185
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[186
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+Overfull \vbox (6.9646pt too high) detected at line 540
+ []
+
+
+
+[187
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[188
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb
+Overfull \hbox (7.22932pt too wide) in paragraph at lines 19--45
+ [][] 
+ []
+
+)
+
+[189
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[190
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+Overfull \vbox (8.25128pt too high) detected at line 715
+ []
+
+
+
+[191
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+Overfull \vbox (7.4346pt too high) detected at line 764
+ []
+
+
+
+[192
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[193
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+Overfull \vbox (1.45787pt too high) detected at line 821
+ []
+
+
+
+[194
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[195
+
+]
+
+[196
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[197
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+Overfull \vbox (0.81703pt too high) detected at line 976
+ []
+
+
+
+[198
+
+]
+
+[199
+
+]
+
+[200
 
 ]
 \openout4 = `sample.vrb'.
@@ -1081,7 +2394,230 @@ Overfull \vbox (14.76804pt too high) detected at line 1031
 
 
 
-[35
+[201
+
+]) (./slides-por-aula/Biblioteca-Matplotlib.tex
+
+Package hyperref Warning: Option `pdfauthor' has already been used,
+(hyperref)                setting the option has no effect on input line 7.
+
+
+
+[202
+
+]
+
+[203
+
+]
+
+[204
+
+]
+
+[205
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[206
+
+]
+
+[207
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[208
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[209
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[210
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[211
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[212
+
+]
+
+[213
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[214
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[215
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[216
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[217
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[218
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[219
+
+]
+
+[220
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+Overfull \vbox (8.48547pt too high) detected at line 403
+ []
+
+
+
+[221
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+Overfull \vbox (8.48547pt too high) detected at line 427
+ []
+
+
+
+[222
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+Overfull \vbox (9.70213pt too high) detected at line 450
+ []
+
+
+
+[223
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+Overfull \vbox (9.70213pt too high) detected at line 475
+ []
+
+
+
+[224
+
+]
+
+[225
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+Overfull \vbox (9.1318pt too high) detected at line 516
+ []
+
+
+
+[226
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[227
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+Overfull \vbox (9.0938pt too high) detected at line 559
+ []
+
+
+
+[228
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[229
+
+]
+
+[230
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[231
+
+]
+\openout4 = `sample.vrb'.
+
+ (./sample.vrb)
+
+[232
+
+]
+
+[233
 
 ])
 \tf@nav=\write6
@@ -1098,22 +2634,29 @@ Overfull \vbox (14.76804pt too high) detected at line 1031
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `sample.out' has not changed.
-(rerunfilecheck)             Checksum: 18BEC96350F416809BB11870796602B9;126.
+(rerunfilecheck)             Checksum: B93DB72DF10C4977EF30CA4FAED6B37B;1507.
  ) 
 Here is how much of TeX's memory you used:
- 27915 strings out of 475151
- 579502 string characters out of 5766386
- 957100 words of memory out of 5000000
- 50232 multiletter control sequences out of 15000+600000
- 571787 words of font info for 83 fonts, out of 8000000 for 9000
+ 30417 strings out of 475151
+ 645039 string characters out of 5766386
+ 1075491 words of memory out of 5000000
+ 52019 multiletter control sequences out of 15000+600000
+ 577527 words of font info for 104 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
- 128i,15n,123p,512b,1053s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1200.pfb>
-Output written on sample.pdf (35 pages, 276884 bytes).
+ 128i,15n,123p,512b,1084s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
+Output written on sample.pdf (233 pages, 1301019 bytes).
 PDF statistics:
- 974 PDF objects out of 1000 (max. 8388607)
- 554 compressed objects within 6 object streams
- 72 named destinations out of 1000 (max. 500000)
- 2115 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 4875 PDF objects out of 5155 (max. 8388607)
+ 2834 compressed objects within 29 object streams
+ 479 named destinations out of 1000 (max. 500000)
+ 10443 words of extra memory for PDF output out of 12000 (max. 10000000)
 

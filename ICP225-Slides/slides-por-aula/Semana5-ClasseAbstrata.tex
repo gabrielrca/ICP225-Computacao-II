@@ -5,7 +5,7 @@
 \institute
 {
     gabrielaquino@ic.ufrj.br\\
-    
+
     Instituto de Computação -
     Universidade Federal do Rio de Janeiro % Your institution for the title page
 }
@@ -29,46 +29,46 @@
 
 
 \begin{frame}{Classes Abstratas na POO}
-    Um componente do desenvolvimento moderno de software é a 
-    \textbf{Programação Orientada a Objetos (POO)}, 
-    que permite organizar o código de forma 
-    \textbf{escalável}, \textbf{modular} e \textbf{reutilizável}. 
-    
+    Um componente do desenvolvimento moderno de software é a
+    \textbf{Programação Orientada a Objetos (POO)},
+    que permite organizar o código de forma
+    \textbf{escalável}, \textbf{modular} e \textbf{reutilizável}.
+
     \vspace{0.3cm}
-    As \textbf{classes abstratas} são um dos conceitos centrais da POO, 
+    As \textbf{classes abstratas} são um dos conceitos centrais da POO,
     fundamentais para criar um \textbf{modelo} (template) que outras classes podem usar.
 
-\begin{block}{Pergunta}
-    O que vocês acham que é uma classe abstrata?
-\end{block}
+    \begin{block}{Pergunta}
+        O que vocês acham que é uma classe abstrata?
+    \end{block}
 \end{frame}
 
 
 \begin{frame}{Classe Abstrata em POO}
 
-\begin{block}{Definição}
-\begin{itemize}
-    \item Uma \textbf{classe abstrata} é uma classe que não pode ser instanciada diretamente.
-    \item Atua apenas como base (superclasse) para outras classes.
-    \item Pode conter:
-    \begin{itemize}
-        \item \textbf{Métodos implementados}: já possuem código definido.
-        \item \textbf{Métodos abstratos}: devem obrigatoriamente ser sobrescritos nas subclasses concretas.
-    \end{itemize}
-\end{itemize}
-\end{block}
+    \begin{block}{Definição}
+        \begin{itemize}
+            \item Uma \textbf{classe abstrata} é uma classe que não pode ser instanciada diretamente.
+            \item Atua apenas como base (superclasse) para outras classes.
+            \item Pode conter:
+                  \begin{itemize}
+                      \item \textbf{Métodos implementados}: já possuem código definido.
+                      \item \textbf{Métodos abstratos}: devem obrigatoriamente ser sobrescritos nas subclasses concretas.
+                  \end{itemize}
+        \end{itemize}
+    \end{block}
 
-\begin{block}{Objetivo}
-Garantir que certas operações sejam obrigatoriamente implementadas pelas subclasses, definindo uma interface comum.
-\end{block}
+    \begin{block}{Objetivo}
+        Garantir que certas operações sejam obrigatoriamente implementadas pelas subclasses, definindo uma interface comum.
+    \end{block}
 
 \end{frame}
 
 \begin{frame}{O que é uma Classe Abstrata?}
-    Uma \textbf{classe abstrata} é como um \textbf{molde} (ou \textbf{template}) para outras classes.  
-    Ela define métodos que devem estar presentes em qualquer classe que herde dela, 
+    Uma \textbf{classe abstrata} é como um \textbf{molde} (ou \textbf{template}) para outras classes.
+    Ela define métodos que devem estar presentes em qualquer classe que herde dela,
     mas não fornece o código específico desses métodos.
-    
+
     \vspace{0.3cm}
     Pense nela como um \textbf{esqueleto mas sem dizer como preencher o resto}.
 \end{frame}
@@ -79,7 +79,7 @@ Garantir que certas operações sejam obrigatoriamente implementadas pelas subcl
         \item Definem um \textbf{molde} para outras classes.
         \item Obrigam a implementação de métodos específicos nas subclasses.
         \item Melhoram a \textbf{organização} e a \textbf{reutilização} do código.
-        \item Permitem \textbf{polimorfismo}, ou seja, diferentes objetos 
+        \item Permitem \textbf{polimorfismo}, ou seja, diferentes objetos
               compartilhando uma interface comum.
     \end{itemize}
 \end{frame}
@@ -97,8 +97,8 @@ Garantir que certas operações sejam obrigatoriamente implementadas pelas subcl
 
 \begin{frame}[fragile]{Antes das Classes Abstratas}
 
-\small
-\begin{verbatim}
+    \small
+    \begin{verbatim}
 class Forma:
     pass
     def area(self):
@@ -121,8 +121,8 @@ class Circulo(Forma):
 
 \begin{frame}[fragile]{Depois das classes abstratas}
 
-\small
-\begin{verbatim}
+    \small
+    \begin{verbatim}
 from abc import ABC, abstractmethod
 # Classe abstrata
 class Forma(ABC):
@@ -145,11 +145,11 @@ class Circulo(Forma):
 \end{frame}
 
 \begin{frame}[fragile]{Exemplo Completo de Classe Abstrata}
-\small
-\begin{columns}[T]
+    \small
+    \begin{columns}[T]
 
-\begin{column}{0.48\textwidth}
-\begin{verbatim}
+        \begin{column}{0.48\textwidth}
+            \begin{verbatim}
 from abc import ABC, abstractmethod
 class Forma(ABC):
     @abstractmethod
@@ -166,10 +166,10 @@ class Circulo(Forma):
     def perimetro(self):
         return 2 * 3.14159 * self.raio
 \end{verbatim}
-\end{column}
+        \end{column}
 
-\begin{column}{0.48\textwidth}
-\begin{verbatim}
+        \begin{column}{0.48\textwidth}
+            \begin{verbatim}
 class Retangulo(Forma):
     def __init__(self, largura,
     altura):
@@ -184,23 +184,23 @@ class Retangulo(Forma):
         return 2 * (self.largura
         + self.altura)
 \end{verbatim}
-\end{column}
+        \end{column}
 
-\end{columns}
+    \end{columns}
 \end{frame}
 
 
 
 \begin{frame}{Por que usar Classes Abstratas em Python?}
 
-As classes abstratas são úteis quando queremos:
+    As classes abstratas são úteis quando queremos:
 
-\begin{itemize}
-    \item \textbf{Garantir a implementação de métodos}: os métodos abstratos funcionam como um \textbf{contrato}, exigindo que cada subclasse forneça sua própria implementação, evitando inconsistências.
-    \item \textbf{Estimular a reutilização de código}: classes abstratas podem ter métodos concretos que reduzem duplicação e promovem o princípio DRY (\textit{Do Not Repeat Yourself}).
-    \item \textbf{Melhorar legibilidade e manutenibilidade}: fornecem uma estrutura consistente e transparente, facilitando a compreensão e manutenção do código.
-    \item \textbf{Permitir polimorfismo}: possibilitam escrever código genérico que funciona com diferentes subclasses, aumentando a extensibilidade e adaptabilidade do software.
-\end{itemize}
+    \begin{itemize}
+        \item \textbf{Garantir a implementação de métodos}: os métodos abstratos funcionam como um \textbf{contrato}, exigindo que cada subclasse forneça sua própria implementação, evitando inconsistências.
+        \item \textbf{Estimular a reutilização de código}: classes abstratas podem ter métodos concretos que reduzem duplicação e promovem o princípio DRY (\textit{Do Not Repeat Yourself}).
+        \item \textbf{Melhorar legibilidade e manutenibilidade}: fornecem uma estrutura consistente e transparente, facilitando a compreensão e manutenção do código.
+        \item \textbf{Permitir polimorfismo}: possibilitam escrever código genérico que funciona com diferentes subclasses, aumentando a extensibilidade e adaptabilidade do software.
+    \end{itemize}
 
 \end{frame}
 
@@ -208,26 +208,26 @@ As classes abstratas são úteis quando queremos:
 
 \begin{frame}{Passos para Criar e Usar Classes Abstratas em Python}
 
-\begin{enumerate}
-    \item Importar \texttt{ABC} e \texttt{abstractmethod} do módulo \texttt{abc}.
-    \item Definir a classe abstrata como subclasse de \texttt{ABC}.
-    \item Definir métodos abstratos usando o decorador \texttt{@abstractmethod}.
-    \item Sobrescrever os métodos abstratos nas subclasses não abstratas.
-\end{enumerate}
+    \begin{enumerate}
+        \item Importar \texttt{ABC} e \texttt{abstractmethod} do módulo \texttt{abc}.
+        \item Definir a classe abstrata como subclasse de \texttt{ABC}.
+        \item Definir métodos abstratos usando o decorador \texttt{@abstractmethod}.
+        \item Sobrescrever os métodos abstratos nas subclasses não abstratas.
+    \end{enumerate}
 
-\begin{block}{Objetivo}
-Garantir que todas as subclasses concretas implementem os métodos essenciais definidos na classe abstrata, criando uma interface comum.
-\end{block}
+    \begin{block}{Objetivo}
+        Garantir que todas as subclasses concretas implementem os métodos essenciais definidos na classe abstrata, criando uma interface comum.
+    \end{block}
 
 \end{frame}
 
 \begin{frame}{Como o módulo abc garante a implementação de métodos}
-\begin{itemize}
-    \item Qualquer subclasse de uma classe abstrata deve implementar todos os métodos decorados com \texttt{@abstractmethod}.
-    \item Se uma subclasse não implementar todos os métodos abstratos, Python impede sua instanciação.
-    \item Um \texttt{TypeError} é gerado, ajudando a identificar falhas de implementação cedo.
-    \item Isso garante que todas as subclasses concretas sigam o comportamento e design esperados da classe abstrata.
-\end{itemize}
+    \begin{itemize}
+        \item Qualquer subclasse de uma classe abstrata deve implementar todos os métodos decorados com \texttt{@abstractmethod}.
+        \item Se uma subclasse não implementar todos os métodos abstratos, Python impede sua instanciação.
+        \item Um \texttt{TypeError} é gerado, ajudando a identificar falhas de implementação cedo.
+        \item Isso garante que todas as subclasses concretas sigam o comportamento e design esperados da classe abstrata.
+    \end{itemize}
 \end{frame}
 
 \begin{frame}{Especificação da classe abstrata Animal}
@@ -241,8 +241,8 @@ Garantir que todas as subclasses concretas implementem os métodos essenciais de
 
 
 \begin{frame}[fragile]{Exemplo: Erro ao não implementar métodos abstratos}
-\small
-\begin{verbatim}
+    \small
+    \begin{verbatim}
 class Retangulo(Forma):
     def __init__(self, largura, altura):
         self.largura = largura
@@ -260,7 +260,7 @@ r = Retangulo(5, 10)
 
 
 \begin{frame}{Resumo do Módulo ABC}
-    O módulo \textbf{abc} oferece suporte nativo para classes abstratas.  
+    O módulo \textbf{abc} oferece suporte nativo para classes abstratas.
     \begin{itemize}
         \item "ABC" significa \textbf{Abstract Base Classes}.
         \item Fornece ferramentas como a classe \texttt{ABC} e o decorador \texttt{@abstractmethod}.
@@ -274,18 +274,18 @@ r = Retangulo(5, 10)
 
 \begin{frame}[fragile]{Classe Abstrata: Papel do \texttt{@abstractmethod}}
 
-\begin{block}{Função do \texttt{@abstractmethod}}
-\begin{itemize}
-    \item Indica que o método é \textbf{abstrato} e deve ser implementado em subclasses concretas.
-    \item Garante que todas as subclasses forneçam sua própria implementação.
-    \item Permite que a classe abstrata defina uma \textbf{interface comum}.
-\end{itemize}
-\end{block}
+    \begin{block}{Função do \texttt{@abstractmethod}}
+        \begin{itemize}
+            \item Indica que o método é \textbf{abstrato} e deve ser implementado em subclasses concretas.
+            \item Garante que todas as subclasses forneçam sua própria implementação.
+            \item Permite que a classe abstrata defina uma \textbf{interface comum}.
+        \end{itemize}
+    \end{block}
 
-\begin{block}{Consequência}
-Se uma subclasse de \texttt{Animal} não implementar \texttt{emitir\_som()}, o Python gera um erro de instância:  
-\texttt{TypeError: Can't instantiate abstract class X with abstract methods emitir\_som}
-\end{block}
+    \begin{block}{Consequência}
+        Se uma subclasse de \texttt{Animal} não implementar \texttt{emitir\_som()}, o Python gera um erro de instância:
+        \texttt{TypeError: Can't instantiate abstract class X with abstract methods emitir\_som}
+    \end{block}
 
 
 
@@ -303,8 +303,8 @@ Se uma subclasse de \texttt{Animal} não implementar \texttt{emitir\_som()}, o P
 
 %-----------------------------------
 \begin{frame}[fragile]{Classe Abstrata: Animais - Definição}
-\small
-\begin{verbatim}
+    \small
+    \begin{verbatim}
 from abc import ABC, abstractmethod
 class Animal(ABC):
     def __init__(self, nome):
@@ -328,7 +328,7 @@ class Pato(Animal):
 %-----------------------------------
 \begin{frame}[fragile]{Classe Abstrata: Animais - Uso e Saída}
 
-\begin{verbatim}
+    \begin{verbatim}
 c = Cachorro("Rex")
 g = Gato("Mimi")
 p = Pato("Donald")
@@ -338,10 +338,10 @@ g.emitir_som()  # Mimi faz Miau!
 p.emitir_som()  # Donald faz Arrrww!
 \end{verbatim}
 
-\begin{block}{Saída Esperada}
-Rex faz Au Au! \\
-Mimi faz Miau! \\
-Donald faz Arrrww!
-\end{block}
+    \begin{block}{Saída Esperada}
+        Rex faz Au Au! \\
+        Mimi faz Miau! \\
+        Donald faz Arrrww!
+    \end{block}
 
 \end{frame}

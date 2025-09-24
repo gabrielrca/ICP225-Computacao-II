@@ -5,7 +5,7 @@
 \institute
 {
     gabrielaquino@ic.ufrj.br\\
-    
+
     Instituto de Computação -
     Universidade Federal do Rio de Janeiro % Your institution for the title page
 }
@@ -26,16 +26,16 @@
 
 \begin{frame}{Material de Referência}
 
-\begin{block}{Site de Computação 1 - Python}
-Acesse o conteúdo, exemplos e exercícios do curso de Computação 1 em:
+    \begin{block}{Site de Computação 1 - Python}
+        Acesse o conteúdo, exemplos e exercícios do curso de Computação 1 em:
 
-\centering
-\href{https://python.ic.ufrj.br/index.html}{\textbf{https://python.ic.ufrj.br/index.html}}
+        \centering
+        \href{https://python.ic.ufrj.br/index.html}{\textbf{https://python.ic.ufrj.br/index.html}}
 
-\vspace{1em}
+        \vspace{1em}
 
-Explore o material complementar, slides, desafios e mais recursos úteis para aprender Python.
-\end{block}
+        Explore o material complementar, slides, desafios e mais recursos úteis para aprender Python.
+    \end{block}
 
 \end{frame}
 
@@ -44,53 +44,53 @@ Explore o material complementar, slides, desafios e mais recursos úteis para ap
 \begin{frame}[fragile]{Paradigmas de Programação}
 
 
-\begin{block}{Paradigma de Programação}
-\begin{itemize}
-    \item \textbf{Padrão} para estruturação do programa.
-    \item Organização da \textbf{solução algorítmica}.
-    \item Exemplo em Python (imperativo estruturado):
-    \begin{verbatim}
+    \begin{block}{Paradigma de Programação}
+        \begin{itemize}
+            \item \textbf{Padrão} para estruturação do programa.
+            \item Organização da \textbf{solução algorítmica}.
+            \item Exemplo em Python (imperativo estruturado):
+                  \begin{verbatim}
     def calcular_media(notas):
         soma = 0
         for n in notas:
             soma += n
         return soma / len(notas)
     \end{verbatim}
-\end{itemize}
-\end{block}
+        \end{itemize}
+    \end{block}
 \end{frame}
 \begin{frame}[fragile]{Estilos de Programação}
-\begin{block}{Estilo de Programação}
-\begin{itemize}
-    \item \textbf{Organização do código} (legibilidade, manutenção).
-    \item Influência no \textbf{raciocínio do programador}.
-    \item Exemplo modular em Python:
-    \begin{verbatim}
+    \begin{block}{Estilo de Programação}
+        \begin{itemize}
+            \item \textbf{Organização do código} (legibilidade, manutenção).
+            \item Influência no \textbf{raciocínio do programador}.
+            \item Exemplo modular em Python:
+                  \begin{verbatim}
     def quadrado(x):
         return x ** 2
 
     print(quadrado(5))  # Saída: 25
     \end{verbatim}
-\end{itemize}
-\end{block}
+        \end{itemize}
+    \end{block}
 
-\centering
-\begin{itemize}
-    \item Em Comp2: Evolução para POO (classes, herança) e outros paradigmas
- 
-\end{itemize}
+    \centering
+    \begin{itemize}
+        \item Em Comp2: Evolução para POO (classes, herança) e outros paradigmas
+
+    \end{itemize}
 \end{frame}
 
 
 
 \begin{frame}[fragile]{Paradigma Imperativo}
 
-\begin{block}{Paradigma Imperativo Estruturado}
-\begin{itemize}
-    \item Código sequencial
-    \item "Faça isso, depois isso, depois aquilo…"
-\end{itemize}
-\begin{verbatim}
+    \begin{block}{Paradigma Imperativo Estruturado}
+        \begin{itemize}
+            \item Código sequencial
+            \item "Faça isso, depois isso, depois aquilo…"
+        \end{itemize}
+        \begin{verbatim}
 valor = int(input("Digite um número: "))
 if valor > 0:
     print("Positivo")
@@ -100,22 +100,22 @@ else:
     resultado = valor + 10
 print("Resultado:", resultado)
 \end{verbatim}
-\vspace{-0.3cm}
+        \vspace{-0.3cm}
 
-\end{block}
+    \end{block}
 \end{frame}
 
 \begin{frame}[fragile]{Estilo Modular}
-\begin{block}{Estilo Modular}
-\begin{itemize}
-    \item Construção de módulos
-    \item Pequenos códigos (módulos) que tem uma função única
-    \item Evitar fazer códigos grandes
-    \item A combinação dos módulos realiza uma grande tarefa
-    \item Os módulos são as funções
+    \begin{block}{Estilo Modular}
+        \begin{itemize}
+            \item Construção de módulos
+            \item Pequenos códigos (módulos) que tem uma função única
+            \item Evitar fazer códigos grandes
+            \item A combinação dos módulos realiza uma grande tarefa
+            \item Os módulos são as funções
 
-\end{itemize}
-\begin{verbatim}
+        \end{itemize}
+        \begin{verbatim}
 # Módulo de processamento
 def calcular(x):
     return x * 2 if x > 0 else x + 10
@@ -125,9 +125,9 @@ def ler_imprimir():
     print("Resultado:", calcular(valor))
 ler_imprimir()
 \end{verbatim}
-\vspace{-0.3cm}
+        \vspace{-0.3cm}
 
-\end{block}
+    \end{block}
 
 
 \end{frame}
@@ -135,45 +135,45 @@ ler_imprimir()
 
 
 \begin{frame}[fragile]{Tipos de Dados Básicos}
-\begin{columns}[T]
+    \begin{columns}[T]
 
-\column{0.48\textwidth}
-\begin{block}{Numéricos}
-\begin{verbatim}
+        \column{0.48\textwidth}
+        \begin{block}{Numéricos}
+            \begin{verbatim}
 # Inteiro (int)
 idade = 25
 
 # Ponto flutuante (float)
 peso = 68.5
 \end{verbatim}
-\end{block}
+        \end{block}
 
-\column{0.48\textwidth}
-\begin{block}{Texto (string)}
-\begin{verbatim}
+        \column{0.48\textwidth}
+        \begin{block}{Texto (string)}
+            \begin{verbatim}
 # String (str)
 nome = "Maria"
 msg = 'Olá, mundo!'
 \end{verbatim}
-\end{block}
+        \end{block}
 
-\end{columns}
+    \end{columns}
 
-\begin{alertblock}{Características}
-\begin{itemize}
-    \item \texttt{int}: Valores inteiros (ex: -3, 0, 42)
-    \item \texttt{float}: Decimais (ex: 3.14, -0.5)
-    \item \texttt{str}: Texto (entre aspas simples ou duplas)
-\end{itemize}
-\end{alertblock}
+    \begin{alertblock}{Características}
+        \begin{itemize}
+            \item \texttt{int}: Valores inteiros (ex: -3, 0, 42)
+            \item \texttt{float}: Decimais (ex: 3.14, -0.5)
+            \item \texttt{str}: Texto (entre aspas simples ou duplas)
+        \end{itemize}
+    \end{alertblock}
 \end{frame}
 
 \begin{frame}[fragile]{Operações com Tipos Básicos}
-\begin{columns}[T]
+    \begin{columns}[T]
 
-\column{0.48\textwidth}
-\begin{block}{Numéricas}
-\begin{verbatim}
+        \column{0.48\textwidth}
+        \begin{block}{Numéricas}
+            \begin{verbatim}
 soma = 5 + 3.2         #Result: 8.2
 subtracao = 10 - 4     #Result: 6
 multiplicacao = 7 * 2  #Result: 14
@@ -181,80 +181,80 @@ divisao = 15 / 2       #Result: 7.5
 modulo = 10 % 3        #Result: 1
 exponenciacao = 2 ** 3 #Result: 8
 \end{verbatim}
-\end{block}
+        \end{block}
 
-\column{0.48\textwidth}
-\begin{block}{Strings}
-\begin{verbatim}
+        \column{0.48\textwidth}
+        \begin{block}{Strings}
+            \begin{verbatim}
 "a" + "b"   # "ab" (concatenação)
 "oi" * 3    # "oioioi" (repetição)
 len("abc")  # 3 (tamanho)
 \end{verbatim}
-\end{block}
+        \end{block}
 
-\end{columns}
+    \end{columns}
 
-\begin{exampleblock}{Importante}
-\begin{itemize}
-    \item Não misture tipos! \texttt{"10" + 5} → Erro!
-    \item Converta com \texttt{int()}, \texttt{str()}, etc.
-\end{itemize}
-\end{exampleblock}
+    \begin{exampleblock}{Importante}
+        \begin{itemize}
+            \item Não misture tipos! \texttt{"10" + 5} → Erro!
+            \item Converta com \texttt{int()}, \texttt{str()}, etc.
+        \end{itemize}
+    \end{exampleblock}
 \end{frame}
 
 \begin{frame}[fragile]{Variáveis e Atribuição}
 
-\begin{block}{O que são variáveis?}
-\begin{itemize}
-    \item \textbf{Armazenam informações} para uso futuro e são mantidas na \textbf{memória RAM}
-    \item Acessadas através de um \textbf{identificador} (nome)
-\end{itemize}
-\end{block}
+    \begin{block}{O que são variáveis?}
+        \begin{itemize}
+            \item \textbf{Armazenam informações} para uso futuro e são mantidas na \textbf{memória RAM}
+            \item Acessadas através de um \textbf{identificador} (nome)
+        \end{itemize}
+    \end{block}
 
-\begin{exampleblock}{Comando de Atribuição}
-\begin{verbatim}
+    \begin{exampleblock}{Comando de Atribuição}
+        \begin{verbatim}
 # Sintaxe: nome_variavel = valor
 idade = 25             # Criando variável 'idade'
 pi = 3.1415            # Atribuição de valor decimal
 mensagem = "Olá!"      # Variável do tipo string
 \end{verbatim}
-\end{exampleblock}
+    \end{exampleblock}
 
-\begin{alertblock}{Regras Importantes}
-\begin{itemize}
-    \item Nomes à \textbf{esquerda} do \texttt{=}, valores à \textbf{direita}
-    \item Podem ser \textbf{reescritas}: \texttt{contador = 10} → \texttt{contador = 20}
-    \item Tipos são \textbf{inferidos} automaticamente
-\end{itemize}
-\end{alertblock}
+    \begin{alertblock}{Regras Importantes}
+        \begin{itemize}
+            \item Nomes à \textbf{esquerda} do \texttt{=}, valores à \textbf{direita}
+            \item Podem ser \textbf{reescritas}: \texttt{contador = 10} → \texttt{contador = 20}
+            \item Tipos são \textbf{inferidos} automaticamente
+        \end{itemize}
+    \end{alertblock}
 \end{frame}
 
 \begin{frame}[fragile]{Funções em Python}
 
 
-\begin{columns}
-    \column{0.60\textwidth}
-    \begin{block}{O que são funções?}
-        \begin{itemize}
-            \item \textbf{Trechos de código} com um objetivo específico
-            \item \textbf{Organizam} e \textbf{dividem} problemas complexos
-            \item Podem \textbf{retornar valores} ou executar ações
-        \end{itemize}
-    \end{block}
-    
-    \column{0.40\textwidth}
-    \begin{alertblock}{Por que usar funções?}
-        \begin{itemize}
-            \item \textbf{Evita repetição} de código
-            \item Facilita \textbf{manutenção}
-            \item Permite \textbf{reuso} em diferentes partes do programa
-        \end{itemize}
-    \end{alertblock}
-\end{columns}
+    \begin{columns}
+        \column{0.60\textwidth}
+        \begin{block}{O que são funções?}
+            \begin{itemize}
+                \item \textbf{Trechos de código} com um objetivo específico
+                \item \textbf{Organizam} e \textbf{dividem} problemas complexos
+                \item Podem \textbf{retornar valores} ou executar ações
+            \end{itemize}
+        \end{block}
+
+        \column{0.40\textwidth}
+        \begin{alertblock}{Por que usar funções?}
+            \begin{itemize}
+                \item \textbf{Evita repetição} de código
+                \item Facilita \textbf{manutenção}
+                \item Permite \textbf{reuso} em diferentes partes do programa
+            \end{itemize}
+        \end{alertblock}
+    \end{columns}
 
 
-\begin{exampleblock}{Sintaxe Básica}
-\begin{verbatim}
+    \begin{exampleblock}{Sintaxe Básica}
+        \begin{verbatim}
 def nome_funcao(argumentos):
     # Corpo da função
     return resultado
@@ -263,7 +263,7 @@ def calcular_media(nota1, nota2):
     media = (nota1 + nota2) / 2
     return media
 \end{verbatim}
-\end{exampleblock}
+    \end{exampleblock}
 
 
 \end{frame}
@@ -273,7 +273,7 @@ def calcular_media(nota1, nota2):
 
 
     \begin{block}{Código em Python}
-\begin{verbatim}
+        \begin{verbatim}
 def calcular_area(largura, altura):
     """Calcula área de um retângulo"""
     return largura * altura
@@ -296,7 +296,7 @@ print(f"Área para pintar: {area_total}m²")
 
 \begin{frame}[fragile]{Escopo de Variáveis em Funções - Cuidado!}
     \begin{exampleblock}{Exemplo Prático}
-\begin{verbatim}
+        \begin{verbatim}
 def calcular():
     x = 10  # Variável local
     print(x)
@@ -305,87 +305,87 @@ calcular()
 print(x)  # ERRO! x não existe aqui
 \end{verbatim}
     \end{exampleblock}
-\begin{columns}[T]
-    \column{0.5\textwidth}
-    \begin{block}{\textbf{Escopo}: Conceito chave que  determina}
-        
-        \begin{itemize}
-            \item \textbf{Tempo de vida}:\\ Quando a variável existe
-            \item \textbf{Visibilidade}:\\ Onde a variável pode ser acessada
-        \end{itemize}
-    \end{block}
+    \begin{columns}[T]
+        \column{0.5\textwidth}
+        \begin{block}{\textbf{Escopo}: Conceito chave que  determina}
 
-
-    \column{0.5\textwidth}
-    \begin{alertblock}{Regras Importantes}
-        \begin{itemize}
-            \item Variáveis \textbf{dentro} da função:
             \begin{itemize}
-                \item Nascem quando a função é chamada
-                \item Morrem quando a função termina
-                \item São \textbf{invisíveis} fora da função
+                \item \textbf{Tempo de vida}:\\ Quando a variável existe
+                \item \textbf{Visibilidade}:\\ Onde a variável pode ser acessada
             \end{itemize}
-            \item \textbf{Cuidado}:\\ Tentar acessar fora causa erro
-        \end{itemize}
-    \end{alertblock}
+        \end{block}
 
 
-\end{columns}
+        \column{0.5\textwidth}
+        \begin{alertblock}{Regras Importantes}
+            \begin{itemize}
+                \item Variáveis \textbf{dentro} da função:
+                      \begin{itemize}
+                          \item Nascem quando a função é chamada
+                          \item Morrem quando a função termina
+                          \item São \textbf{invisíveis} fora da função
+                      \end{itemize}
+                \item \textbf{Cuidado}:\\ Tentar acessar fora causa erro
+            \end{itemize}
+        \end{alertblock}
+
+
+    \end{columns}
 
 
 \end{frame}
 
 \begin{frame}[fragile]{Strings em Python - Definição e Índices}
 
-\begin{columns}[T]
-    \column{0.5\textwidth}
-    \begin{block}{Definição e Criação}
-        \begin{itemize}
-            \item Sequência imutável de caracteres
-            \item Podem usar \texttt{' '} ou \texttt{" "}
-            \item Exemplos:
-\begin{verbatim}
+    \begin{columns}[T]
+        \column{0.5\textwidth}
+        \begin{block}{Definição e Criação}
+            \begin{itemize}
+                \item Sequência imutável de caracteres
+                \item Podem usar \texttt{' '} ou \texttt{" "}
+                \item Exemplos:
+                      \begin{verbatim}
 disciplina = 'Computação 1'
 nome = "Maria"
 \end{verbatim}
-        \end{itemize}
-    \end{block}
+            \end{itemize}
+        \end{block}
 
-    \begin{block}{Acesso por Índice}
-        \begin{itemize}
-            \item Posições começam em 0
-            \item Índices negativos acessam do final
-\begin{verbatim}
+        \begin{block}{Acesso por Índice}
+            \begin{itemize}
+                \item Posições começam em 0
+                \item Índices negativos acessam do final
+                      \begin{verbatim}
 print(nome[0])   # 'M'
 print(nome[-1])  # 'a'
 \end{verbatim}
-        \end{itemize}
-    \end{block}
+            \end{itemize}
+        \end{block}
 
-    \column{0.5\textwidth}
-    \begin{exampleblock}{Tabela de Índices}
-        \centering
-        \begin{tabular}{|c|c|c|c|c|c|}
-            \hline
-            \textbf{Índice +} & 0 & 1 & 2 & 3 & 4 \\
-            \hline
-            \textbf{Caractere} & M & a & r & i & a \\
-            \hline
-            \textbf{Índice -} & -5 & -4 & -3 & -2 & -1 \\
-            \hline
-        \end{tabular}
-    \end{exampleblock}
+        \column{0.5\textwidth}
+        \begin{exampleblock}{Tabela de Índices}
+            \centering
+            \begin{tabular}{|c|c|c|c|c|c|}
+                \hline
+                \textbf{Índice +}  & 0  & 1  & 2  & 3  & 4  \\
+                \hline
+                \textbf{Caractere} & M  & a  & r  & i  & a  \\
+                \hline
+                \textbf{Índice -}  & -5 & -4 & -3 & -2 & -1 \\
+                \hline
+            \end{tabular}
+        \end{exampleblock}
 
-    \begin{block}{Imutabilidade de string}
-        \begin{itemize}
-            \item Strings são \textbf{imutáveis}
-            \item Tentar modificar gera erro:
-\begin{verbatim}
+        \begin{block}{Imutabilidade de string}
+            \begin{itemize}
+                \item Strings são \textbf{imutáveis}
+                \item Tentar modificar gera erro:
+                      \begin{verbatim}
 nome[0] = 'm'  # TypeError
 \end{verbatim}
-        \end{itemize}
-    \end{block}
-\end{columns}
+            \end{itemize}
+        \end{block}
+    \end{columns}
 
 \end{frame}
 
@@ -393,7 +393,7 @@ nome[0] = 'm'  # TypeError
 \begin{frame}[fragile]{Strings em Python - Operações Comuns}
 
 
-    
+
     \begin{block}{Operações com Strings}
         \begin{itemize}
             \item \textbf{Concatenação (\texttt{+}):} Junta duas strings.
@@ -406,7 +406,7 @@ nome[0] = 'm'  # TypeError
 
 
     \begin{block}{Exemplos}
-\begin{verbatim}
+        \begin{verbatim}
 len(nome)          # 5
 nome + ' Silva'    # 'Maria Silva'
 'ri' in nome       # True
@@ -423,7 +423,7 @@ nome[1:4]          # 'ari'
 
 
 
-\begin{verbatim}
+    \begin{verbatim}
 nome = "Ana Clara"
 idade = 22
 
@@ -444,20 +444,20 @@ print(f"{nome} tem {idade} anos")  # Ana Clara tem 22 anos
 
 \begin{frame}[fragile]{Tuplas em Python}
 
-\begin{block}{Características das Tuplas}
-\begin{itemize}
-    \item Sequência de dados \textbf{ordenados}, representadas por \textbf{parênteses}.
-    \item Podem conter \textbf{diferentes tipos} de dados: inteiros, floats, strings, outras tuplas etc.
-    \item São \textbf{imutáveis}: não é possível alterar seus valores após a criação.
-    \item São \textbf{indexadas}: acessamos os elementos por índices, como em listas ou strings.
-    \item Suportam \textbf{fatiamento} (slicing).
-\end{itemize}
-\end{block}
+    \begin{block}{Características das Tuplas}
+        \begin{itemize}
+            \item Sequência de dados \textbf{ordenados}, representadas por \textbf{parênteses}.
+            \item Podem conter \textbf{diferentes tipos} de dados: inteiros, floats, strings, outras tuplas etc.
+            \item São \textbf{imutáveis}: não é possível alterar seus valores após a criação.
+            \item São \textbf{indexadas}: acessamos os elementos por índices, como em listas ou strings.
+            \item Suportam \textbf{fatiamento} (slicing).
+        \end{itemize}
+    \end{block}
 
-\vspace{0.5em}
+    \vspace{0.5em}
 
-\begin{block}{Exemplo}
-\begin{verbatim}
+    \begin{block}{Exemplo}
+        \begin{verbatim}
 tuplanum = (1, 2, 3)
 mistura = ('Maria', 10, 3.14, (1, 2))
 
@@ -465,67 +465,67 @@ print(tuplanum[0])    # 1
 print(mistura[-1])    # (1, 2)
 print(tuplanum[1:])   # (2, 3)
 \end{verbatim}
-\end{block}
+    \end{block}
 
 \end{frame}
 
 
 \begin{frame}[fragile]{Listas em Python}
 
-\begin{columns}[T]
-    \column{0.55\textwidth}
-    \begin{block}{Características das Listas}
-        \begin{itemize}
-            \item Sequência de valores \textbf{ordenados}, representada por \textbf{colchetes}.
-            \item Suporta \textbf{diferentes tipos} de dados: inteiros, floats, strings, outras listas etc.
-            \item São \textbf{mutáveis}: é possível alterar, adicionar e remover elementos.
-            \item São \textbf{indexadas}, como strings e tuplas.
-        \end{itemize}
-    \end{block}
+    \begin{columns}[T]
+        \column{0.55\textwidth}
+        \begin{block}{Características das Listas}
+            \begin{itemize}
+                \item Sequência de valores \textbf{ordenados}, representada por \textbf{colchetes}.
+                \item Suporta \textbf{diferentes tipos} de dados: inteiros, floats, strings, outras listas etc.
+                \item São \textbf{mutáveis}: é possível alterar, adicionar e remover elementos.
+                \item São \textbf{indexadas}, como strings e tuplas.
+            \end{itemize}
+        \end{block}
 
-    \begin{block}{Exemplo}
-\begin{verbatim}
+        \begin{block}{Exemplo}
+            \begin{verbatim}
 listanum = [1, 2, 3]
 listanum[0] = 10
 \end{verbatim}
-    \end{block}
+        \end{block}
 
-    \column{0.45\textwidth}
-    \begin{exampleblock}{Tabela de Índices}
-    \centering
-    \begin{tabular}{|c|c|c|c|}
-        \hline
-        \textbf{Índice +} & 0 & 1 & 2 \\
-        \hline
-        \textbf{Elemento} & 1 & 2 & 3 \\
-        \hline
-        \textbf{Índice -} & -3 & -2 & -1 \\
-        \hline
-    \end{tabular}
-    \end{exampleblock}
-\end{columns}
+        \column{0.45\textwidth}
+        \begin{exampleblock}{Tabela de Índices}
+            \centering
+            \begin{tabular}{|c|c|c|c|}
+                \hline
+                \textbf{Índice +} & 0  & 1  & 2  \\
+                \hline
+                \textbf{Elemento} & 1  & 2  & 3  \\
+                \hline
+                \textbf{Índice -} & -3 & -2 & -1 \\
+                \hline
+            \end{tabular}
+        \end{exampleblock}
+    \end{columns}
 
 \end{frame}
 
 \begin{frame}[fragile]{Listas em Python - Operações Comuns}
 
-\begin{columns}[T]
-    \column{0.6\textwidth}
-    \begin{block}{Operações com Listas}
-        \begin{itemize}
-            \item \textbf{Tamanho} (\texttt{len}): número de elementos da lista.
-            \item \textbf{Adicionar} (\texttt{append}, \texttt{insert}): adiciona elementos.
-            \item \textbf{Remover} (\texttt{remove}, \texttt{pop}): exclui elementos.
-            \item \textbf{Concatenação} (\texttt{+}): junta duas listas.
-            \item \textbf{Repetição} (\texttt{*}): repete os elementos da lista.
-            \item \textbf{Pertencimento} (\texttt{in}): verifica se um valor está na lista.
-            \item \textbf{Fatiamento} (\texttt{:}): retorna sublistas.
-        \end{itemize}
-    \end{block}
+    \begin{columns}[T]
+        \column{0.6\textwidth}
+        \begin{block}{Operações com Listas}
+            \begin{itemize}
+                \item \textbf{Tamanho} (\texttt{len}): número de elementos da lista.
+                \item \textbf{Adicionar} (\texttt{append}, \texttt{insert}): adiciona elementos.
+                \item \textbf{Remover} (\texttt{remove}, \texttt{pop}): exclui elementos.
+                \item \textbf{Concatenação} (\texttt{+}): junta duas listas.
+                \item \textbf{Repetição} (\texttt{*}): repete os elementos da lista.
+                \item \textbf{Pertencimento} (\texttt{in}): verifica se um valor está na lista.
+                \item \textbf{Fatiamento} (\texttt{:}): retorna sublistas.
+            \end{itemize}
+        \end{block}
 
-    \column{0.4\textwidth}
-    \begin{block}{Exemplos}
-\begin{verbatim}
+        \column{0.4\textwidth}
+        \begin{block}{Exemplos}
+            \begin{verbatim}
 lista = [1, 2, 3]
 len(lista)     # 3
 lista.append(4)# [1, 2, 3, 4]
@@ -535,27 +535,27 @@ lista.pop()    # [1, 2, 3]
 2 in lista     # True
 lista[1:3]     # [2, 3]
 \end{verbatim}
-    \end{block}
-\end{columns}
+        \end{block}
+    \end{columns}
 
 \end{frame}
 
 \begin{frame}[fragile]{Dicionários em Python}
 
-\begin{block}{Características dos Dicionários}
-\begin{itemize}
-    \item \textbf{Coleção não ordenada} de dados.
-    \item Representada por \texttt{\{ \}} com pares \textbf{chave: valor}.
-    \item Acesso aos valores é feito pelas \textbf{chaves}, e não por índices.
-    \item Cada \textbf{chave é única} dentro do dicionário.
-    \item Os dicionários são \textbf{mutáveis}: é possível alterar, adicionar e remover pares.
-\end{itemize}
-\end{block}
+    \begin{block}{Características dos Dicionários}
+        \begin{itemize}
+            \item \textbf{Coleção não ordenada} de dados.
+            \item Representada por \texttt{\{ \}} com pares \textbf{chave: valor}.
+            \item Acesso aos valores é feito pelas \textbf{chaves}, e não por índices.
+            \item Cada \textbf{chave é única} dentro do dicionário.
+            \item Os dicionários são \textbf{mutáveis}: é possível alterar, adicionar e remover pares.
+        \end{itemize}
+    \end{block}
 
-\vspace{0.5em}
+    \vspace{0.5em}
 
-\begin{block}{Exemplo}
-\begin{verbatim}
+    \begin{block}{Exemplo}
+        \begin{verbatim}
 produtos = {
     'farinha': 3.00,
     'feijão': 5.00,
@@ -563,7 +563,7 @@ produtos = {
     'açúcar': 2.49 }
 print(produtos['leite'])  # 4.25
 \end{verbatim}
-\end{block}
+    \end{block}
 
 \end{frame}
 
@@ -580,7 +580,7 @@ print(produtos['leite'])  # 4.25
 
 
     \begin{block}{Exemplos}
-\begin{verbatim}
+        \begin{verbatim}
 produtos['arroz'] = 4.99
 'feijão' in produtos       # True
 'macarrão' in produtos     # False
@@ -593,69 +593,69 @@ preco = produtos.get('leite')
 
 \begin{frame}[fragile]{Booleanos em Python}
 
-\begin{block}{O que são Booleanos?}
-\begin{itemize}
-    \item Tipo \texttt{bool} representa apenas dois valores: \texttt{True} e \texttt{False}.
-    \item Usado para expressar condições lógicas.
-    \item Muito comum em estruturas de decisão (como \texttt{if}).
-\end{itemize}
-\end{block}
-
-\vspace{0.5em}
-
-\begin{columns}[T]
-    \column{0.5\textwidth}
-    \begin{block}{Operadores de Comparação}
-    \begin{itemize}
-        \item \texttt{==} : Igual a
-        \item \texttt{!=} : Diferente de
-        \item \texttt{>}  : Maior que
-        \item \texttt{>=} : Maior ou igual a
-        \item \texttt{<}  : Menor que
-        \item \texttt{<=} : Menor ou igual a
-    \end{itemize}
+    \begin{block}{O que são Booleanos?}
+        \begin{itemize}
+            \item Tipo \texttt{bool} representa apenas dois valores: \texttt{True} e \texttt{False}.
+            \item Usado para expressar condições lógicas.
+            \item Muito comum em estruturas de decisão (como \texttt{if}).
+        \end{itemize}
     \end{block}
 
-    \column{0.5\textwidth}
-    \begin{block}{Exemplos}
-\begin{verbatim}
+    \vspace{0.5em}
+
+    \begin{columns}[T]
+        \column{0.5\textwidth}
+        \begin{block}{Operadores de Comparação}
+            \begin{itemize}
+                \item \texttt{==} : Igual a
+                \item \texttt{!=} : Diferente de
+                \item \texttt{>}  : Maior que
+                \item \texttt{>=} : Maior ou igual a
+                \item \texttt{<}  : Menor que
+                \item \texttt{<=} : Menor ou igual a
+            \end{itemize}
+        \end{block}
+
+        \column{0.5\textwidth}
+        \begin{block}{Exemplos}
+            \begin{verbatim}
 5 > 3        # True
 10 == 20     # False
 7 != 4       # True
 2 <= 2       # True
 \end{verbatim}
-    \end{block}
-\end{columns}
+        \end{block}
+    \end{columns}
 
 \end{frame}
 
 \begin{frame}[fragile]{Booleanos em Python - Operadores Lógicos}
 
-\begin{block}{Conectando Expressões Booleanas}
-\begin{itemize}
-    \item \texttt{not} – \textbf{Não lógico}: inverte o valor lógico.
-    \item \texttt{and} – \textbf{E lógico}: verdadeiro apenas se as duas expressões forem verdadeiras.
-    \item \texttt{or} – \textbf{Ou lógico}: verdadeiro se pelo menos uma das expressões for verdadeira.
-\end{itemize}
-\end{block}
+    \begin{block}{Conectando Expressões Booleanas}
+        \begin{itemize}
+            \item \texttt{not} – \textbf{Não lógico}: inverte o valor lógico.
+            \item \texttt{and} – \textbf{E lógico}: verdadeiro apenas se as duas expressões forem verdadeiras.
+            \item \texttt{or} – \textbf{Ou lógico}: verdadeiro se pelo menos uma das expressões for verdadeira.
+        \end{itemize}
+    \end{block}
 
-\vspace{0.5em}
+    \vspace{0.5em}
 
-\begin{columns}[T]
-    \column{0.5\textwidth}
-    \begin{block}{Exemplos}
-\begin{verbatim}
+    \begin{columns}[T]
+        \column{0.5\textwidth}
+        \begin{block}{Exemplos}
+            \begin{verbatim}
 not True       # False
 not False      # True
 
 True and True  # True
 True and False # False
 \end{verbatim}
-    \end{block}
+        \end{block}
 
-    \column{0.5\textwidth}
-    \begin{block}{Mais Exemplos}
-\begin{verbatim}
+        \column{0.5\textwidth}
+        \begin{block}{Mais Exemplos}
+            \begin{verbatim}
 True or False   # True
 False or False  # False
 
@@ -663,47 +663,47 @@ x = 5
 x > 0 and x < 10     # True
 not (x == 5)         # False
 \end{verbatim}
-    \end{block}
-\end{columns}
+        \end{block}
+    \end{columns}
 
 \end{frame}
 
 \begin{frame}[fragile]{Estrutura Condicional em Python}
 
-\begin{block}{Decisões com \texttt{if} e \texttt{else}}
-\begin{itemize}
-    \item Em muitas situações, partes do código devem ser executadas apenas se certas condições forem verdadeiras.
-    \item Para isso, usamos expressões booleanas com as estruturas \texttt{if} e \texttt{else}.
-    \item O bloco \texttt{if} só será executado se a condição for \texttt{True}.
-    \item Caso contrário, o bloco \texttt{else} (se presente) será executado.
-\end{itemize}
-\end{block}
+    \begin{block}{Decisões com \texttt{if} e \texttt{else}}
+        \begin{itemize}
+            \item Em muitas situações, partes do código devem ser executadas apenas se certas condições forem verdadeiras.
+            \item Para isso, usamos expressões booleanas com as estruturas \texttt{if} e \texttt{else}.
+            \item O bloco \texttt{if} só será executado se a condição for \texttt{True}.
+            \item Caso contrário, o bloco \texttt{else} (se presente) será executado.
+        \end{itemize}
+    \end{block}
 
-\vspace{0.5em}
+    \vspace{0.5em}
 
-\begin{block}{Sintaxe}
-\begin{verbatim}
+    \begin{block}{Sintaxe}
+        \begin{verbatim}
 if <condição>:
     <bloco if>
 else:
     <bloco else>
 \end{verbatim}
-\end{block}
+    \end{block}
 
 \end{frame}
 
 \begin{frame}[fragile]{Exemplo de Estrutura Condicional}
 
-\begin{block}{Problema}
-Queremos verificar se uma pessoa pode votar.  
-Se a idade for maior ou igual a 18 anos, ela pode votar.  
-Caso contrário, ela não pode votar.
-\end{block}
+    \begin{block}{Problema}
+        Queremos verificar se uma pessoa pode votar.
+        Se a idade for maior ou igual a 18 anos, ela pode votar.
+        Caso contrário, ela não pode votar.
+    \end{block}
 
-\vspace{1em}
+    \vspace{1em}
 
-\begin{block}{Código em Python}
-\begin{verbatim}
+    \begin{block}{Código em Python}
+        \begin{verbatim}
 idade = int(input("Digite sua idade: "))
 
 if idade >= 18:
@@ -711,84 +711,84 @@ if idade >= 18:
 else:
     print("Você não pode votar.")
 \end{verbatim}
-\end{block}
+    \end{block}
 
 \end{frame}
 
 \begin{frame}[fragile]{Estrutura de Repetição em Python}
 
-\begin{block}{O que são Loops?}
-\begin{itemize}
-    \item Permitem executar um trecho de código várias vezes durante a mesma execução.
-    \item Úteis para automatizar tarefas repetitivas.
-\end{itemize}
-\end{block}
+    \begin{block}{O que são Loops?}
+        \begin{itemize}
+            \item Permitem executar um trecho de código várias vezes durante a mesma execução.
+            \item Úteis para automatizar tarefas repetitivas.
+        \end{itemize}
+    \end{block}
 
-\vspace{0.5em}
+    \vspace{0.5em}
 
-\begin{block}{Tipos de Estruturas de Repetição}
-\begin{itemize}
-    \item \textbf{While:} repete enquanto uma condição booleana for verdadeira.
-    \item \textbf{For:} itera sobre elementos de uma coleção (strings, listas, tuplas, etc.).
-\end{itemize}
-\end{block}
+    \begin{block}{Tipos de Estruturas de Repetição}
+        \begin{itemize}
+            \item \textbf{While:} repete enquanto uma condição booleana for verdadeira.
+            \item \textbf{For:} itera sobre elementos de uma coleção (strings, listas, tuplas, etc.).
+        \end{itemize}
+    \end{block}
 
-\vspace{0.5em}
+    \vspace{0.5em}
 
-\begin{block}{Exemplos}
-\begin{verbatim}
+    \begin{block}{Exemplos}
+        \begin{verbatim}
 while condicao:
     # bloco de código
 for elemento in iteravel:
     # bloco de código
 \end{verbatim}
-\end{block}
+    \end{block}
 
 \end{frame}
 
 
 \begin{frame}[fragile]{Exemplo de Loop \texttt{while}}
 
-\begin{block}{Contando de 1 a 5 com \texttt{while}}
-\begin{verbatim}
+    \begin{block}{Contando de 1 a 5 com \texttt{while}}
+        \begin{verbatim}
 contador = 1
 
 while contador <= 5:
     print(contador)
     contador += 1
 \end{verbatim}
-\end{block}
+    \end{block}
 
 \end{frame}
 
 
 \begin{frame}[fragile]{Exemplo de Loop \texttt{for}}
 
-\begin{block}{Iterando sobre uma lista com \texttt{for}}
-\begin{verbatim}
+    \begin{block}{Iterando sobre uma lista com \texttt{for}}
+        \begin{verbatim}
 nomes = ['Ana', 'Bruno', 'Carlos']
 
 for nome in nomes:
     print(nome)
 \end{verbatim}
-\end{block}
+    \end{block}
 
 \end{frame}
 
 \begin{frame}[fragile]{Entrada de Dados em Python}
 
-\begin{block}{Função \texttt{input()}}
-\begin{itemize}
-    \item Usada para ler dados digitados pelo usuário.
-    \item Sempre retorna uma \textbf{string}.
-    \item É necessário converter o valor se quisermos um número.
-\end{itemize}
-\end{block}
+    \begin{block}{Função \texttt{input()}}
+        \begin{itemize}
+            \item Usada para ler dados digitados pelo usuário.
+            \item Sempre retorna uma \textbf{string}.
+            \item É necessário converter o valor se quisermos um número.
+        \end{itemize}
+    \end{block}
 
-\vspace{1em}
+    \vspace{1em}
 
-\begin{block}{Exemplos}
-\begin{verbatim}
+    \begin{block}{Exemplos}
+        \begin{verbatim}
 nome = input("Digite seu nome: ")
 idade = input("Digite sua idade: ")
 
@@ -798,25 +798,25 @@ idade = int(idade)
 # Ou diretamente
 idade = int(input("Digite sua idade: "))
 \end{verbatim}
-\end{block}
+    \end{block}
 
 \end{frame}
 
 
 \begin{frame}[fragile]{Saída de Dados em Python}
 
-\begin{block}{Função \texttt{print()}}
-\begin{itemize}
-    \item Utilizada para \textbf{exibir informações} ao usuário.
-    \item Pode mostrar textos, resultados de expressões, valores de variáveis, etc.
-    \item Aceita múltiplos argumentos separados por vírgula.
-\end{itemize}
-\end{block}
+    \begin{block}{Função \texttt{print()}}
+        \begin{itemize}
+            \item Utilizada para \textbf{exibir informações} ao usuário.
+            \item Pode mostrar textos, resultados de expressões, valores de variáveis, etc.
+            \item Aceita múltiplos argumentos separados por vírgula.
+        \end{itemize}
+    \end{block}
 
-\vspace{1em}
+    \vspace{1em}
 
-\begin{block}{Exemplos}
-\begin{verbatim}
+    \begin{block}{Exemplos}
+        \begin{verbatim}
 print("Olá, mundo!")
 nome = "Maria"
 print("Olá,", nome)
@@ -824,6 +824,6 @@ print("Olá,", nome)
 idade = 20
 print("Idade:", idade)
 \end{verbatim}
-\end{block}
+    \end{block}
 
 \end{frame}
