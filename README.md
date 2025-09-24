@@ -1,10 +1,16 @@
-# SimpleDarkBlue Beamer Theme
+# ICP225 - Computação II
 
-The **SimpleDarkBlue Beamer Theme** is a simple LaTeX template designed for academic and scientific presentations.
+Este repositório contém o material didático da disciplina **ICP225 - Computação II**, oferecida pelo **Instituto de Computação da UFRJ**.
 
--   CTAN: https://ctan.org/pkg/beamertheme-simpledarkblue
--   Github: https://github.com/pm25/SimpleDarkBlue-BeamerTheme
+O conteúdo foi desenvolvido em **LaTeX/Beamer**, com o objetivo de apoiar as aulas e servir como referência para os alunos.  
+Os slides seguem o conteúdo programático da disciplina, abordando tópicos como programação orientada a objetos, herança, polimorfismo, tratamento de exceções, persistência de dados, bibliotecas científicas, entre outros.
 
-## License
+## Estrutura
 
-This project is released under the **Unlicense License**, granting you complete freedom to use, modify, and distribute the template. For more details, see the [LICENSE](./LICENSE) file.
+- `ICP225-Listas` → Listas de exercícios da disciplina  
+- `ICP225-Slides` → Slides organizados por semana/tema  
+- `ICP225-Codigo` → Códigos-fonte utilizados como exemplo nas aulas 
+## Observações
+
+Este repositório está em constante atualização.  
+O uso é recomendado para alunos matriculados na disciplina, bem como demais interessados em programação orientada a objetos com Python.
