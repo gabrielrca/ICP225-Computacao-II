@@ -8,6 +8,8 @@ Os slides seguem o conteúdo programático da disciplina, abordando tópicos com
 ## Sugestões, erros ou informaçoes
 Caso encontre algum erro, queira sugerir alguma coisa ou deseje pedir alguma informação, entre em contato! :)
 
+gabrielcaldas AT ic.ufrj.br
+
 ## Estrutura
 
 - `ICP225-Listas` → Listas de exercícios da disciplina  
