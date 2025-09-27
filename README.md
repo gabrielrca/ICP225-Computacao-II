@@ -19,3 +19,36 @@ gabrielcaldas AT ic.ufrj.br
 
 Este repositório está em constante atualização.  
 O uso é recomendado para alunos matriculados na disciplina, bem como demais interessados em programação orientada a objetos com Python.
+
+## Como utilizar:
+
+Para utilizar este repositório você deve clonar e compilar o Latex localmente. 
+Os passos abaixo são os que eu utilizo para fazer a compilação local usando CachyOS (distro baseada em Arch)
+Obs: Para ouras distro, eu nunca fiz (se souber fazer, me fala que eu atualizo aqui), para Mac e Windows (...)
+Obs2: Dá pra zipar e usar no overleaf também.
+
+### 1. Para instalar o Latex:
+```bash
+sudo pacman -S texlive-basic texlive-latex texlive-latexextra texlive-fontsextra texlive-langportuguese texlive-binextra texlive-pictures texlive-mathscience
+```
+
+### 2. Para instalar o pearl (que é necessário para autoidentação no vscodium)
+```bash
+sudo pacman -S perl-yaml-tiny perl-file-homedir perl-file-which perl-capture-tiny
+```
+
+Feito isso, adicione `/usr/bin/latexindent` no Vscodium para ativar a auto identação do latex da seguinte forma: 
+
+- Insale o `LaTeX Workshop` no VSCodium
+- Após instalar, edite o `settings.json` com o seguinte:
+
+```bash
+"latex-workshop.formatting.latexindent.path": "/usr/share/texmf-dist/scripts/latexindent/latexindent.pl",
+  "latex-workshop.latexindent.modifyLineBreaks": true,
+  "editor.wordWrap": "on",
+  "editor.formatOnSave": true,
+  "[latex]": {
+    "editor.formatOnSave": true
+  },
+  "latex-workshop.formatting.latex": "latexindent",
+```
