@@ -23,8 +23,11 @@ O uso é recomendado para alunos matriculados na disciplina, bem como demais int
 ## Como utilizar:
 
 Para utilizar este repositório você deve clonar e compilar o Latex localmente. 
+
 Os passos abaixo são os que eu utilizo para fazer a compilação local usando CachyOS (distro baseada em Arch)
+
 Obs: Para ouras distro, eu nunca fiz (se souber fazer, me fala que eu atualizo aqui), para Mac e Windows (...)
+
 Obs2: Dá pra zipar e usar no overleaf também.
 
 ### 1. Para instalar o Latex:
