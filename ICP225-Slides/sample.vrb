@@ -1,22 +1,25 @@
-\frametitle{Histograma com Distribuição Exponencial}
-\begin{itemize}
-        \item Podemos visualizar dados de uma distribuição exponencial com \texttt{plt.hist()}.
-        \item A distribuição exponencial é assimétrica e decresce rapidamente.
-    \end{itemize}
+\frametitle{Criando Exceções Personalizadas}
+\small
+    \begin{verbatim}
+class SaldoInsuficienteError(Exception):
+    def __init__(self, saldo, valor, mensagem="Saldo insuficiente para a
+    operação."):
+        self.saldo = saldo
+        self.valor = valor
+        self.mensagem = f"{mensagem} Saldo atual: R${saldo:.2f},
+        valor solicitado: R${valor:.2f}."
+        super().__init__(self.mensagem)
+def sacar(saldo, valor):
+    if valor > saldo:
+        raise SaldoInsuficienteError(saldo, valor)
+    saldo -= valor
+    return saldo
+try:
+    saldo_atual = 100.0
+    novo_saldo = sacar(saldo_atual, 20.0)
+    print(f"Saque realizado! Novo saldo: R${novo_saldo:.2f}")
+except SaldoInsuficienteError as e:
+    print(f"Erro: {e}")
 
-    \begin{block}{Código em Python}
-        \begin{verbatim}
-data = np.random.exponential(scale=1.0, size=1000)
-plt.hist(data, bins=30, edgecolor='black')
-plt.xlabel('Valor')
-plt.ylabel('Frequência')
-plt.title('Histograma de Distribuição Exponencial')
-plt.grid(True)
-plt.show()
 \end{verbatim}
-    \end{block}
 
-    \begin{itemize}
-        \item \texttt{np.random.exponential(scale=1.0, size=1000)} gera 1000 valores exponenciais com média 1.
-        \item A maioria dos valores está concentrada próximo de 0, com uma cauda longa à direita.
-    \end{itemize}
