@@ -1,25 +1,15 @@
-\frametitle{Criando Exceções Personalizadas}
-\small
-    \begin{verbatim}
-class SaldoInsuficienteError(Exception):
-    def __init__(self, saldo, valor, mensagem="Saldo insuficiente para a
-    operação."):
-        self.saldo = saldo
-        self.valor = valor
-        self.mensagem = f"{mensagem} Saldo atual: R${saldo:.2f},
-        valor solicitado: R${valor:.2f}."
-        super().__init__(self.mensagem)
-def sacar(saldo, valor):
-    if valor > saldo:
-        raise SaldoInsuficienteError(saldo, valor)
-    saldo -= valor
-    return saldo
-try:
-    saldo_atual = 100.0
-    novo_saldo = sacar(saldo_atual, 20.0)
-    print(f"Saque realizado! Novo saldo: R${novo_saldo:.2f}")
-except SaldoInsuficienteError as e:
-    print(f"Erro: {e}")
+\frametitle{Demonstração: Tratando Arquivo Corrompido}
 
+    \begin{block}{Código de Tratamento}
+        \begin{verbatim}
+try:
+    f = open("arquivo-corrompido.txt", "r")
+    conteudo = f.read()
+    f.close()
+    print(conteudo)
+except IOError:
+    print("Erro: Problema ao ler o arquivo")
 \end{verbatim}
+    \end{block}
+
 
