@@ -402,12 +402,28 @@ arquivo.seek(offset)
 arquivo.seek(10)
                 \end{verbatim}
     \end{exampleblock}
+\end{frame}
 
+\begin{frame}[fragile]{Encontrando um conteúdo no arquivo}
+    \begin{block}{Como fazer para achar um conteúdo no arquivo?}
+        Podemos achar um conteúdo com usando o \textbf{find}
+    \end{block}
+    \begin{verbatim}
+f = open("vinyl_sales.txt", "r+")
+conteudo = f.read()
+pos = conteudo.find("achado")
+print(pos)
+f.seek(pos)
+f.write("Encontrei")
+f.close()
+    \end{verbatim}
 
-
-
+    \begin{alertblock}{Nesse caso}
+        Nós lemos o arquivo, depois encontramos a palavra desejada com o find e temos a posição correta na variável \textbf{pos}
+    \end{alertblock}
 
 \end{frame}
+
 
 \begin{frame}[fragile]{Modo de Abertura \texttt{r+}}
 
