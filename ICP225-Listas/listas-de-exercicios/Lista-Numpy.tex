@@ -1,0 +1,100 @@
+\title{Lista de exercicios: Numpy}
+\author{Gabriel Rodrigues Caldas de Aquino}
+\date{\today}
+\begin{document}
+
+
+\maketitle
+
+\textbf{Faça todos os exercícios utilizando Python e Numpy.}
+
+\section{Resolução de Sistema}
+\textbf{Resolva}:
+\[
+    \begin{cases}
+        2x_1 + x_2 - x_3 + x_4 + 2x_5 + x_6 - x_7 + x_8 = 5    \\
+        x_1 + 3x_2 + x_3 - 2x_4 + x_5 + x_6 + x_7 - x_8 = 12   \\
+        -x_1 + 2x_2 + 4x_3 + x_4 - x_5 + x_6 + 2x_7 + x_8 = 3  \\
+        3x_1 - x_2 + 2x_3 + 5x_4 + x_5 - x_6 + x_7 + x_8 = 18  \\
+        x_1 + x_2 + x_3 + x_4 + x_5 + x_6 + x_7 + x_8 = 10     \\
+        2x_1 - 3x_2 + x_3 + 4x_4 - x_5 + 2x_6 - x_7 + 3x_8 = 7 \\
+        x_1 + 4x_2 - 2x_3 + x_4 + 2x_5 - 3x_6 + x_7 + x_8 = 9  \\
+        4x_1 + x_2 + x_3 - x_4 + x_5 + 2x_6 + x_7 + 5x_8 = 20
+    \end{cases}
+\]
+
+\begin{itemize}
+    \item Encontre o valor das incógnitas.
+    \item Faça a operação com a prova real.
+\end{itemize}
+
+\section{Vendas de papelaria}
+
+Abra o arquivo \textbf{vendas\_papelaria.csv} que contém a venda de 10 itens em 50 papelarias em uma planilha. Faça:
+
+\begin{itemize}
+    \item Descubra a maior e menor quantidade de cada item vendido considerando todas as papelarias.
+    \item Descubra para cada papelaria qual foi a quantidade do item que menos vendeu e do item que mais vendeu.
+    \item Calcule o total de cada item vendido considerando todas as papelarias.
+    \item Calcule quantos items cada papelaria vendeu.
+    \item Calcule a média de vendas de cada item.
+    \item Faça a transposição da planilha de vendas.
+\end{itemize}
+
+\section{Vendas de papelaria e preços}
+
+Considere o arquivo \textbf{preços\_papelarias.csv} que contém o preço de cada item em cada papelaria em uma planilha. Faça:
+
+\begin{itemize}
+    \item Calcule o faturamento de cada item em cada papelaria.
+    \item Calcule o faturamento de cada papelaria.
+    \item Calcule qual foi o faturamento de cada item considerando todas as papelarias.
+\end{itemize}
+
+\section{Soma de Forças no Plano}
+
+Um corpo está sujeito à ação de três forças no plano, dadas em newtons (N):
+
+\[
+    \vec{F_1} = (8, 3), \quad
+    \vec{F_2} = (-5, 7), \quad
+    \vec{F_3} = (4, -6)
+\]
+
+\textbf{Tarefas:}
+
+\begin{itemize}
+    \item Calcule o vetor resultante.
+    \item Determine o módulo do vetor resultante.
+    \item Aumente a força resultante por 3 e determine o novo vetor.
+    \item Calcule o módulo deste novo vetor.
+\end{itemize}
+
+\textbf{Dica}: Use \textit{np.linalg.norm()} para calcular o módulo.
+
+\section{Movimento de um Drone}
+
+Um drone de entrega com massa \(m = 5\ \mathrm{kg}\) está em voo. Ele está sujeito a três forças principais:
+
+\[
+    \vec{F_1} = (20, 70), \quad \text{Força dos Propulsores}
+\]
+\[
+    \vec{F_2} = (-30, -5), \quad \text{Força do Vento}
+\]
+\[
+    \vec{g} = (0, -9.8), \quad \text{Gravidade}
+\]
+
+\textbf{Dica}: Fgrav = m*g
+
+
+\textbf{Tarefas:}
+
+\begin{enumerate}
+    \item Calcule a Força da Gravidade.
+    \item Calcule a Força Resultante:
+    \item Calcule a aceleração resultante \(\vec{a} = \vec{R} / m\).
+\end{enumerate}
+
+\end{document}

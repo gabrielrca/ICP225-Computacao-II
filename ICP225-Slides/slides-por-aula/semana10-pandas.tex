@@ -1,0 +1,559 @@
+%----------------------------------------------------------------------------------------
+%    TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title{Pandas}
+
+\author{Prof. Gabriel Rodrigues Caldas de Aquino}
+
+\institute
+{
+    gabrielaquino@ic.ufrj.br\\
+
+    Instituto de Computação -
+    Universidade Federal do Rio de Janeiro % Your institution for the title page
+}
+\date{Compilado em: \\ \today} % Date, can be changed to a custom date
+
+%----------------------------------------------------------------------------------------
+%    PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+%------------------------------------------------
+\section{Pandas}
+%------------------------------------------------
+
+\begin{frame}
+    % Print the title page as the first slide
+    \titlepage
+\end{frame}
+
+% Slide 1
+\begin{frame}{Introdução ao Pandas}
+    \begin{itemize}
+        \item Pandas é um pacote do Python para análise de dados.
+        \item Ela fornece estruturas de dados embutidas que simplificam a manipulação e análise de conjuntos de dados.
+        \item Não podemos ensinar tudo sobre o pandas, precisamos focar em como ele funciona, para que você possa descobrir o restante por conta própria.
+              \begin{itemize}
+                  \item \url{http://pandas.pydata.org/pandas-docs/stable/}
+              \end{itemize}
+    \end{itemize}
+\end{frame}
+
+% Slide 2
+\begin{frame}{O que é Pandas?}
+    \begin{itemize}
+        \item Pandas, assim como o NumPy, é uma das bibliotecas Python mais populares para análise de dados.
+        \item É uma abstração de alto nível sobre o NumPy, que é escrito em C puro.
+        \item O Pandas oferece estruturas de dados e ferramentas de análise de dados de alto desempenho e fáceis de usar.
+        \item Existem duas estruturas principais usadas pelo Pandas: DataFrames e Series.
+    \end{itemize}
+\end{frame}
+
+
+
+% Slide 4
+\begin{frame}{Pandas: Conceitos Essenciais}
+    \begin{itemize}
+        \item Serie é uma lista nomeada no Python (ou um dicionário com listas como valor)
+              \begin{itemize}
+                  \item \{ 'Notas': [50, 90, 100, 45] \}
+              \end{itemize}
+
+        \item DataFrame é como um dicionário de Series (ou seja, um dicionário contendo várias listas nomeadas).
+              \begin{itemize}
+                  \item \{ 'Nomes': ['Carlos', 'Larissa', 'Roberto', 'João'],\\
+                        'Notas': [50, 90, 100, 45] \}
+              \end{itemize}
+
+    \end{itemize}
+
+    \begin{itemize}
+        \item Essas estruturas são fundamentais para trabalhar com dados no pandas.
+        \item Uma Serie representa uma única coluna, enquanto o DataFrame organiza várias colunas relacionadas.
+    \end{itemize}
+\end{frame}
+
+% Slide 6
+\begin{frame}{Índices em uma Série do Pandas}
+    \begin{itemize}
+        \item Uma Série do Pandas é semelhante a uma lista, mas difere pelo fato de associar um rótulo a cada elemento. Isso a faz parecer com um dicionário.
+        \item Se um índice não for explicitamente fornecido pelo usuário, o Pandas cria um RangeIndex, que varia de 0 a $N-1$.
+        \item Cada objeto da Série também possui um tipo de dado associado (data type), que define o tipo dos elementos armazenados na Série.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Criando  Séries e Dataframes no Pandas}
+
+
+    \begin{block}{Criando \textbf{Séries}}
+        \begin{verbatim}
+import pandas as df
+
+s = df.Series([10, 20, 30, 40])
+print(s)
+\end{verbatim}
+    \end{block}
+
+
+    \begin{block}{Criando \textbf{DataFrames}}
+        \begin{verbatim}
+import pandas as df
+
+df = df.DataFrame({
+    "Nomes": ["Carlos", "Larissa", "Roberto", "João"],
+    "Notas": [50, 90, 100, 45]
+})
+
+print(df)
+\end{verbatim}
+    \end{block}
+
+\end{frame}
+
+\begin{frame}{Pandas DataFrame}
+
+    \begin{itemize}
+        \item Um DataFrame é uma tabela com linhas e colunas.
+        \item Cada coluna em um DataFrame é um objeto \textbf{Série}.
+        \item As linhas consistem em elementos dentro das Séries.
+    \end{itemize}
+
+    \vspace{0.5cm}
+    \begin{center}
+        \begin{tabular}{c c c c}
+            \textbf{ID} & \textbf{Variavel 1} & \textbf{Variavel 2} & \textbf{Variavel 3} \\
+            1           & 123                 & ABC                 & 10                  \\
+            2           & 456                 & DEF                 & 20                  \\
+            3           & 789                 & XYZ                 & 3                   \\
+        \end{tabular}
+    \end{center}
+
+\end{frame}
+
+
+\begin{frame}[fragile]{Exemplo de DataFrame com Índice Personalizado}
+
+    \begin{block}{Criando \textbf{DataFrame} com índice}
+        \begin{verbatim}
+import pandas as df
+
+df1 = df.DataFrame(
+    {
+        "p1": [3.2, 2.0, 3.0, 4.0],
+        "p2": [2.3, 1.0, 1.0, 1.0]
+    },
+    index=["Gabriel", "Pedro", "Mariana", "Joana"]
+)
+
+print(df1)
+        \end{verbatim}
+    \end{block}
+
+\end{frame}
+
+\begin{frame}[fragile]{Acessando elementos por posição com \texttt{iloc}}
+
+    \begin{block}{Usando \textbf{iloc}}
+        \begin{verbatim}
+# Supondo que df1 já exista
+# Acessa a primeira linha
+print(df1.iloc[0])
+
+# Acessa o valor da primeira linha, segunda coluna
+print(df1.iloc[0, 1])
+        \end{verbatim}
+    \end{block}
+
+    \begin{block}{Explicação}
+        \texttt{iloc} é projetado para acessar elementos do DataFrame \textbf{por posição numérica}.
+        - O primeiro índice indica a linha.
+        - O segundo índice indica a coluna.
+    \end{block}
+
+\end{frame}
+
+\begin{frame}[fragile]{Selecionando múltiplas linhas e colunas}
+
+    \begin{block}{Usando \textbf{iloc} para várias linhas e colunas}
+        \begin{verbatim}
+# Primeiras duas linhas, primeira e segunda colunas
+print(df1.iloc[0:2, 0:2])
+        \end{verbatim}
+    \end{block}
+
+    \begin{block}{Usando \textbf{loc} para acessar pelo rótulo}
+        \begin{verbatim}
+# Linhas "Gabriel" e "Pedro", colunas "p1" e "p2"
+print(df1.loc[["Gabriel","Pedro"], ["p1","p2"]])
+        \end{verbatim}
+    \end{block}
+
+    \begin{block}{Explicação}
+        - \texttt{iloc} acessa linhas e colunas por posição numérica.\\
+        - \texttt{loc} acessa linhas e colunas por rótulo (nomes de índice e colunas).
+    \end{block}
+
+\end{frame}
+
+
+
+\begin{frame}[fragile]{Acessando uma coluna do DataFrame}
+
+    \begin{block}{Selecionando a coluna \textbf{p2}}
+        \begin{verbatim}
+# Supondo que df1 já exista
+print(df1["p2"])
+        \end{verbatim}
+    \end{block}
+
+    \begin{block}{Explicação}
+        É possível acessar qualquer coluna do DataFrame usando o nome dela entre colchetes.
+        Isso retorna uma \textbf{Série} contendo todos os valores dessa coluna.
+    \end{block}
+
+\end{frame}
+
+
+\begin{frame}[fragile]{Exemplos de filtragem e seleção no DataFrame}
+
+    \begin{block}{1. Filtrando apenas a coluna \textbf{p1}}
+        \begin{verbatim}
+# Mostra apenas a coluna p1
+print(df1["p1"])
+        \end{verbatim}
+    \end{block}
+
+    \begin{block}{2. Filtrando apenas a linha de um aluno (ex: Gabriel)}
+        \begin{verbatim}
+# Mostra apenas a linha do aluno "Gabriel"
+print(df1.loc["Gabriel"])
+        \end{verbatim}
+    \end{block}
+
+    \begin{block}{3. Condição booleana: valores maiores que 3}
+        \begin{verbatim}
+# Mostra True/False para cada elemento > 3
+print(df1 > 3)
+        \end{verbatim}
+    \end{block}
+
+\end{frame}
+
+
+\begin{frame}[fragile]{Filtrando elementos no DataFrame}
+
+    \begin{block}{Filtrando valores menores que 7}
+        \begin{verbatim}
+# Supondo que df1 já exista
+# Filtra todas as linhas onde p1 < 7
+print(df1[df1["p1"] < 7])
+        \end{verbatim}
+    \end{block}
+
+    \begin{block}{Explicação}
+        - Usando uma condição booleana dentro de colchetes podemos selecionar apenas as linhas que atendem ao critério.\\
+        - O resultado é um DataFrame contendo somente essas linhas.
+    \end{block}
+
+\end{frame}
+
+
+\begin{frame}[fragile]{Adicionando uma nova coluna p3 no DataFrame}
+
+    \begin{block}{Criando a coluna \textbf{p3}}
+        \begin{verbatim}
+# Supondo que df1 já exista
+df1["p3"] = [5.0, 4.5, 3.5, 4.0]
+
+print(df1)
+        \end{verbatim}
+    \end{block}
+
+\end{frame}
+
+\begin{frame}[fragile]{Adicionando uma nova coluna no DataFrame}
+
+    \begin{block}{Criando a coluna \textbf{Média}}
+        \begin{verbatim}
+# Supondo que df1 já exista
+df1["Media"] = (df1["p1"] + df1["p2"]) / 2
+
+print(df1)
+        \end{verbatim}
+    \end{block}
+
+\end{frame}
+
+\begin{frame}[fragile]{Adicionando coluna \textbf{Aprovado} ao DataFrame}
+
+    \begin{block}{Criando a coluna \textbf{Aprovado}}
+        \begin{verbatim}
+# Supondo que df1 já exista e a coluna "Media" já tenha sido criada
+df1["Aprovado"] = df1["Media"] > 5
+
+print(df1)
+        \end{verbatim}
+    \end{block}
+
+\end{frame}
+
+
+
+\begin{frame}[fragile]{Criando o DataFrame de população}
+
+    \begin{block}{Criando o DataFrame}
+        \begin{verbatim}
+import pandas as pd
+
+ano = [1750, 1800, 1850, 1900, 1950, 1955, 1960, 1965,
+       1970, 1975, 1980, 1985, 1990, 1995, 2000, 2005]
+populacao = [791000, 978000, 1262000, 1650000, 2518629,
+             2755823, 3021475, 3334874, 3692492, 4063587,
+             4434682, 4830979, 5263593, 5674380, 6070581, 6453628]
+
+df = pd.DataFrame({
+    "Ano": ano,
+    "Populacao": populacao
+}, columns=["Ano", "Populacao"])
+print(df)
+        \end{verbatim}
+    \end{block}
+
+\end{frame}
+
+\begin{frame}[fragile]{Filtrando colunas}
+
+    \begin{block}{Mostrando apenas a coluna População}
+        \begin{verbatim}
+print(df["Populacao"])
+        \end{verbatim}
+    \end{block}
+
+    \begin{block}{Mostrando apenas a coluna Ano}
+        \begin{verbatim}
+print(df["Ano"])
+        \end{verbatim}
+    \end{block}
+
+\end{frame}
+
+\begin{frame}[fragile]{Filtragem por condição}
+
+    \begin{block}{Linhas com Ano $>$ 1999}
+        \begin{verbatim}
+print(df[df["Ano"] > 1999])
+        \end{verbatim}
+    \end{block}
+
+    \begin{block}{Selecionando apenas a coluna Ano dessas linhas}
+        \begin{verbatim}
+print(df[df["Ano"] > 1999]["Ano"])
+        \end{verbatim}
+    \end{block}
+
+    \begin{block}{Selecionando apenas a coluna População dessas linhas}
+        \begin{verbatim}
+print(df[df["Ano"] > 1999]["Populacao"])
+        \end{verbatim}
+    \end{block}
+
+\end{frame}
+
+\begin{frame}[fragile]{Gráfico de população ao longo dos anos }
+
+    \begin{block}{Plot completo}
+        \begin{verbatim}
+import matplotlib.pyplot as plt
+
+plt.plot(df["Ano"], df["Populacao"])
+plt.ticklabel_format(style='plain', axis='y')  
+plt.show()
+        \end{verbatim}
+    \end{block}
+
+\end{frame}
+
+\begin{frame}[fragile]{Gráfico com Ano $>$ 1900 }
+
+    \begin{block}{Filtragem de linhas e plot}
+        \begin{verbatim}
+import matplotlib.pyplot as plt
+
+plt.plot(df[df["Ano"] > 1900]["Ano"], df[df["Ano"] > 1900]["Populacao"])
+plt.ticklabel_format(style='plain', axis='y')  
+plt.show()
+        \end{verbatim}
+    \end{block}
+
+\end{frame}
+
+
+\begin{frame}[fragile]{Gráfico com População $>$ 1650000 }
+
+    \begin{block}{Filtragem por População e plot}
+        \begin{verbatim}
+import matplotlib.pyplot as plt
+
+plt.plot(df[df["Populacao"] > 1650000]["Ano"], df[df["Populacao"] > 
+1650000]["Populacao"])
+plt.ticklabel_format(style='plain', axis='y')  
+plt.show()
+        \end{verbatim}
+    \end{block}
+
+\end{frame}
+
+
+\begin{frame}[fragile]{Criando DataFrame a partir de uma matriz NumPy}
+
+    \begin{block}{Exemplo com labels de linhas e colunas}
+        \begin{verbatim}
+import pandas as pd
+import numpy as np
+# Criando uma matriz 3x3
+matriz = np.array([[1, 7, 6],
+                   [6, 3, 4],
+                   [2, 5, 2]])
+df2 = pd.DataFrame( matriz,
+    index=["Papelaria Rua 1", "Papelaria Rua 2", "Papelaria Rua 3"],
+    columns=["Lápis", "Borracha", "Papel"])
+print(df2.loc["Papelaria Rua 1"])
+print(df2["Borracha"]>4)
+print(df2[df2["Borracha"]>4])
+        \end{verbatim}
+    \end{block}
+
+\end{frame}
+
+\begin{frame}[fragile]{Ordenando o DataFrame por Lápis vendido}
+
+    \begin{block}{Usando \textbf{sort\_values}}
+        \begin{verbatim}
+# Ordena df2 pela coluna "Lápis" em ordem crescente
+df2_ordenado = df2.sort_values(by="Lápis")
+
+print(df2_ordenado)
+
+# Ordenação decrescente
+df2_ordenado_desc = df2.sort_values(by="Lápis", ascending=False)
+print(df2_ordenado_desc)
+        \end{verbatim}
+    \end{block}
+
+    \begin{block}{Explicação}
+        - `by="Lápis"`: define a coluna que será usada para ordenar.\\
+        - `ascending=False`: ordena em ordem decrescente.\\
+        - O resultado é um novo DataFrame ordenado sem alterar o original.
+    \end{block}
+
+\end{frame}
+
+\begin{frame}[fragile]{Abrindo CSV}
+
+    \begin{block}{Exemplo em Python}
+        \begin{verbatim}
+import pandas as pd
+
+# Lendo os dados de um CSV online
+dados_apts = pd.read_csv("https://raw.githubusercontent.com
+/mvinoba/notebooks-for-binder/refs/heads/master/dados.csv")
+
+# Filtrando apenas apartamentos do bairro Botafogo
+dados_apts_botafogo = dados_apts[dados_apts["bairro"]=="Botafogo"]
+
+# Filtrando condomínios menores que 500
+print(dados_apts_botafogo[dados_apts_botafogo["condominio"] < 500])
+        \end{verbatim}
+    \end{block}
+
+
+
+\end{frame}
+
+\begin{frame}[fragile]{Filtragem múltipla no DataFrame}
+
+    \begin{block}{Apartamentos em Botafogo por condomínio e  quartos}
+        \begin{verbatim}
+import pandas as pd
+
+# Lendo os dados completos
+dados_apts = pd.read_csv("https://raw.githubusercontent.com/
+mvinoba/notebooks-for-binder/refs/heads/master/dados.csv")
+
+# Filtrando múltiplas condições
+dados_filtrados = dados_apts[
+    (dados_apts["bairro"] == "Botafogo") & 
+    (dados_apts["condominio"] < 500) & 
+    (dados_apts["quartos"] >= 2)
+]
+
+print(dados_filtrados)
+        \end{verbatim}
+    \end{block}
+
+
+\end{frame}
+
+\begin{frame}[fragile]{Valores únicos e contagem de frequência em uma coluna}
+
+    \begin{block}{Exemplo de valores únicos}
+        \begin{verbatim}
+# Lista os bairros únicos no DataFrame
+dados_apts["bairro"].unique()
+dados_apts["bairro"].value_counts()
+        \end{verbatim}
+    \end{block}
+
+    \begin{block}{Explicação}
+        - Imagine situações com muitas ocorrências da mesma entidade, como nomes de bairros, rótulos de produtos, etc.\\
+        - Para listar os valores únicos de uma coluna usamos o método \textbf{unique()}.\\
+        - Para contar a frequência de cada valor usamos o método \textbf{value\_counts()}
+    \end{block}
+
+\end{frame}
+
+\begin{frame}[fragile]{Agrupando dados por bairro e calculando a média}
+
+    \begin{block}{Exemplo de agregação com \textbf{groupby}}
+        \begin{verbatim}
+# Agrupando por bairro e calculando a média das colunas numéricas
+media_por_bairro = dados_apts.groupby("bairro").mean()
+
+print(media_por_bairro)
+        \end{verbatim}
+    \end{block}
+
+    \begin{block}{Explicação}
+        - `groupby("bairro")`: agrupa os registros pelo valor da coluna "bairro".\\
+        - `mean()`: calcula a média de todas as colunas numéricas dentro de cada grupo.\\
+        - O resultado é um DataFrame onde cada linha representa um bairro e os valores são médias.
+    \end{block}
+
+\end{frame}
+
+\begin{frame}[fragile]{Exercício — Análise de Medalhas Olímpicas}
+
+    \begin{block}{Carregando os dados}
+        \begin{verbatim}
+url = "https://raw.githubusercontent.com/MainakRepositor
+/Datasets/refs/heads/master/Tokyo-Olympics/Medals.csv"
+        \end{verbatim}
+    \end{block}
+
+    \begin{block}{Tarefas para análise}
+        \begin{enumerate}
+            \item Mostre os países que ganharam mais de 5 medalhas de ouro.
+            \item Ordene esses países pelo número de medalhas de ouro em ordem decrescente.
+            \item Mostre os países que ganharam menos de 5 medalhas no total.
+            \item Ordene esses países pelo número de medalhas de ouro em ordem crescente.
+
+            \item Filtre apenas os registros do Brasil.
+            \item Determine qual tipo de medalha (ouro, prata ou bronze) o Brasil ganhou \textbf{menos}.
+            \item Crie um gráfico barra para mostrar a distribuição de medalhas (ouro, prata, bronze) do Brasil por modalidade.
+        \end{enumerate}
+    \end{block}
+
+
+
+\end{frame}

@@ -1,0 +1,65 @@
+\title{Lista de exercicios: Pandas}
+\author{Gabriel Rodrigues Caldas de Aquino}
+\date{\today}
+\begin{document}
+
+
+\maketitle
+
+
+\section{Análise de Medalhas Olímpicas}
+\textbf{Use a base de dados}: \url{https://raw.githubusercontent.com/MainakRepositor/Datasets/refs/heads/master/Tokyo-Olympics/Medals.csv}
+
+
+
+\textbf{Faça a seguinte análise de dados:}
+
+\begin{enumerate}
+    \item Mostre os países que ganharam mais de 5 medalhas de ouro.
+    \item Ordene esses países pelo número de medalhas de ouro em ordem decrescente.
+    \item Mostre os países que ganharam menos de 5 medalhas no total.
+    \item Ordene esses países pelo número de medalhas de ouro em ordem crescente.
+    \item Filtre apenas os registros do Brasil.
+    \item Determine qual tipo de medalha (ouro, prata ou bronze) o Brasil ganhou \textbf{menos}.
+    \item Crie um gráfico barra para mostrar a distribuição de medalhas (ouro, prata, bronze) do Brasil por modalidade.
+\end{enumerate}
+
+
+\section{Análise de apartamentos no Rio de Janeiro}
+\textbf{Use a base de dados}: \url{https://raw.githubusercontent.com/mvinoba/notebooks-for-binder/refs/heads/master/dados.csv}
+
+
+
+\begin{enumerate}
+    \item Crie uma lista dos bairros que possuem entradas na base de dados (liste somente uma única ocorrência).
+    \item Conte a quantidade de ocorrências de imóveis em cada bairro na base de dados.
+    \item Filtre os apartamentos de Botafogo com condomínio mais barato do que R\$500,00
+    \item Liste os apartamentos de Ipanema que tem mais de 2 quartos.
+    \item Liste os apartamentos da Tijuca que tem mais de 1 quarto e condomínio menor que R\$700,00.
+    \item Apresente um gráfico Numpy com dados relevantes sobre apartamentos de Copacabana (Apresente a sua análise).
+\end{enumerate}
+
+
+\section{Alunos do CEFET-MG}
+
+Considere a base de dados em \url{https://dados.gov.br/dados/conjuntos-dados/12-alunos}
+
+Pegue o conjunto de dados através da URL \url{https://www.dados.cefetmg.br/wp-content/uploads/sites/248/2023/02/PDA_2022-2024_1.2_Alunos_Anonimo.csv}
+
+\textbf{Obs:} Note que este arquivo CSV utiliza ponto e vírgula (;) como separador e possui linhas de metadados no cabeçalho que precisam ser ignoradas - parâmetro skiprows
+\begin{verbatim}
+    df_cefet = pd.read_csv(url_cefet, sep=';', skiprows=2, encoding='latin1')
+\end{verbatim}
+
+
+\begin{enumerate}
+    \item Carregue os dados corretamente, ignorando as linhas iniciais que não fazem parte do cabeçalho (linhas 1 e 2 do arquivo original).
+    \item Conte quantos registros existem para "Ingressante" e quantos para "Concluinte".
+    \item Liste os nomes de todos os \textbf{Campus} únicos presentes na base de dados.
+    \item Filtre apenas os alunos do "CAMPUS NOVA SUÍÇA".
+    \item Dentre os alunos do Campus Nova Suíça filtrados anteriormente, mostre apenas os que estão no curso de "TÉCNICO EM MECATRÔNICA".
+    \item Identifique qual é o "Nível de Ensino" (Técnico, Graduação, etc.) que possui a maior quantidade de alunos registrados nesta base.
+    \item Crie um gráfico de barras horizontais mostrando a quantidade de alunos por Campus (ordene do campus com mais alunos para o com menos alunos).
+\end{enumerate}
+
+\end{document}
