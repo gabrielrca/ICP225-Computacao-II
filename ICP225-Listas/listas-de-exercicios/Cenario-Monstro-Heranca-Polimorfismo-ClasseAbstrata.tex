@@ -1,0 +1,142 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\title{Lista de Exercícios: Jogo de Monstros \\ Herança, Polimorfismo, Classes Abstratas e Encapsulamento}
+\author{Prof. Gabriel Rodrigues Caldas de Aquino}
+\date{Compilado em: \\ \today}
+
+\begin{document}
+
+\maketitle
+
+\section{Introdução}
+
+Neste trabalho vocês vão construir um pequeno jogo de batalha entre monstros inspirado em Pokémon,
+mas com uma regra simples: cada monstro é de um tipo entre \textbf{Pedra}, \textbf{Papel} ou \textbf{Tesoura}.
+Assim como no jogo clássico, um tipo tem vantagem sobre o outro:
+
+\begin{itemize}
+    \item \textbf{Pedra} tem vantagem sobre \textbf{Tesoura}
+    \item \textbf{Tesoura} tem vantagem sobre \textbf{Papel}
+    \item \textbf{Papel} tem vantagem sobre \textbf{Pedra}
+\end{itemize}
+
+Quando um monstro ataca outro que ele tem vantagem, o dano é \textbf{dobrado}.
+Quando ataca outro que o tem vantagem, o dano é \textbf{reduzido pela metade}.
+Quando ataca um do mesmo tipo, o dano é normal (sem nenhum multiplicador).
+
+Além disso, os monstros podem carregar \textbf{itens} que os ajudam na batalha:
+um item de cura e um item de dano. Cada monstro só pode carregar \textbf{no máximo 2 itens}.
+
+O objetivo é praticar os conceitos de \textbf{herança}, \textbf{polimorfismo},
+\textbf{classes abstratas} e \textbf{encapsulamento}.
+
+\section{Requisitos Gerais}
+
+\begin{enumerate}
+    \item Todos os atributos devem ter \textbf{getters} e \textbf{setters} públicos.
+    \item Os setters devem conter validações sempre que fizer sentido
+          (por exemplo, vida entre 0 e 100).
+    \item A classe \texttt{Monstro} deve ser \textbf{abstrata} e definir um método
+          abstrato que será implementado pelas classes filhas.
+    \item A classe \texttt{Item} também deve ser \textbf{abstrata}.
+    \item Utilize \textbf{polimorfismo}.
+\end{enumerate}
+
+\section{Monstros}
+
+Crie a classe abstrata \texttt{Monstro} com os seguintes atributos:
+
+\begin{itemize}
+    \item \texttt{nome}
+    \item \texttt{vida} (deve sempre estar entre 0 e 100)
+    \item \texttt{danoBase}
+    \item \texttt{itens} (lista com no máximo 2 itens)
+\end{itemize}
+
+A classe \texttt{Monstro} deve ter:
+
+\begin{enumerate}
+    \item Getters e setters públicos para todos os atributos.
+    \item O setter de \texttt{vida} deve garantir que o valor fique sempre entre 0 e 100.
+    \item Um método \texttt{esta\_vivo()} que retorna \texttt{True} se a vida for maior que 0.
+    \item Um método \texttt{adicionar\_item(item)} que só adiciona se ainda houver espaço
+          (no máximo 2 itens) e se o objeto for realmente um \texttt{Item}.
+    \item Um método \texttt{usar\_item(indice, alvo)} que usa o item da posição indicada,
+          remove-o da lista após o uso e valida se o índice é válido.
+    \item Um método \texttt{atacar(alvo)} que calcula o dano e reduz a vida do alvo.
+          Esse método deve impedir que monstros mortos ataquem.
+    \item Um método \textbf{abstrato} chamado \texttt{calcular\_dano(alvo)} que cada
+          subclasse vai implementar com a sua própria regra de vantagem.
+\end{enumerate}
+
+\subsection{Subclasses de Monstro}
+
+Crie as classes \texttt{MonstroPedra}, \texttt{MonstroPapel} e \texttt{MonstroTesoura},
+todas herdando de \texttt{Monstro}. Cada uma deve:
+
+\begin{enumerate}
+    \item Implementar o método \texttt{calcular\_dano(alvo)} de acordo com a regra de vantagem:
+          \begin{itemize}
+              \item Se o monstro vence o alvo, o dano é \texttt{danoBase} $\times$ 2.
+              \item Se o monstro perde para o alvo, o dano é \texttt{danoBase} $\times$ 0.5.
+              \item Se empatam, o dano é apenas \texttt{danoBase}.
+          \end{itemize}
+    \item Ter um método \texttt{exibir\_detalhes()} que mostre o nome, o tipo, a vida atual
+          e quantos itens o monstro está carregando.
+\end{enumerate}
+
+\section{Itens}
+
+Crie a classe abstrata \texttt{Item} com os atributos privados:
+
+\begin{itemize}
+    \item \texttt{nome}
+    \item \texttt{descricao}
+\end{itemize}
+
+A classe \texttt{Item} deve ter:
+
+\begin{enumerate}
+    \item Getters e setters públicos.
+    \item Um método \textbf{abstrato} chamado \texttt{usar(alvo)} que será
+          implementado pelas subclasses.
+\end{enumerate}
+
+\subsection{Subclasses de Item}
+
+Crie as classes \texttt{ItemCura} e \texttt{ItemDano}, ambas herdando de \texttt{Item}.
+
+\begin{enumerate}
+    \item \texttt{ItemCura} deve ter um atributo privado \texttt{valorCura} e, ao ser usado,
+          aumentar a vida do \texttt{usuario} respeitando o limite máximo de 100.
+    \item \texttt{ItemDano} deve ter um atributo privado \texttt{valorDano} e, ao ser usado,
+          reduzir a vida do \texttt{alvo}. Se nenhum alvo for passado, o item não deve ser usado.
+    \item Ambas devem ter getters e setters públicos para seus atributos específicos.
+\end{enumerate}
+
+\section{Testando o Jogo}
+
+Depois de implementar tudo, faça o seguinte no seu notebook:
+
+\begin{enumerate}
+    \item Crie pelo menos um monstro de cada tipo.
+    \item Crie alguns itens de cura e de dano.
+    \item Adicione itens aos monstros, testando o limite de 2 itens.
+    \item Faça um monstro atacar o outro e mostre o dano causado.
+    \item Faça um monstro usar um item e mostre o efeito.
+    \item Coloque todos os monstros em uma lista e percorra essa lista chamando
+          \texttt{exibir\_detalhes()} para demonstrar polimorfismo.
+\end{enumerate}
+
+\section{Perguntas para Reflexão}
+
+\begin{enumerate}
+    \item Por que a classe \texttt{Monstro} precisa ser abstrata?
+    \item O que aconteceria se o método \texttt{calcular\_dano} não fosse abstrato?
+    \item Como o polimorfismo aparece quando chamamos \texttt{atacar} em monstros diferentes?
+    \item Por que é importante que o setter de vida limite o valor entre 0 e 100?
+\end{enumerate}
+
+\end{document}

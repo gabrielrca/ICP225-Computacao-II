@@ -7,40 +7,40 @@
 \maketitle
 
 \section{Polimorfismo e Sobrescrita de Métodos}
-Implemente, do zero, um sistema de veículos que utilize herança e polimorfismo.  
+Implemente, do zero, um sistema de veículos que utilize herança e polimorfismo.
 Siga as instruções abaixo:
 
 \begin{enumerate}
     \item Crie uma classe \texttt{Veiculo} com:
-    \begin{itemize}
-        \item Um atributo \texttt{marca} definido no método \texttt{\_\_init\_\_}.
-        \item Um método \texttt{descricao()} que retorna a frase: \texttt{"Veículo da marca <marca>"}.
-        \item Um método \texttt{tipo()} que retorna a string: \texttt{"Genérico"}.
-    \end{itemize}
+          \begin{itemize}
+              \item Um atributo \texttt{marca} definido no método \texttt{\_\_init\_\_}.
+              \item Um método \texttt{descricao()} que retorna a frase: \texttt{"Veículo da marca <marca>"}.
+              \item Um método \texttt{tipo()} que retorna a string: \texttt{"Genérico"}.
+          \end{itemize}
 
     \item Crie uma classe \texttt{Carro} que herda de \texttt{Veiculo}:
-    \begin{itemize}
-        \item Adicione um atributo \texttt{modelo}.
-        \item Sobrescreva o método \texttt{descricao()} para retornar: \texttt{"Carro <marca> - Modelo <modelo>"}.
-        \item Sobrescreva o método \texttt{tipo()} para retornar \texttt{"Carro"}.
-    \end{itemize}
+          \begin{itemize}
+              \item Adicione um atributo \texttt{modelo}.
+              \item Sobrescreva o método \texttt{descricao()} para retornar: \texttt{"Carro <marca> - Modelo <modelo>"}.
+              \item Sobrescreva o método \texttt{tipo()} para retornar \texttt{"Carro"}.
+          \end{itemize}
 
     \item Crie uma classe \texttt{Moto} que herda de \texttt{Veiculo}:
-    \begin{itemize}
-        \item Adicione um atributo \texttt{cilindradas}.
-        \item Sobrescreva o método \texttt{tipo()} para retornar \texttt{"Moto"}.
-    \end{itemize}
+          \begin{itemize}
+              \item Adicione um atributo \texttt{cilindradas}.
+              \item Sobrescreva o método \texttt{tipo()} para retornar \texttt{"Moto"}.
+          \end{itemize}
 
     \item No final do programa:
-    \begin{itemize}
-        \item Crie um objeto \texttt{Carro} com marca \texttt{"Toyota"} e modelo \texttt{"Corolla"}.
-        \item Crie um objeto \texttt{Moto} com marca \texttt{"Honda"} e \texttt{250} cilindradas.
-        \item Imprima o resultado de \texttt{tipo()} e \texttt{descricao()} para cada objeto, no formato:
-        \begin{verbatim}
+          \begin{itemize}
+              \item Crie um objeto \texttt{Carro} com marca \texttt{"Toyota"} e modelo \texttt{"Corolla"}.
+              \item Crie um objeto \texttt{Moto} com marca \texttt{"Honda"} e \texttt{250} cilindradas.
+              \item Imprima o resultado de \texttt{tipo()} e \texttt{descricao()} para cada objeto, no formato:
+                    \begin{verbatim}
 Carro - Carro Toyota - Modelo Corolla
 Moto - Veículo da marca Honda
         \end{verbatim}
-    \end{itemize}
+          \end{itemize}
 \end{enumerate}
 \begin{itemize}
     \item[(a)] Explique o conceito de \textbf{polimorfismo} presente neste código e como ele aparece no exemplo.
@@ -79,12 +79,13 @@ class Conta:
 \end{itemize}
 
 \section{Métodos Mágicos}
-Crie uma classe \texttt{Ponto} para representar pontos em um plano cartesiano.  
+Crie uma classe \texttt{Ponto} para representar pontos em um plano cartesiano.
 Ela deve conter:
 \begin{itemize}
     \item Atributos: \texttt{x} e \texttt{y}.
     \item Método mágico \texttt{\_\_add\_\_} para somar dois pontos (\texttt{x} com \texttt{x} e \texttt{y} com \texttt{y}).
-    
+    \item Utilize os outros métodos mágicos para implementar outras funções.
+
 \end{itemize}
 
 Dica: a distância de um ponto $(x, y)$ à origem pode ser calculada como $\sqrt{x^2 + y^2}$.
@@ -108,5 +109,61 @@ Crie uma classe \texttt{Livro} com atributos \texttt{titulo}, \texttt{autor} e \
     \item Implemente \texttt{\_\_add\_\_} para somar as páginas de dois livros e retornar um \texttt{int} com o total.
     \item Teste criando dois livros e usando os operadores \texttt{>} e \texttt{+}.
 \end{itemize}
+
+
+\section{Análise de código}
+
+Considere o código abaixo.
+
+\begin{verbatim}
+class Animal:
+    def __init__(self, nome):
+        self.nome = nome
+    def getNome(self):
+        return self.nome
+    def som(self):
+        return "..."
+    def getType(self):
+        return "Animal"
+
+class Cachorro(Animal):
+    def __init__(self, nome, raca):
+        super().__init__(nome)
+        self.raca = raca
+    def getRaca(self):
+        return self.raca
+    def som(self):
+        return "Latido"
+    def getType(self):
+        return "Cachorro"
+
+class Gato(Animal):
+    def __init__(self, nome, cor):
+        super().__init__(nome)
+        self.cor = cor
+    def getCor(self):
+        return self.cor
+    def getType(self):
+        return "Gato"
+
+cao1 = Cachorro("Rex", "Labrador")
+gato1 = Gato("Mimi", "Preto")
+
+print(cao1.getType(), cao1.getNome(), cao1.getRaca())
+print(gato1.getType(), gato1.getNome(), gato1.som())
+\end{verbatim}
+
+
+Diga o que será escrito quando:
+
+\begin{itemize}
+
+    \item A linha print(cao1.getType(), cao1.getNome(), cao1.getRaca()) for executada.
+
+    \item  A linha print(gato1.getType(), gato1.getNome(), gato1.som()) for executada.
+
+\end{itemize}
+Justifique todas as respostas.
+
 
 \end{document}
